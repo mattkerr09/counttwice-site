@@ -1,0 +1,10 @@
+worker,classification,day1,day2,day3,day4,day5,day6,day7,rate_paid,cash_fringe,plan_fringe,apprentice,ot_rate_paid
+Ana R.,Carpenter,8,8,8,8,8,0,0,30.00,0.00,10.00,no,
+Ben C.,Carpenter,10,10,10,10,4,0,0,30.00,10.00,0.00,no,45.00
+Cal D.,Carpenter,9,9,9,9,9,0,0,30.00,0.00,10.00,no,30.00
+Dee F.,Laborer,8,8,8,8,8,0,0,22.00,4.00,0.00,no,
+Eli G.,Laborer,8,8,8,8,8,0,0,20.50,6.00,0.00,no,
+Fay H.,Carpenter,8,8,8,8,8,0,0,18.00,0.00,5.00,yes,
+Gus K.,Carpenter,8,8,8,0,0,0,0,18.00,0.00,5.00,yes,
+Hal M.,Electrician,8,8,8,8,8,0,0,38.50,0.00,18.25,no,
+Ivy N.,Laborer,8,8,eight,8,8,0,0,22.00,6.00,0.00,no,

@@ -1,0 +1,47 @@
+# Count Twice: certified payroll checker
+
+> A free page that checks one week of certified payroll before the contractor signs it. You drop in a CSV file and type each trade's base rate, fringe and apprentice ratio from your wage determination. It flags pay under the base rate, short fringe, overtime under 1.5 times the basic rate, and apprentices over the ratio. It runs in the browser: nothing is uploaded or saved. Made by Kerr & Company LLC, Grand Rapids, Michigan. Facts checked 8 November 2026.
+
+## What it checks
+- Base rate plus fringe on every hour, paid as cash, plan payments or both (29 CFR 5.31, 40 U.S.C. 3142(d))
+- Overtime over 40 hours in the week at 1.5 times the basic rate, with the fringe at its straight amount (40 U.S.C. 3702, 29 CFR 5.32)
+- Apprentices over the program's ratio on any day (29 CFR 5.5(a)(4))
+- Rows it can't read, and trades with no rate typed
+- A Michigan mode for state projects that counts the overtime hours on Michigan rate schedules
+
+## What it doesn't check
+- Whether each worker is in the right trade, or whether you have the right wage determination
+- Gross pay, deductions and net pay
+- Apprentice pay steps, and whether each apprentice is registered
+- Hours worked off the job in the same week
+- Due dates, and other states' prevailing wage rules
+
+It checks math against the rates you type. It isn't legal advice, and the contractor still signs the Statement of Compliance.
+
+## Pages
+- [Count Twice: certified payroll checker](https://counttwice.app/): the checker, how to use it, what it checks and doesn't, and Michigan's online certified payroll, which started 2 April 2026
+- [Sample week](https://counttwice.app/sample-week.csv): a CSV file with every column, and made-up names and rates
+- [Privacy](https://counttwice.app/privacy.html)
+- [Terms](https://counttwice.app/terms.html)
+
+## Crawler access
+These bots may read this public site. The same access is set in robots.txt.
+This file is guidance. It does not control whether a crawler visits.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Count Twice: certified payroll checker for your WH-347</title>
+<meta name="description" content="A free certified payroll checker. Drop in one week as a CSV file and it flags pay under the base rate, short fringe, overtime and apprentice ratios. Nothing is uploaded.">
+<link rel="canonical" href="https://counttwice.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Count Twice">
+<meta property="og:title" content="Count Twice: certified payroll checker">
+<meta property="og:description" content="Check one week of certified payroll before you sign it. Free, no account, and your file never leaves your computer.">
+<meta property="og:url" content="https://counttwice.app/">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#1f5f8b">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<script defer data-domain="counttwice.app" src="https://plausible.io/js/script.js"></script>
+<script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };</script>
+<style>
+:root {
+  --bg: #fbfaf7; --card: #ffffff; --ink: #1b1f23; --muted: #555e69; --line: #d9dde3;
+  --accent: #1f5f8b; --accent-ink: #ffffff;
+  --flag: #b3261e; --flag-bg: #fdecea; --fix: #8a5a00; --fix-bg: #fff4dc; --note: #35506b; --note-bg: #eef3f8; --ok: #2e6b3f;
+  --radius: 10px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --card: #1c2024; --ink: #e8eaed; --muted: #a5adb7; --line: #2f353b;
+    --accent: #6fb3e0; --accent-ink: #0b1620;
+    --flag: #ff8a80; --flag-bg: #3a1d1b; --fix: #ffcc66; --fix-bg: #3a2e12; --note: #a8c4e0; --note-bg: #1c2a38; --ok: #7fd18f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--font); }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.skip { position: absolute; left: -9999px; top: 8px; background: var(--card); padding: 8px 12px; border-radius: var(--radius); }
+.skip:focus { left: 8px; z-index: 10; }
+.top { border-bottom: 1px solid var(--line); }
+.top p { margin: 0; padding: 10px 0; font-size: 15px; color: var(--muted); }
+.top .brand { display: flex; align-items: center; gap: 10px; padding: 12px 0; font-size: 1.05rem; color: var(--ink); }
+.top .brand img { flex: none; display: block; }
+h1 { font-size: 2.1rem; line-height: 1.2; margin: 32px 0 12px; letter-spacing: -0.01em; }
+h2 { font-size: 1.5rem; line-height: 1.25; margin: 48px 0 12px; }
+h3 { font-size: 1.15rem; margin: 28px 0 8px; }
+.lede { font-size: 1.15rem; margin: 0 0 16px; }
+.facts { padding-left: 1.2em; margin: 0 0 20px; }
+.facts li { margin: 4px 0; }
+.btn { display: inline-block; min-height: 44px; padding: 10px 20px; border: 0; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); font: 600 1rem/1.5 var(--font); text-decoration: none; cursor: pointer; }
+.btn:disabled { opacity: 0.6; cursor: default; }
+.small { font-size: 0.95rem; color: var(--muted); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; }
+.privacy { margin-top: 16px; }
+.dated { display: inline-block; margin: 0 0 8px; padding: 2px 10px; border-radius: 999px; background: var(--note-bg); color: var(--note); font-size: 0.9rem; }
+.steps li { margin: 8px 0; }
+.table-wrap { overflow-x: auto; }
+table.cols { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card); }
+table.cols th, table.cols td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+table.cols th { font-weight: 600; }
+code { font-family: var(--mono); font-size: 0.92em; }
+.notice { padding: 12px 16px; border-radius: var(--radius); background: var(--fix-bg); color: var(--ink); }
+footer { margin: 56px auto 40px; border-top: 1px solid var(--line); padding-top: 16px; }
+footer p { margin: 8px 0; }
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.7rem; }
+  .btn { width: 100%; text-align: center; }
+  table.cols th:nth-child(3), table.cols td:nth-child(3) { display: none; }
+}
+@media print {
+  .top, .skip, .btn, #how, #checks, #limits, #michigan, #app, footer { display: none; }
+  body { background: #fff; color: #000; }
+}
+</style>
+<link rel="stylesheet" href="checker.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebApplication", "name": "Count Twice: certified payroll checker", "url": "https://counttwice.app/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any web browser", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Checks one week of certified payroll in the browser before you sign it: pay under the base rate, short fringe, overtime under time and a half, and apprentices over the ratio."}
+</script>
+</head>
+<body>
+<a class="skip" href="#check">Skip to the checker</a>
+<header class="top"><div class="wrap"><p class="brand"><img src="icon.svg" alt="" width="28" height="28"><span><strong>Count Twice</strong>: certified payroll checker</span></p></div></header>
+
+<main id="main" class="wrap">
+
+<section class="hero" aria-labelledby="top-h">
+<h1 id="top-h">Check your certified payroll before you sign it</h1>
+<p class="lede">Drop in one week of payroll as a CSV file and type each trade's rates from your wage determination. The page flags pay under the base rate, short fringe, overtime under time and a half, and apprentices over the ratio. It checks your numbers before you sign.</p>
+<ul class="facts">
+<li>Free. Nothing to install, and no account.</li>
+<li>Your file stays on your computer. Nothing is uploaded or saved.</li>
+<li>Built on the federal Davis-Bacon rules, with a Michigan mode for state projects.</li>
+</ul>
+<p><a class="btn" href="#check">Check a week now</a></p>
+<p class="small">Looking for the blank WH-347? The U.S. Department of Labor gives it away free, as a <a href="https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/wh347.pdf">PDF</a> and as an <a href="https://www.dol.gov/agencies/whd/forms/wh347-web">online form</a>. This page doesn't replace the form. It checks the numbers you put on it.</p>
+</section>
+
+<section id="check" aria-labelledby="check-h">
+<h2 id="check-h">Run the check</h2>
+<p>Type your rates, pick your payroll file, then press Check my numbers. No CSV file yet? Start from the <a href="sample-week.csv" download>sample file</a> and type over it in any spreadsheet.</p>
+<p>To see how it works first, press Try the sample week. Its 9 made-up rows hide 4 pay problems: overtime paid at the straight rate, a short fringe, a wage under the base rate and too many apprentices on three days. The check flags all 4 and shows a possible $215.00 short for the week.</p>
+<div id="checker"></div>
+<noscript><p class="notice">The checker needs JavaScript turned on. It runs on your own computer, so turning it on doesn't send your file anywhere.</p></noscript>
+<p class="privacy card"><strong>What happens to your file:</strong> your browser reads it on this computer. It isn't uploaded and it isn't saved. Close the tab and it's gone. The page counts visits and button presses, never what's in your file.</p>
+</section>
+
+<section id="how" aria-labelledby="how-h">
+<h2 id="how-h">How to use it</h2>
+<ol class="steps">
+<li><strong>Get one week out of payroll.</strong> Save it as a CSV file with the columns below. Most payroll and spreadsheet programs can do that. Or start from the <a href="sample-week.csv" download>sample file</a> and type over it.</li>
+<li><strong>Type your rates.</strong> For each trade on the payroll, copy the base rate and the fringe from the wage determination in your contract. If you have apprentices, add the ratio from their apprenticeship program, like 1:3.</li>
+<li><strong>Press Check my numbers.</strong> Fix what it flags and check again.</li>
+<li><strong>Then fill in the WH-347 and sign it.</strong> The check helps you get there. The signature is still yours.</li>
+</ol>
+
+<h3>The columns</h3>
+<div class="table-wrap">
+<table class="cols">
+<thead><tr><th scope="col">Column</th><th scope="col">What to put in it</th><th scope="col">Example</th></tr></thead>
+<tbody>
+<tr><td><code>worker</code></td><td>A name or ID, like the last four digits of the Social Security number. One row per worker for each trade they worked.</td><td>Ana R.</td></tr>
+<tr><td><code>classification</code></td><td>The trade, spelled the way it is in your rates.</td><td>Carpenter</td></tr>
+<tr><td><code>day1</code> to <code>day7</code></td><td>Hours worked each day of the pay week. Day 1 is the first day of your pay week. Blank counts as 0.</td><td>8</td></tr>
+<tr><td><code>rate_paid</code></td><td>The hourly wage, not counting any cash paid in place of fringe.</td><td>30.00</td></tr>
+<tr><td><code>cash_fringe</code></td><td>Cash paid each hour in place of fringe benefits. Blank counts as 0.</td><td>10.00</td></tr>
+<tr><td><code>plan_fringe</code></td><td>What you pay into health, pension or other plans, per hour. Use the plan's hourly credit, spread over every hour the worker works in the year. Blank counts as 0.</td><td>0.00</td></tr>
+<tr><td><code>apprentice</code></td><td>yes for a registered apprentice, no for everyone else. RA and J work too.</td><td>no</td></tr>
+<tr><td><code>ot_rate_paid</code></td><td>Optional. The hourly wage for overtime hours, not counting cash fringe. Add it to check overtime.</td><td>45.00</td></tr>
+</tbody>
+</table>
+</div>
+<p>These line up with the WH-347. The rate is column 6A, plan fringe is column 6B, and cash in place of fringe is column 6C. The form shows 6B and 6C as weekly totals. This page wants them per hour.</p>
+</section>
+
+<section id="checks" aria-labelledby="checks-h">
+<h2 id="checks-h">What it checks</h2>
+<ul>
+<li><strong>Base plus fringe.</strong> Every hour needs at least the base rate plus the fringe. You can pay it as cash, as plan payments, or both, and cash above the base rate counts toward the fringe. Sources: 29 CFR 5.31 and 40 U.S.C. 3142(d).</li>
+<li><strong>Overtime.</strong> Hours over 40 in the week need at least 1.5 times the basic rate, and the fringe is added at its straight amount. The basic rate is never lower than the base rate on your wage determination. Sources: 40 U.S.C. 3702, 40 U.S.C. 3142(e) and 29 CFR 5.32.</li>
+<li><strong>Apprentices.</strong> On any day, a trade's apprentices can't outnumber what the program's ratio allows. An apprentice over the ratio gets the full rate for the work. Source: 29 CFR 5.5(a)(4).</li>
+<li><strong>Your file and your rates.</strong> Rows it can't read and trades with no rate typed are listed, so nothing gets skipped quietly.</li>
+</ul>
+<p class="small">Rules it's built on: <a href="https://www.ecfr.gov/current/title-29/subtitle-A/part-5">29 CFR part 5</a>, <a href="https://www.ecfr.gov/current/title-29/subtitle-A/part-3">29 CFR part 3</a>, <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap31-subchapIV-sec3142.htm">40 U.S.C. 3142</a>, <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap37-sec3702.htm">40 U.S.C. 3702</a>, <a href="https://www.dol.gov/agencies/whd/forms/wh347">DOL's WH-347 instructions</a> and <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-Act-10-of-2023">Michigan's Act 10 of 2023</a>.</p>
+
+<h3>An overtime example</h3>
+<p>Say the base rate is $30.00 and the fringe is $10.00, paid in cash. An overtime hour needs at least $30.00 times 1.5, which is $45.00, plus the $10.00 cash fringe. That's $55.00. Paying 1.5 times $40.00, or $60.00, is fine too. It's just more than the minimum.</p>
+<p>One catch: the page goes by your columns. If you pay a single $40.00 rate and put all of it under <code>rate_paid</code>, it figures overtime on $40.00. If $10.00 of that is cash in place of fringe, put the $10.00 under <code>cash_fringe</code>. Then overtime is figured on $30.00.</p>
+</section>
+
+<section id="limits" aria-labelledby="limits-h">
+<h2 id="limits-h">What it doesn't check</h2>
+<ul>
+<li>Whether each worker is in the right trade for the work they did.</li>
+<li>Whether you have the right wage determination, or its latest changes.</li>
+<li>Whether your fringe plans count, or their hourly credit. It uses the numbers you type.</li>
+<li>Gross pay, deductions and net pay.</li>
+<li>Apprentice pay steps, and whether each apprentice is registered.</li>
+<li>Hours worked off this job in the same week. Those count toward overtime too.</li>
+<li>Overtime for a worker split across two trades. It tells you when to check that by hand.</li>
+<li>Michigan double-time pay, start and end times, and trades whose schedules set their own overtime rules.</li>
+<li>Due dates, and other states' prevailing wage rules.</li>
+</ul>
+<p>It checks math against the rates you type. It doesn't decide which trade a job belongs to, and it isn't a lawyer. If something doesn't fit your job, ask the contracting officer or the agency named in your contract.</p>
+</section>
+
+<section id="michigan" aria-labelledby="mi-h">
+<h2 id="mi-h">Michigan certified payroll went online on 2 April 2026</h2>
+<p class="dated">Checked 8 November 2026</p>
+<p>On Michigan state projects, contractors and subcontractors now send certified payroll to the state's online system instead of the contracting agent. It's due no later than 10 days after each pay period ends. That rule is MCL 408.1122, part of the prevailing wage law Michigan brought back in 2023 Public Act 10 and amended in 2024 Public Act 110.</p>
+
+<h3>The 10-day clock</h3>
+<p>The 10 days start when the pay period ends. For a pay week that ends Saturday, 7 November 2026, day 10 is Tuesday, 17 November 2026. Federal jobs run on a different clock. The WH-347 goes in within 7 days after the regular payday, under 29 CFR 3.4.</p>
+
+<h3>The portal</h3>
+<p>Michigan's labor department, LEO, runs the system. The Online Certified Payroll Submission button on <a href="https://www.michigan.gov/leo/bureaus-agencies/ber/wage-and-hour/prevailing-wage">LEO's prevailing wage page</a> opens an LCPtracker portal at userportal.fortifyv2.lcptracker.net. To get in, you register with LEO's Wage and Hour Division, which costs $500 a year, and you register each project. LEO then sends the steps to log in.</p>
+
+<h3>What the state's system asks for</h3>
+<ul>
+<li>Each worker's trade</li>
+<li>Apprentice, journeyman or other level</li>
+<li>Gross wages for the pay period</li>
+<li>Hours worked each day</li>
+<li>Start and end time each day</li>
+<li>Hourly wage rate, hourly overtime rate and hourly fringe rate</li>
+</ul>
+<p>It leaves out home addresses, phone numbers and Social Security numbers. When you submit, you sign electronically that the record is complete and accurate, and that you paid at least the required wage and fringe rates. You also confirm you understand that breaking the rule can lead to a suspended or revoked state project registration. LEO can fine up to $5,000 for each violation, plus 10%, under MCL 408.1113.</p>
+
+<h3>Overtime on Michigan rate schedules</h3>
+<p>LEO's <a href="https://www.michigan.gov/leo/bureaus-agencies/ber/wage-and-hour/prevailing-wage/prevailing-wages-by-county">rates page</a> says every trade follows these rules unless its schedule notes otherwise:</p>
+<ul>
+<li>Time and a half for hours over 8 in a day, or over 10 where four 10-hour days are allowed.</li>
+<li>Time and a half for hours over 40 in a week, and for Saturdays.</li>
+<li>Double time for Sundays and recognized holidays.</li>
+</ul>
+<p>LEO updates its rates every year on 1 November. Tick Michigan state project in the checker to count these hours.</p>
+
+<h3>Which jobs it covers</h3>
+<p>State-funded work on public buildings, schools, roads, bridges and other public works, plus wind, solar and storage projects of 2 megawatts or more, private ones included. Contracts that already carry federal Davis-Bacon rates are exempt from the Michigan law. So are projects that send certified payroll to MDOT, and routine maintenance on energy projects.</p>
+
+<h3>Federal jobs use the WH-347</h3>
+<p>The U.S. Department of Labor gives the WH-347 away free, as a PDF and as an online form that runs in your browser. The online form does the pay math, one worker at a time. DOL's form pages don't mention checking your pay against your wage determination's rates. That's the part this page does. Get the form from <a href="https://www.dol.gov/agencies/whd/forms/wh347">DOL's WH-347 page</a>, or use <a href="https://www.dol.gov/agencies/whd/forms/wh347-web">the online WH-347</a>.</p>
+<p class="small">Sources, read 8 November 2026: MCL 408.1101, 408.1102, 408.1113 and 408.1122 in <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-Act-10-of-2023">Michigan's Act 10 of 2023</a>; LEO's prevailing wage and rates pages on michigan.gov; <a href="https://www.ecfr.gov/current/title-29/subtitle-A/part-3/section-3.4">29 CFR 3.4</a>; and DOL's WH-347 pages.</p>
+</section>
+
+<section id="app" aria-labelledby="app-h">
+<h2 id="app-h">A desktop app, if this page earns it</h2>
+<p>If contractors use this page, I'll build a desktop version. It would check every week straight from your payroll export, keep your payroll on your own computer, and cost one price with no monthly fee. It isn't built yet.</p>
+<p><button type="button" class="btn" id="notify">Tell me when the desktop app is ready</button></p>
+<p id="notify-thanks" class="small" role="status" hidden>Thanks. Your click is counted, and nothing else was sent. There's no email list yet, so check back on this page.</p>
+</section>
+
+</main>
+
+<footer class="wrap small">
+<p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan. <a href="privacy.html">Privacy</a> <span aria-hidden="true">&middot;</span> <a href="terms.html">Terms</a></p>
+<p>Facts on this page checked 8 November 2026. Count Twice checks math against the rates you type. You still sign the Statement of Compliance yourself.</p>
+</footer>
+
+<script>
+(function () {
+  var button = document.getElementById("notify");
+  var thanks = document.getElementById("notify-thanks");
+  if (!button) { return; }
+  button.addEventListener("click", function () {
+    if (typeof window.plausible === "function") { window.plausible("notify-click"); }
+    button.disabled = true;
+    if (thanks) { thanks.hidden = false; }
+  });
+})();
+</script>
+<script src="checker.js" defer></script>
+</body>
+</html>
