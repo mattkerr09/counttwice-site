@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>California prevailing wage 2026: DIR rates and payroll</title>
+<meta name="description" content="California public works pay: the $1,000 test, DIR&#x27;s February and August rates, daily overtime, $400 registration and monthly certified payroll.">
+<link rel="canonical" href="https://counttwice.app/california-prevailing-wage/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Count Twice">
+<meta property="og:title" content="California prevailing wage: DIR rates, registration and certified payroll">
+<meta property="og:description" content="California public works pay: the $1,000 test, DIR&#x27;s February and August rates, daily overtime, $400 registration and monthly certified payroll.">
+<meta property="og:url" content="https://counttwice.app/california-prevailing-wage/">
+<meta property="og:image" content="https://counttwice.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Count Twice: certified payroll checker. Check one week before you sign. Free, in your browser. Nothing uploaded.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f5f8b">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script defer data-domain="counttwice.app" src="https://plausible.io/js/script.js"></script>
+<style>
+:root {
+  --bg: #fbfaf7; --card: #ffffff; --ink: #1b1f23; --muted: #555e69; --line: #d9dde3;
+  --accent: #1f5f8b; --accent-ink: #ffffff;
+  --flag: #b3261e; --flag-bg: #fdecea; --fix: #8a5a00; --fix-bg: #fff4dc; --note: #35506b; --note-bg: #eef3f8; --ok: #2e6b3f;
+  --radius: 10px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --card: #1c2024; --ink: #e8eaed; --muted: #a5adb7; --line: #2f353b;
+    --accent: #6fb3e0; --accent-ink: #0b1620;
+    --flag: #ff8a80; --flag-bg: #3a1d1b; --fix: #ffcc66; --fix-bg: #3a2e12; --note: #a8c4e0; --note-bg: #1c2a38; --ok: #7fd18f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--font); }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.skip { position: absolute; left: -9999px; top: 8px; background: var(--card); padding: 8px 12px; border-radius: var(--radius); }
+.skip:focus { left: 8px; z-index: 10; }
+.top { border-bottom: 1px solid var(--line); }
+.top p { margin: 0; padding: 10px 0; font-size: 15px; color: var(--muted); }
+.top .brand { display: flex; align-items: center; gap: 10px; padding: 12px 0; font-size: 1.05rem; color: var(--ink); }
+.top .brand img { flex: none; display: block; }
+h1 { font-size: 2.1rem; line-height: 1.2; margin: 32px 0 12px; letter-spacing: -0.01em; }
+h2 { font-size: 1.5rem; line-height: 1.25; margin: 48px 0 12px; }
+h3 { font-size: 1.15rem; margin: 28px 0 8px; }
+.lede { font-size: 1.15rem; margin: 0 0 16px; }
+.facts { padding-left: 1.2em; margin: 0 0 20px; }
+.facts li { margin: 4px 0; }
+.btn { display: inline-block; min-height: 44px; padding: 10px 20px; border: 0; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); font: 600 1rem/1.5 var(--font); text-decoration: none; cursor: pointer; }
+.btn:disabled { opacity: 0.6; cursor: default; }
+.small { font-size: 0.95rem; color: var(--muted); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; }
+.privacy { margin-top: 16px; }
+.dated { display: inline-block; margin: 0 0 8px; padding: 2px 10px; border-radius: 999px; background: var(--note-bg); color: var(--note); font-size: 0.9rem; }
+.steps li { margin: 8px 0; }
+.table-wrap { overflow-x: auto; }
+table.cols { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card); }
+table.cols th, table.cols td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+table.cols th { font-weight: 600; }
+code { font-family: var(--mono); font-size: 0.92em; }
+.notice { padding: 12px 16px; border-radius: var(--radius); background: var(--fix-bg); color: var(--ink); }
+footer { margin: 56px auto 40px; border-top: 1px solid var(--line); padding-top: 16px; }
+footer p { margin: 8px 0; }
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.7rem; }
+  .btn { width: 100%; text-align: center; }
+  table.cols th:nth-child(3), table.cols td:nth-child(3) { display: none; }
+}
+.top .brand a { color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.cta { margin: 24px 0; }
+.cta p { margin: 8px 0; }
+figure { margin: 24px 0; }
+figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+figcaption { margin-top: 8px; font-size: 0.95rem; color: var(--muted); }
+table.data { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card); }
+table.data th, table.data td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+table.data th { font-weight: 600; }
+table.data td.num { font-family: var(--mono); white-space: nowrap; }
+.next { margin-top: 40px; }
+table.grid { border-collapse: collapse; background: var(--card); font-family: var(--mono); font-size: 0.9rem; }
+table.grid th, table.grid td { border: 1px solid var(--line); padding: 6px 9px; text-align: center; }
+table.grid thead th { font-weight: 600; line-height: 1.3; }
+table.grid caption { caption-side: bottom; text-align: left; padding-top: 6px; font-family: var(--font); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (max-width: 480px) {
+  table.grid th, table.grid td { padding: 5px 4px; font-size: 0.85rem; }
+  table.data { font-size: 0.88rem; }
+  table.data td.num { white-space: normal; }
+  table.data th, table.data td { padding: 8px 6px; }
+}
+main .table-wrap { margin: 16px 0; }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "California prevailing wage: DIR rates, registration and certified payroll", "url": "https://counttwice.app/california-prevailing-wage/", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "image": "https://counttwice.app/og.png", "author": {"@type": "Person", "name": "Matt Kerr", "worksFor": {"@type": "Organization", "name": "Kerr & Company LLC"}}, "publisher": {"@type": "Organization", "name": "Kerr & Company LLC"}}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the article</a>
+<header class="top"><div class="wrap"><p class="brand"><a href="/"><img src="/icon.svg" alt="" width="28" height="28"><span><strong>Count Twice</strong>: certified payroll checker</span></a></p></div></header>
+
+<main id="main" class="wrap">
+
+<section aria-labelledby="top-h">
+<h1 id="top-h">California prevailing wage: DIR rates, registration and certified payroll</h1>
+<p class="dated">By Matt Kerr, who makes Count Twice in Grand Rapids &middot; Checked 9 November 2026</p>
+<p class="lede">On a California public works job over $1,000, every worker gets at least the prevailing wage the Director of Industrial Relations sets for their craft and county. DIR, the state's Department of Industrial Relations, issues new rates twice a year, on 22 February and 22 August. Contractors register with DIR for $400 a year and send certified payroll to the Labor Commissioner online, at least once a month.</p>
+<ul class="facts">
+<li>The current rates are DIR's 2026-2 set, issued 22 August 2026 and in effect since 1 September. Going by DIR's schedule, the next set comes out on 22 February 2027.</li>
+<li>Overtime starts after 8 hours in a day, as well as after 40 in a week. Each craft's determination sets its own overtime and holiday rates.</li>
+<li>On contracts of $30,000 or more you have to employ apprentices: at least 1 hour of apprentice work for every 5 hours of journeyperson work, unless the craft's determination says it doesn't use them.</li>
+</ul>
+<div class="card cta">
+<p><strong>Checking a California payroll?</strong> Count Twice is a free checker I built for the weekly certified payroll. It's built on the federal Davis-Bacon rules, with a Michigan mode, and it has no California mode. On a California week it still flags pay under the basic rate, short fringe and overtime past 40 hours, against the rates you type. Count California's daily overtime and apprentice hours by hand. The example below shows how.</p>
+<p><a class="btn" href="/#check">Check a week free</a></p>
+<p class="small">Free, with no account. Your file stays on your computer. Nothing is uploaded or saved.</p>
+</div>
+</section>
+
+<section aria-labelledby="cover-h">
+<h2 id="cover-h">Which jobs count as public works</h2>
+<p>DIR's public works page sums up the definition in Labor Code 1720: construction, alteration, demolition, installation or repair work, done under contract and paid for in whole or in part out of public funds. It can include work before and after construction on the project.</p>
+<ul>
+<li><strong>Over $1,000:</strong> prevailing wages apply to every worker on a public works project over $1,000 (Labor Code 1771, as DIR's FAQs give it). A job can't be split up to stay under that line.</li>
+<li><strong>A higher line for some agencies:</strong> if the awarding body runs a labor compliance program the Director has approved on all its projects, prevailing wages aren't required on construction of $25,000 or less, or on alteration, demolition, repair or maintenance of $15,000 or less.</li>
+<li><strong>Federal money:</strong> state law stays out of projects awarded by and under the complete control of the federal government. But a federally funded project that a California agency controls or carries out is under the state's prevailing wage law, and its contractors have to register. So one job can carry the federal Davis-Bacon rules and California's at once.</li>
+</ul>
+<p>Not sure about a project? Anyone with an interest in it can ask the Director for a written coverage determination, at pwcoverage@dir.ca.gov. DIR posts the ones it has issued since 2002.</p>
+</section>
+
+<section aria-labelledby="rates-h">
+<h2 id="rates-h">How DIR sets the rates, and when they change</h2>
+<p>DIR's rate is the basic hourly rate paid to a majority of workers in a craft in the area. If no single rate has a majority, the rate paid to the largest group prevails. DIR says its rates usually come from collective bargaining agreements. The federal test is different: with no majority and no group of 30 percent, DOL takes a weighted average. <a href="/prevailing-wage/">How the federal test works</a>.</p>
+<p>General determinations come out on 22 February and 22 August and take effect 10 days later, under 8 CCR 16000. That's 1 September for an August set, and 4 March for a February set in a year that isn't a leap year. Each determination has an expiration date, and the mark after it tells you what happens next:</p>
+<ul>
+<li><strong>One asterisk (*):</strong> the determination in effect on the day the job was advertised for bids stays in effect for the life of the project.</li>
+<li><strong>Two asterisks (**):</strong> the rates for work after that date are already set, from the union contract. If your work runs past the date, you owe the new rates.</li>
+</ul>
+<p class="notice">Two asterisks catch people out. A job bid at one rate can owe a higher one partway through, because the increase was set before the bid. DIR's own determinations say the new rate "should be incorporated in contracts entered into now."</p>
+<h3>Finding your craft</h3>
+<p>DIR's index for the 2026-2 set lays out six steps. Look first in the statewide trades, then Northern or Southern California, then San Diego if the job is there. If your craft still isn't listed, check the county's subtrades and shift pay. Last, read the important notices for corrections. If no determination covers the work, the awarding body can ask for a special one at least 45 days before it advertises the job.</p>
+</section>
+
+<section aria-labelledby="line-h">
+<h2 id="line-h">A real rate line, and one week worked through</h2>
+<p>Here's the carpenter line from determination SC-23-31-2-2026-2, issued 22 August 2026. It covers Imperial, Inyo, Kern, Los Angeles, Mono, Orange, Riverside, San Bernardino, San Luis Obispo, Santa Barbara and Ventura counties.</p>
+<div class="table-wrap">
+<table class="data">
+<thead><tr><th scope="col">Column</th><th scope="col">Carpenter, an hour</th></tr></thead>
+<tbody>
+<tr><td>Basic hourly rate</td><td class="num">$54.41</td></tr>
+<tr><td>Health and welfare</td><td class="num">$10.25</td></tr>
+<tr><td>Pension</td><td class="num">$6.41</td></tr>
+<tr><td>Vacation and holiday</td><td class="num">$7.57</td></tr>
+<tr><td>Training</td><td class="num">$0.79</td></tr>
+<tr><td>Other</td><td class="num">$4.89</td></tr>
+<tr><th scope="row">Total hourly rate</th><td class="num">$84.32</td></tr>
+<tr><td>Daily overtime, 1.5 times</td><td class="num">$111.525</td></tr>
+<tr><td>Saturday overtime, 1.5 times</td><td class="num">$111.525</td></tr>
+<tr><td>Sunday and holiday, 2 times</td><td class="num">$138.73</td></tr>
+</tbody>
+</table>
+</div>
+<p>The five employer payments add up to $29.91, and $54.41 plus $29.91 is the $84.32 total. The overtime rates multiply only the basic rate. 1.5 times $54.41 is $81.615, plus $29.91 makes $111.525. Double time is $108.82 plus $29.91, or $138.73. Federal overtime works the same way, with the fringe at its straight amount (29 CFR 5.32).</p>
+<p>Two footnotes on this line matter for payroll. On weekdays, the first 4 overtime hours are at 1.5 times and anything past 12 hours in the day is at 2 times. On Saturdays, the first 8 hours are at 1.5 times and the rest at 2 times. And the expiration date, 30 June 2027, carries two asterisks, so the rate after it is already set.</p>
+<p>The $0.79 training amount doesn't go to the worker. DIR's apprenticeship rules send it to the apprenticeship committee for the craft or to the California Apprenticeship Council.</p>
+<h3>One week, two answers</h3>
+<p>Say a carpenter on this determination works 10 hours on Monday, 10 on Tuesday, 8 on Wednesday, 8 on Thursday and 4 on Friday. That's 40 hours, so a check that only looks for hours past 40 in the week finds no overtime at all.</p>
+<div class="table-wrap">
+<table class="data">
+<thead><tr><th scope="col">Day</th><th scope="col">Hours</th><th scope="col">Straight time</th><th scope="col">Daily overtime</th></tr></thead>
+<tbody>
+<tr><td>Monday</td><td class="num">10</td><td class="num">8</td><td class="num">2</td></tr>
+<tr><td>Tuesday</td><td class="num">10</td><td class="num">8</td><td class="num">2</td></tr>
+<tr><td>Wednesday</td><td class="num">8</td><td class="num">8</td><td class="num">0</td></tr>
+<tr><td>Thursday</td><td class="num">8</td><td class="num">8</td><td class="num">0</td></tr>
+<tr><td>Friday</td><td class="num">4</td><td class="num">4</td><td class="num">0</td></tr>
+<tr><th scope="row">Week</th><td class="num">40</td><td class="num">36</td><td class="num">4</td></tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><strong>Counted by the week only:</strong> 40 hours &times; $84.32 = $3,372.80.</li>
+<li><strong>Counted the California way:</strong> 36 hours &times; $84.32 = $3,035.52, plus 4 hours &times; $111.525 = $446.10. That's $3,481.62.</li>
+</ul>
+<p>The difference is $108.82 for one worker in one week, which is 4 hours times the $27.205 overtime premium. These totals include the employer payments, so part of each one goes to plans, not into the paycheck.</p>
+</section>
+
+<section aria-labelledby="reg-h">
+<h2 id="reg-h">Register with DIR before you bid</h2>
+<p>DIR counts anyone who bids on or works on a public works project as a public works contractor, subcontractors included. Every one of them has to register. Registration costs $400 and covers one fiscal year, 1 July to 30 June, whatever day you sign up. To qualify you need:</p>
+<ul>
+<li>workers' compensation coverage for your employees,</li>
+<li>a Contractors State License Board license, if your trade needs one,</li>
+<li>no unpaid wage or penalty assessments owed,</li>
+<li>no federal or state debarment,</li>
+<li>registered subcontractors only.</li>
+</ul>
+<p>An unregistered contractor can't bid or work on public works and can be taken off a job it's already on. For a first slip in 12 months, you can still register by paying a $2,000 penalty on top of the $400 fee. Miss the 30 June renewal by accident and DIR's FAQ gives you 90 days to renew late, with a $400 penalty. DIR's registration page charges $2,000 when the lapse wasn't an accident.</p>
+<p>Small projects are the exception. If the whole prime contract is $25,000 or less for new construction, alteration, installation, demolition or repair, or $15,000 or less for maintenance, you don't register or upload payroll for it. You still pay prevailing wages over $1,000, keep certified payroll records and hand them over if the Labor Commissioner asks.</p>
+</section>
+
+<section aria-labelledby="cpr-h">
+<h2 id="cpr-h">DIR certified payroll: where it goes and when</h2>
+<p>Each contractor and subcontractor sends its own certified payroll records straight to the Labor Commissioner, through DIR's Public Works Portal. The awarding body has to register the project there first, which gives it a DIR project ID. DIR's FAQ treats 30 days after the award as the deadline for that. If you can't find the project, ask the awarding body to register it.</p>
+<ul>
+<li><strong>When:</strong> at least monthly, within a month after the end of the payroll period, or more often if the contract says so. DIR's advice is to send each week, or at the end of each payroll period.</li>
+<li><strong>How:</strong> type it into the online form, or upload an XML file built to DIR's CPR schema, version 2.</li>
+<li><strong>Fixing a mistake:</strong> you can't change or delete a record once it's in. Send a new record for the same period, and it takes precedence. The original stays on file next to it. If you filed for a week with no work, send a Statement of Non-Performance for it.</li>
+<li><strong>Who can see it:</strong> anyone can search and print the records through DIR's public search, with confidential details removed.</li>
+</ul>
+<p>Some projects don't upload to DIR: those monitored by Caltrans, the City of Los Angeles, the Los Angeles Unified School District or the County of Sacramento, and projects under a qualifying project labor agreement. Ask your awarding body which applies.</p>
+<p>Compare the federal clock. On a Davis-Bacon job, each week's certified payroll is due within 7 days after that week's regular payday (29 CFR 3.4(a)). <a href="/certified-payroll/">How the federal routine works</a>.</p>
+</section>
+
+<section aria-labelledby="app-h">
+<h2 id="app-h">Apprentices: California sets a floor</h2>
+<p>Every public works contract of $30,000 or more carries a duty to hire apprentices, unless the craft's determination says it doesn't use them. That duty reaches every contractor and subcontractor on the project, even one whose own part is under $30,000. DIR's Division of Apprenticeship Standards lists the steps:</p>
+<ol class="steps">
+<li>Send contract award information for each craft on form DAS 140. If you're approved to train apprentices, it goes to your own apprenticeship committee. If not, it goes to every committee that can supply apprentices to the site.</li>
+<li>Pay the training amount in the rate to the committee or to the California Apprenticeship Council.</li>
+<li>Ask a committee for apprentices on form DAS 142, at least 3 business days before you need them.</li>
+<li>Employ at least 1 hour of apprentice work for every 5 hours of journeyperson work, and cover apprentices with workers' compensation.</li>
+</ol>
+<p>Here's that ratio worked out. If your journeyperson carpenters put in 600 hours on the job, you owe at least 120 hours of carpenter apprentice work, since 600 divided by 5 is 120.</p>
+<p>The federal rule points the other way. Under 29 CFR 5.5(a)(4)(i)(C), the ratio is a ceiling: apprentices can't outnumber what the registered program allows, and one over the ratio gets the full journeyworker rate. Count Twice checks that ceiling, day by day. It can't tell you whether you met California's floor.</p>
+</section>
+
+<section aria-labelledby="vs-h">
+<h2 id="vs-h">Federal and California rules, side by side</h2>
+<div class="table-wrap">
+<table class="data">
+<thead><tr><th scope="col"><span class="sr">Question</span></th><th scope="col">Federal: Davis-Bacon</th><th scope="col">California public works</th></tr></thead>
+<tbody>
+<tr><th scope="row">Which jobs</th><td>Federal contracts over $2,000 to build, alter or repair public buildings and works, and federally funded work under the related acts</td><td>Public works over $1,000, paid for in whole or in part with public funds</td></tr>
+<tr><th scope="row">Who sets the rate</th><td>The U.S. Department of Labor</td><td>The Director of Industrial Relations</td></tr>
+<tr><th scope="row">When rates change</th><td>The wage determination in the contract generally holds for the whole contract</td><td>New sets each 22 February and 22 August. Predetermined increases, marked **, apply during the job.</td></tr>
+<tr><th scope="row">Overtime</th><td>Over 40 hours a week, at 1.5 times the basic rate, on contracts over $100,000</td><td>Over 8 hours a day and 40 a week, at 1.5 times the basic rate at least. The determination sets the details.</td></tr>
+<tr><th scope="row">Apprentices</th><td>The ratio is a ceiling</td><td>On contracts of $30,000 or more, a floor of 1 apprentice hour for every 5 journeyperson hours</td></tr>
+<tr><th scope="row">Contractor registration</th><td>No registration step in the labor clauses of 29 CFR 5.5</td><td>$400 a fiscal year with DIR</td></tr>
+<tr><th scope="row">Certified payroll</th><td>Every week, within 7 days after payday, to the agency</td><td>At least monthly, online, to the Labor Commissioner</td></tr>
+</tbody>
+</table>
+</div>
+<p class="small">From 40 U.S.C. 3142, 3701 and 3702; 29 CFR 1.6(a)(1), 3.4(a) and 5.5; and DIR's public works, contractor, certified payroll, apprenticeship and FAQ pages.</p>
+<p>When the Labor Commissioner finds a violation, DIR lists what can follow: the wages owed with interest and liquidated damages, penalties, up to 3 years of debarment, criminal prosecution, and DIR's investigation costs. The prime and its subcontractors are jointly liable for what's owed.</p>
+</section>
+
+<section aria-labelledby="check-h">
+<h2 id="check-h">Check the week's math before you upload it</h2>
+<p>Count Twice takes each craft's basic rate and fringe and one week of payroll, and checks every worker's hours against them. On a California job, type the basic rate as the rate. Leave the training amount out of the fringe and check that payment on its own, since it goes to a committee, not the worker. Here's its result on the made-up sample week, which has four mistakes planted in it.</p>
+<figure>
+<img src="/img/sample-week-result.jpg" width="918" height="1100" alt="Count Twice results for the sample week: 9 rows read, 4 flags, 2 things to fix, 2 notes, and a possible shortfall of $215.00. The flags are overtime under time and a half for Cal D., fringe short for Dee F., pay under the base rate for Eli G., and carpenter apprentices over the 1:3 ratio on days 1 to 3." loading="lazy">
+<figcaption>The checker's results for the made-up sample week, in a browser on 9 November 2026.</figcaption>
+</figure>
+<div class="card cta">
+<p><a class="btn" href="/#check">Check a week free</a></p>
+<p class="small">Count Twice checks math against the rates you type. It doesn't know California's daily overtime or apprentice floor, it doesn't upload to DIR, and it isn't a lawyer.</p>
+</div>
+</section>
+
+<section class="next" aria-labelledby="next-h">
+<h2 id="next-h">Next: if the job has federal money too</h2>
+<p>A California agency's project with federal funding can owe the federal rules on top of the state's. <a href="/certified-payroll/">What is certified payroll?</a> covers the federal weekly routine, its 7-day deadline and the 3-year records.</p>
+<p class="small">Sources, each read 9 November 2026 (UTC):</p>
+<ul class="small">
+<li>DIR: <a href="https://www.dir.ca.gov/Public-Works/PublicWorks.html">Public Works</a>, <a href="https://www.dir.ca.gov/public-works/prevailing-wage.html">Prevailing Wage Requirements</a>, <a href="https://www.dir.ca.gov/Public-Works/Contractors.html">Public Works Contractors</a>, <a href="https://www.dir.ca.gov/Public-Works/Certified-Payroll-Reporting.html">Certified Payroll Reporting</a>, <a href="https://www.dir.ca.gov/Public-Works/eCPR_exemptions.html">Certified Payroll Reporting Exemptions</a>, <a href="https://www.dir.ca.gov/Public-Works/Apprentices.html">Apprenticeship Requirements</a>, <a href="https://www.dir.ca.gov/Public-Works/Enforcement.html">Enforcement of Public Works Law</a> and the <a href="https://www.dir.ca.gov/Public-Works/PublicWorksSB854FAQ.html">Public Works FAQ</a></li>
+<li>DIR Office of the Director: <a href="https://www.dir.ca.gov/OPRL/FAQ_PrevailingWage.html">Frequently Asked Questions, Prevailing Wage</a>, the <a href="https://www.dir.ca.gov/OPRL/2026-2/PWD/index.htm">2026-2 general determinations index</a> and <a href="https://www.dir.ca.gov/OPRL/2026-2/PWD/Determinations/Southern/SC-023-31-2.pdf">determination SC-23-31-2-2026-2, Carpenter</a></li>
+<li>DIR Division of Apprenticeship Standards: <a href="https://www.dir.ca.gov/das/publicworks.html">Public Works Apprenticeship Requirements</a></li>
+<li><a href="https://www.ecfr.gov/current/title-29/section-1.6">29 CFR 1.6</a>, <a href="https://www.ecfr.gov/current/title-29/section-3.4">3.4</a>, <a href="https://www.ecfr.gov/current/title-29/section-5.5">5.5</a> and <a href="https://www.ecfr.gov/current/title-29/section-5.32">5.32</a>, eCFR, current to 5 November 2026</li>
+<li><a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap31-subchapIV-sec3142.htm">40 U.S.C. 3142</a>, <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap37-sec3701.htm">3701</a> and <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap37-sec3702.htm">3702</a>, U.S. Code 2024 edition on govinfo</li>
+</ul>
+</section>
+
+</main>
+
+<footer class="wrap small">
+<p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan. <a href="/">Free checker</a> <span aria-hidden="true">&middot;</span> <a href="/privacy.html">Privacy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms</a></p>
+<p>Facts on this page checked 9 November 2026. This page explains California's public works pay rules and DIR's payroll system. It isn't legal advice.</p>
+</footer>
+</body>
+</html>

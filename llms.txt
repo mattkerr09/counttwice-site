@@ -25,6 +25,7 @@ It checks math against the rates you type. It isn't legal advice, and the contra
 - [What is prevailing wage?](https://counttwice.app/prevailing-wage/): how DOL picks the prevailing wage (majority, 30 percent, weighted average) with a worked example, federal against Michigan's Act 10 of 2023 side by side, and why DOL's state table is out of date
 - [The Davis-Bacon Act](https://counttwice.app/davis-bacon-act/): the $2,000 coverage test, the related acts, who counts as a laborer or mechanic, what a contractor owes each week, and what short pay costs
 - [What is certified payroll?](https://counttwice.app/certified-payroll/): who files on federal and Michigan state jobs, the 7-day federal and 10-day Michigan deadlines with a worked week, where each payroll goes, what the signed statement means, the 3-year records, and what follows when it's late or wrong
+- [California prevailing wage](https://counttwice.app/california-prevailing-wage/): California public works pay: the $1,000 test, DIR's February and August rate sets, daily overtime with a worked week, the $400 contractor registration, monthly certified payroll to the Labor Commissioner, and the apprentice floor
 - [Sample week](https://counttwice.app/sample-week.csv): a CSV file with every column, and made-up names and rates
 - [Privacy](https://counttwice.app/privacy.html)
 - [Terms](https://counttwice.app/terms.html)
