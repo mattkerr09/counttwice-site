@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What is prevailing wage? How it&#x27;s set, and who must pay it</title>
+<meta name="description" content="Prevailing wage is the lowest pay plus fringe a law allows on public construction. How DOL and Michigan set it, who gets it, and how they differ.">
+<link rel="canonical" href="https://counttwice.app/prevailing-wage/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Count Twice">
+<meta property="og:title" content="What is prevailing wage? How the rate is set, and who has to pay it">
+<meta property="og:description" content="Prevailing wage is the lowest pay plus fringe a law allows on public construction. How DOL and Michigan set it, who gets it, and how they differ.">
+<meta property="og:url" content="https://counttwice.app/prevailing-wage/">
+<meta property="og:image" content="https://counttwice.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Count Twice: certified payroll checker. Check one week before you sign. Free, in your browser. Nothing uploaded.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f5f8b">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script defer data-domain="counttwice.app" src="https://plausible.io/js/script.js"></script>
+<style>
+:root {
+  --bg: #fbfaf7; --card: #ffffff; --ink: #1b1f23; --muted: #555e69; --line: #d9dde3;
+  --accent: #1f5f8b; --accent-ink: #ffffff;
+  --flag: #b3261e; --flag-bg: #fdecea; --fix: #8a5a00; --fix-bg: #fff4dc; --note: #35506b; --note-bg: #eef3f8; --ok: #2e6b3f;
+  --radius: 10px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --card: #1c2024; --ink: #e8eaed; --muted: #a5adb7; --line: #2f353b;
+    --accent: #6fb3e0; --accent-ink: #0b1620;
+    --flag: #ff8a80; --flag-bg: #3a1d1b; --fix: #ffcc66; --fix-bg: #3a2e12; --note: #a8c4e0; --note-bg: #1c2a38; --ok: #7fd18f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--font); }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.skip { position: absolute; left: -9999px; top: 8px; background: var(--card); padding: 8px 12px; border-radius: var(--radius); }
+.skip:focus { left: 8px; z-index: 10; }
+.top { border-bottom: 1px solid var(--line); }
+.top p { margin: 0; padding: 10px 0; font-size: 15px; color: var(--muted); }
+.top .brand { display: flex; align-items: center; gap: 10px; padding: 12px 0; font-size: 1.05rem; color: var(--ink); }
+.top .brand img { flex: none; display: block; }
+h1 { font-size: 2.1rem; line-height: 1.2; margin: 32px 0 12px; letter-spacing: -0.01em; }
+h2 { font-size: 1.5rem; line-height: 1.25; margin: 48px 0 12px; }
+h3 { font-size: 1.15rem; margin: 28px 0 8px; }
+.lede { font-size: 1.15rem; margin: 0 0 16px; }
+.facts { padding-left: 1.2em; margin: 0 0 20px; }
+.facts li { margin: 4px 0; }
+.btn { display: inline-block; min-height: 44px; padding: 10px 20px; border: 0; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); font: 600 1rem/1.5 var(--font); text-decoration: none; cursor: pointer; }
+.btn:disabled { opacity: 0.6; cursor: default; }
+.small { font-size: 0.95rem; color: var(--muted); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; }
+.privacy { margin-top: 16px; }
+.dated { display: inline-block; margin: 0 0 8px; padding: 2px 10px; border-radius: 999px; background: var(--note-bg); color: var(--note); font-size: 0.9rem; }
+.steps li { margin: 8px 0; }
+.table-wrap { overflow-x: auto; }
+table.cols { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card); }
+table.cols th, table.cols td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+table.cols th { font-weight: 600; }
+code { font-family: var(--mono); font-size: 0.92em; }
+.notice { padding: 12px 16px; border-radius: var(--radius); background: var(--fix-bg); color: var(--ink); }
+footer { margin: 56px auto 40px; border-top: 1px solid var(--line); padding-top: 16px; }
+footer p { margin: 8px 0; }
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.7rem; }
+  .btn { width: 100%; text-align: center; }
+  table.cols th:nth-child(3), table.cols td:nth-child(3) { display: none; }
+}
+.top .brand a { color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.cta { margin: 24px 0; }
+.cta p { margin: 8px 0; }
+figure { margin: 24px 0; }
+figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+figcaption { margin-top: 8px; font-size: 0.95rem; color: var(--muted); }
+table.data { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card); }
+table.data th, table.data td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+table.data th { font-weight: 600; }
+table.data td.num { font-family: var(--mono); white-space: nowrap; }
+.next { margin-top: 40px; }
+table.grid { border-collapse: collapse; background: var(--card); font-family: var(--mono); font-size: 0.9rem; }
+table.grid th, table.grid td { border: 1px solid var(--line); padding: 6px 9px; text-align: center; }
+table.grid thead th { font-weight: 600; line-height: 1.3; }
+table.grid caption { caption-side: bottom; text-align: left; padding-top: 6px; font-family: var(--font); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (max-width: 480px) {
+  table.grid th, table.grid td { padding: 5px 4px; font-size: 0.85rem; }
+  table.data { font-size: 0.88rem; }
+  table.data td.num { white-space: normal; }
+  table.data th, table.data td { padding: 8px 6px; }
+}
+main .table-wrap { margin: 16px 0; }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "What is prevailing wage? How the rate is set, and who has to pay it", "url": "https://counttwice.app/prevailing-wage/", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "image": "https://counttwice.app/og.png", "author": {"@type": "Person", "name": "Matt Kerr", "worksFor": {"@type": "Organization", "name": "Kerr & Company LLC"}}, "publisher": {"@type": "Organization", "name": "Kerr & Company LLC"}}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the article</a>
+<header class="top"><div class="wrap"><p class="brand"><a href="/"><img src="/icon.svg" alt="" width="28" height="28"><span><strong>Count Twice</strong>: certified payroll checker</span></a></p></div></header>
+
+<main id="main" class="wrap">
+
+<section aria-labelledby="top-h">
+<h1 id="top-h">What is prevailing wage? How the rate is set, and who has to pay it</h1>
+<p class="dated">By Matt Kerr, who makes Count Twice in Grand Rapids &middot; Checked 9 November 2026</p>
+<p class="lede">Prevailing wage is the lowest hourly pay a law allows for a trade on public construction in one area. It comes in two parts, a base rate and a fringe (40 U.S.C. 3141(2)). On federal jobs the law is the Davis-Bacon Act, and the U.S. Department of Labor sets the rates. Many states have their own law for state-funded work, and Michigan's came back in 2024.</p>
+<ul class="facts">
+<li>The federal law covers contracts over $2,000 to build, alter or repair public buildings and public works, painting and decorating included (40 U.S.C. 3142(a)).</li>
+<li>DOL sets a rate for each trade, for each area and type of construction. If more than half the workers in a trade got the same wage on similar projects, that wage prevails (29 CFR 1.2).</li>
+<li>Michigan sets its state rates from the collective bargaining agreements in each area (MCL 408.1104). LEO's rates page says they're updated every year on 1 November.</li>
+</ul>
+<p class="small">Here for an H-1B or PERM filing? That prevailing wage is a separate DOL program. Employers ask DOL's National Prevailing Wage Center for it on Form ETA-9141. This page is about construction.</p>
+<div class="card cta">
+<p><strong>Paying prevailing wage on a federal or Michigan job?</strong> Count Twice is a free checker I built for the weekly certified payroll. Type each trade's rate and fringe, drop in one week of payroll as a CSV file, and it flags pay under the base rate, short fringe, overtime under time and a half, and apprentices over the ratio. It has a Michigan mode for state projects.</p>
+<p><a class="btn" href="/#check">Check a week free</a></p>
+<p class="small">Free, with no account. Your file stays on your computer. Nothing is uploaded or saved.</p>
+</div>
+</section>
+
+<section aria-labelledby="rule-h">
+<h2 id="rule-h">How DOL decides which wage "prevails"</h2>
+<p>The federal test is written in 29 CFR 1.2. For each trade, DOL looks at what workers were paid on similar projects in the area. Then it uses the first of these that fits:</p>
+<ol class="steps">
+<li><strong>A majority.</strong> If more than half were paid the same wage, that wage prevails.</li>
+<li><strong>The biggest group, if it's 30 percent or more.</strong> If no wage has a majority, the wage paid to the largest group prevails, as long as that group is at least 30 percent of the workers.</li>
+<li><strong>A weighted average.</strong> If no wage reaches 30 percent, the prevailing wage is the average of all of them, weighted by how many workers got each one.</li>
+</ol>
+<h3>The test on two made-up surveys</h3>
+<p>Say DOL hears from 20 carpenters on similar building projects in one county. These numbers are invented to show the math, and they look at the hourly wage only.</p>
+<div class="table-wrap">
+<table class="data">
+<thead><tr><th scope="col">Hourly wage</th><th scope="col">Survey 1, workers</th><th scope="col">Survey 2, workers</th></tr></thead>
+<tbody>
+<tr><td class="num">$32.00</td><td class="num">0</td><td class="num">5</td></tr>
+<tr><td class="num">$31.00</td><td class="num">8</td><td class="num">0</td></tr>
+<tr><td class="num">$30.00</td><td class="num">0</td><td class="num">5</td></tr>
+<tr><td class="num">$29.50</td><td class="num">7</td><td class="num">0</td></tr>
+<tr><td class="num">$28.00</td><td class="num">0</td><td class="num">4</td></tr>
+<tr><td class="num">$27.00</td><td class="num">5</td><td class="num">4</td></tr>
+<tr><td class="num">$25.00</td><td class="num">0</td><td class="num">2</td></tr>
+<tr><th scope="row">Total</th><td class="num">20</td><td class="num">20</td></tr>
+<tr><th scope="row">Prevailing wage</th><td class="num">$31.00</td><td class="num">$29.00</td></tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li><strong>Survey 1:</strong> no wage has a majority, since the largest group is 8 of 20, or 40 percent. But 40 percent clears the 30 percent bar, so that group's $31.00 prevails.</li>
+<li><strong>Survey 2:</strong> the largest groups are 5 of 20, or 25 percent each, so no wage reaches 30 percent. The prevailing wage is the weighted average: 5 &times; $32.00 + 5 &times; $30.00 + 4 &times; $28.00 + 4 &times; $27.00 + 2 &times; $25.00 = $580.00, and $580.00 &divide; 20 = $29.00.</li>
+</ul>
+<p>In survey 2 nobody was paid $29.00. An average can land on a rate no one in the area actually gets.</p>
+<h3>Where DOL gets its numbers</h3>
+<p>Contractors, contractor groups, unions, public officials and others send DOL the wages paid on construction projects in the area. DOL also looks at signed collective bargaining agreements and at rates that state and local governments set (29 CFR 1.3). For building and residential rates, it leaves out pay on federal and federally assisted projects unless there isn't enough other data. For heavy and highway rates, it uses that pay too (29 CFR 1.3(d)). It can also adopt a state's or city's rate, if that government's process passes four tests, one being that its criteria are "substantially similar" to DOL's (29 CFR 1.3(g) and (h)).</p>
+<p>Each rate holds for an area and a type of construction. The area is the city, town, village, county or other civil subdivision where the work happens. Highway work can use a state's highway districts, and a project in several counties can use all of them. The types include building, residential, heavy and highway (29 CFR 1.2). That's why one county can have several wage determinations at once. <a href="/davis-bacon-wage-rates/">How to find yours and read its rate lines</a>.</p>
+</section>
+
+<section aria-labelledby="vs-h">
+<h2 id="vs-h">Federal and Michigan prevailing wage, side by side</h2>
+<p>A job in Michigan can fall under the federal law, the state law, or neither. If a state project's contract already requires federal Davis-Bacon rates, Michigan's act doesn't apply to it (MCL 408.1102(1)).</p>
+<div class="table-wrap">
+<table class="data">
+<thead><tr><th scope="col"><span class="sr">Question</span></th><th scope="col">Federal: Davis-Bacon</th><th scope="col">Michigan: Act 10 of 2023</th></tr></thead>
+<tbody>
+<tr><th scope="row">Which jobs</th><td>Federal or Washington, DC contracts over $2,000 to build, alter or repair public buildings and works. Most federally assisted construction too, through the related acts.</td><td>Public buildings, schools, works, bridges, highways and roads that a public contracting agent authorizes and the state sponsors or finances, in whole or in part. Also wind, solar and storage projects of 2 megawatts or more.</td></tr>
+<tr><th scope="row">Who gets the rate</th><td>Laborers and mechanics, meaning workers whose duties are manual or physical. Apprentices and helpers count.</td><td>Construction mechanics, apprentices included. Not executive, administrative, professional, office or custodial staff.</td></tr>
+<tr><th scope="row">Who sets it</th><td>DOL's Wage and Hour Division</td><td>LEO, Michigan's labor department</td></tr>
+<tr><th scope="row">How</th><td>Wage surveys, then the majority, 30 percent or average test</td><td>The rate in collective bargaining agreements in the area. With none there, the nearest similar area's rate.</td></tr>
+<tr><th scope="row">Area</th><td>City, county or other civil subdivision</td><td>County, city, village, township or school district</td></tr>
+<tr><th scope="row">Where to look</th><td>The wage determination named in your contract, on SAM.gov</td><td>LEO's rate schedule by county, updated each 1 November</td></tr>
+<tr><th scope="row">Overtime</th><td>Over 40 hours in the week, at 1.5 times the basic rate, on contracts over $100,000</td><td>Over 8 hours a day (10 where four 10s are allowed), over 40 a week, and Saturdays at 1.5 times the base rate. Sundays and recognized holidays at 2 times. A trade's schedule can say otherwise.</td></tr>
+<tr><th scope="row">Certified payroll</th><td>Every week, within 7 days after the regular payday</td><td>Within 10 days after each pay period ends, to the state's online system since 2 April 2026</td></tr>
+</tbody>
+</table>
+</div>
+<p class="small">From 40 U.S.C. 3142, 3701 and 3702; 29 CFR 1.2, 3.4 and 5.2; DOL's Fact Sheet #66; MCL 408.1101, 408.1102, 408.1102a, 408.1104 and 408.1122; and LEO's prevailing wage and rates pages.</p>
+<p>Michigan also requires a state project registration from every contractor and subcontractor before it bids on or works on a state project (MCL 408.1102(3) and (4)). LEO charges $500 a year for it. <a href="/#michigan">How Michigan's online certified payroll works</a>.</p>
+</section>
+
+<section aria-labelledby="states-h">
+<h2 id="states-h">Other states have their own laws, and DOL's list is behind</h2>
+<p>DOL keeps a table of state prevailing wage laws and the contract size where each one starts. Its table lists 28 states and Washington, DC, and its list of states without a law names 22. The starting points run from no minimum at all in Illinois, Massachusetts and New York to $1,000,000 for new construction in Connecticut.</p>
+<p>Read that table with care. DOL last revised it on 1 January 2023, and it still lists Michigan as "repealed in 2018". Michigan's new act has been in effect since 13 February 2024. The page itself tells readers to check with the state's labor office, so do that for any state before you bid.</p>
+<p>In other states, a federal job may owe both. DOL's Fact Sheet #66 says work under the federal rules may also be subject to state or local prevailing wage and overtime rules.</p>
+</section>
+
+<section aria-labelledby="check-h">
+<h2 id="check-h">Knowing the rate is half of it</h2>
+<p>The other half is paying it on every hour, every week, and signing for it. Count Twice takes each trade's rate and fringe and one week of payroll, and checks every worker's hours against them. Here's its result on the made-up sample week, which has four mistakes planted in it.</p>
+<figure>
+<img src="/img/sample-week-result.jpg" width="918" height="1100" alt="Count Twice results for the sample week: 9 rows read, 4 flags, 2 things to fix, 2 notes, and a possible shortfall of $215.00. The flags are overtime under time and a half for Cal D., fringe short for Dee F., pay under the base rate for Eli G., and carpenter apprentices over the 1:3 ratio on days 1 to 3." loading="lazy">
+<figcaption>The checker's results for the made-up sample week, in a browser on 9 November 2026.</figcaption>
+</figure>
+<div class="card cta">
+<p><a class="btn" href="/#check">Check a week free</a></p>
+<p class="small">Count Twice checks math against the rates you type. It doesn't decide which law or wage determination covers your job, and it isn't a lawyer.</p>
+</div>
+</section>
+
+<section class="next" aria-labelledby="next-h">
+<h2 id="next-h">Next: find the federal rate for your trade</h2>
+<p>Federal prevailing wages are published as wage determinations on SAM.gov, one or more for each county. <a href="/davis-bacon-wage-rates/">Davis-Bacon wage rates for 2026: how to find and read yours</a> walks through a real one.</p>
+<p class="small">Sources, each read 9 November 2026 (UTC):</p>
+<ul class="small">
+<li><a href="https://www.ecfr.gov/current/title-29/section-1.2">29 CFR 1.2</a>, <a href="https://www.ecfr.gov/current/title-29/section-1.3">1.3</a>, <a href="https://www.ecfr.gov/current/title-29/section-3.4">3.4</a> and <a href="https://www.ecfr.gov/current/title-29/section-5.2">5.2</a>, eCFR, current to 5 November 2026</li>
+<li><a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap31-subchapIV-sec3141.htm">40 U.S.C. 3141</a>, <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap31-subchapIV-sec3142.htm">3142</a>, <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap37-sec3701.htm">3701</a> and <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap37-sec3702.htm">3702</a>, U.S. Code 2024 edition on govinfo</li>
+<li>DOL: <a href="https://www.dol.gov/agencies/whd/state/prevailing-wages">Dollar Threshold Amount for Contract Coverage Under State Prevailing Wage Laws</a>, <a href="https://www.dol.gov/agencies/whd/fact-sheets/66-dbra">Fact Sheet #66</a>, <a href="https://www.dol.gov/agencies/whd/government-contracts/construction">Davis-Bacon and Related Acts</a> and <a href="https://www.dol.gov/agencies/eta/foreign-labor/wages">Prevailing Wage Information and Resources</a> (foreign labor)</li>
+<li>Michigan: <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-408-1101">MCL 408.1101</a>, <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-408-1102">408.1102</a>, <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-408-1102a">408.1102a</a>, <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-408-1104">408.1104</a> and <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-408-1122">408.1122</a>; LEO's <a href="https://www.michigan.gov/leo/bureaus-agencies/ber/wage-and-hour/prevailing-wage">Prevailing Wage</a> and <a href="https://www.michigan.gov/leo/bureaus-agencies/ber/wage-and-hour/prevailing-wage/prevailing-wages-by-county">Prevailing Wages By County</a> pages</li>
+</ul>
+</section>
+
+</main>
+
+<footer class="wrap small">
+<p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan. <a href="/">Free checker</a> <span aria-hidden="true">&middot;</span> <a href="/privacy.html">Privacy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms</a></p>
+<p>Facts on this page checked 9 November 2026. This page explains the law and how the rates are set. It isn't legal advice.</p>
+</footer>
+</body>
+</html>

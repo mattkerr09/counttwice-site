@@ -24,7 +24,7 @@
   var RULES = deepFreeze({
   "schema": 1,
   "checked": "2026-11-08",
-  "about": "Flag definitions and wording for the certified payroll checker. Claude writes this file. Codex copies it into site/checker.js word for word and never edits it. The rules and their sources are in docs/RULES.md. The formulas and test cases are in docs/SPEC.md.",
+  "about": "Flag definitions and wording for the certified payroll checker.",
   "limits": {
     "max_rows": 2000,
     "max_file_bytes": 2000000,

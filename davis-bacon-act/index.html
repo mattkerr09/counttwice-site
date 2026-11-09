@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Davis-Bacon Act: which jobs it covers and what you owe</title>
+<meta name="description" content="The 1931 law behind federal construction pay: the $2,000 test, related acts, weekly pay, certified payroll, overtime, and what short pay costs.">
+<link rel="canonical" href="https://counttwice.app/davis-bacon-act/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Count Twice">
+<meta property="og:title" content="The Davis-Bacon Act: which jobs it covers and what you owe">
+<meta property="og:description" content="The 1931 law behind federal construction pay: the $2,000 test, related acts, weekly pay, certified payroll, overtime, and what short pay costs.">
+<meta property="og:url" content="https://counttwice.app/davis-bacon-act/">
+<meta property="og:image" content="https://counttwice.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Count Twice: certified payroll checker. Check one week before you sign. Free, in your browser. Nothing uploaded.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f5f8b">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script defer data-domain="counttwice.app" src="https://plausible.io/js/script.js"></script>
+<style>
+:root {
+  --bg: #fbfaf7; --card: #ffffff; --ink: #1b1f23; --muted: #555e69; --line: #d9dde3;
+  --accent: #1f5f8b; --accent-ink: #ffffff;
+  --flag: #b3261e; --flag-bg: #fdecea; --fix: #8a5a00; --fix-bg: #fff4dc; --note: #35506b; --note-bg: #eef3f8; --ok: #2e6b3f;
+  --radius: 10px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --card: #1c2024; --ink: #e8eaed; --muted: #a5adb7; --line: #2f353b;
+    --accent: #6fb3e0; --accent-ink: #0b1620;
+    --flag: #ff8a80; --flag-bg: #3a1d1b; --fix: #ffcc66; --fix-bg: #3a2e12; --note: #a8c4e0; --note-bg: #1c2a38; --ok: #7fd18f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--font); }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.skip { position: absolute; left: -9999px; top: 8px; background: var(--card); padding: 8px 12px; border-radius: var(--radius); }
+.skip:focus { left: 8px; z-index: 10; }
+.top { border-bottom: 1px solid var(--line); }
+.top p { margin: 0; padding: 10px 0; font-size: 15px; color: var(--muted); }
+.top .brand { display: flex; align-items: center; gap: 10px; padding: 12px 0; font-size: 1.05rem; color: var(--ink); }
+.top .brand img { flex: none; display: block; }
+h1 { font-size: 2.1rem; line-height: 1.2; margin: 32px 0 12px; letter-spacing: -0.01em; }
+h2 { font-size: 1.5rem; line-height: 1.25; margin: 48px 0 12px; }
+h3 { font-size: 1.15rem; margin: 28px 0 8px; }
+.lede { font-size: 1.15rem; margin: 0 0 16px; }
+.facts { padding-left: 1.2em; margin: 0 0 20px; }
+.facts li { margin: 4px 0; }
+.btn { display: inline-block; min-height: 44px; padding: 10px 20px; border: 0; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); font: 600 1rem/1.5 var(--font); text-decoration: none; cursor: pointer; }
+.btn:disabled { opacity: 0.6; cursor: default; }
+.small { font-size: 0.95rem; color: var(--muted); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; }
+.privacy { margin-top: 16px; }
+.dated { display: inline-block; margin: 0 0 8px; padding: 2px 10px; border-radius: 999px; background: var(--note-bg); color: var(--note); font-size: 0.9rem; }
+.steps li { margin: 8px 0; }
+.table-wrap { overflow-x: auto; }
+table.cols { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card); }
+table.cols th, table.cols td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+table.cols th { font-weight: 600; }
+code { font-family: var(--mono); font-size: 0.92em; }
+.notice { padding: 12px 16px; border-radius: var(--radius); background: var(--fix-bg); color: var(--ink); }
+footer { margin: 56px auto 40px; border-top: 1px solid var(--line); padding-top: 16px; }
+footer p { margin: 8px 0; }
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.7rem; }
+  .btn { width: 100%; text-align: center; }
+  table.cols th:nth-child(3), table.cols td:nth-child(3) { display: none; }
+}
+.top .brand a { color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.cta { margin: 24px 0; }
+.cta p { margin: 8px 0; }
+figure { margin: 24px 0; }
+figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+figcaption { margin-top: 8px; font-size: 0.95rem; color: var(--muted); }
+table.data { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card); }
+table.data th, table.data td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+table.data th { font-weight: 600; }
+table.data td.num { font-family: var(--mono); white-space: nowrap; }
+.next { margin-top: 40px; }
+table.grid { border-collapse: collapse; background: var(--card); font-family: var(--mono); font-size: 0.9rem; }
+table.grid th, table.grid td { border: 1px solid var(--line); padding: 6px 9px; text-align: center; }
+table.grid thead th { font-weight: 600; line-height: 1.3; }
+table.grid caption { caption-side: bottom; text-align: left; padding-top: 6px; font-family: var(--font); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (max-width: 480px) {
+  table.grid th, table.grid td { padding: 5px 4px; font-size: 0.85rem; }
+  table.data { font-size: 0.88rem; }
+  table.data td.num { white-space: normal; }
+  table.data th, table.data td { padding: 8px 6px; }
+}
+main .table-wrap { margin: 16px 0; }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "The Davis-Bacon Act: which jobs it covers and what you owe", "url": "https://counttwice.app/davis-bacon-act/", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "image": "https://counttwice.app/og.png", "author": {"@type": "Person", "name": "Matt Kerr", "worksFor": {"@type": "Organization", "name": "Kerr & Company LLC"}}, "publisher": {"@type": "Organization", "name": "Kerr & Company LLC"}}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the article</a>
+<header class="top"><div class="wrap"><p class="brand"><a href="/"><img src="/icon.svg" alt="" width="28" height="28"><span><strong>Count Twice</strong>: certified payroll checker</span></a></p></div></header>
+
+<main id="main" class="wrap">
+
+<section aria-labelledby="top-h">
+<h1 id="top-h">The Davis-Bacon Act: which jobs it covers and what you owe</h1>
+<p class="dated">By Matt Kerr, who makes Count Twice in Grand Rapids &middot; Checked 9 November 2026</p>
+<p class="lede">The Davis-Bacon Act is a federal law from 1931. It covers federal construction contracts over $2,000. On those jobs, every laborer and mechanic on the site gets at least the wage and fringe the Department of Labor set for their trade in that area, paid every week. Many other federal laws, called the related acts, apply the same pay rules to construction paid for with federal grants, loans, loan guarantees and insurance.</p>
+<ul class="facts">
+<li>It covers contracts over $2,000 to build, alter or repair public buildings and public works, painting and decorating included (40 U.S.C. 3142(a)).</li>
+<li>You owe the rate and fringe in the wage determination, every week, plus a certified payroll for each week of covered work (29 CFR 5.5(a)(1) and (a)(3)).</li>
+<li>On contracts over $100,000, hours past 40 in a week need at least time and a half (40 U.S.C. 3702).</li>
+<li>Pay that comes up short can cost back wages with interest, held-back contract payments and 3 years off federal work (29 CFR 5.5(a)(2), 5.10 and 5.12).</li>
+</ul>
+<div class="card cta">
+<p><strong>On a Davis-Bacon job?</strong> Count Twice is a free checker I built for the weekly payroll you sign for. Type each trade's rate and fringe from your wage determination, drop in one week of payroll as a CSV file, and it flags pay under the base rate, short fringe, overtime under time and a half, and apprentices over the ratio.</p>
+<p><a class="btn" href="/#check">Check a week free</a></p>
+<p class="small">Free, with no account. Your file stays on your computer. Nothing is uploaded or saved.</p>
+</div>
+</section>
+
+<section aria-labelledby="cover-h">
+<h2 id="cover-h">Which jobs it covers</h2>
+<p>The Act itself applies to a contract when all of these are true (40 U.S.C. 3142(a)):</p>
+<ul>
+<li>the federal government or Washington, DC is a party to it,</li>
+<li>it's for more than $2,000,</li>
+<li>it's for building, altering or repairing public buildings or public works, painting and decorating included,</li>
+<li>the work is in a state or in Washington, DC.</li>
+</ul>
+<h3>The related acts</h3>
+<p>Many federal laws that fund construction through grants, loans, loan guarantees and insurance carry the same rules. DOL calls them the related acts, and its Fact Sheet #66 says they reach most federally assisted construction. It names the Federal-Aid Highway Acts, the Housing and Community Development Act of 1974 and the Federal Water Pollution Control Act as examples. DOL keeps the full list (29 CFR 5.1). So a city or county project paid for partly with a federal grant can be a Davis-Bacon job. Check the grant terms and your contract.</p>
+<p>In Michigan, state-funded public projects have a prevailing wage law of their own. <a href="/#michigan">How Michigan's rules work</a>.</p>
+<h3>What counts as construction</h3>
+<p>The rule covers construction of all types, as opposed to manufacturing, supplying materials, or servicing and maintenance (29 CFR 5.2). Its examples run from bridges, sewers, power lines and airports to solar panels, wind turbines, broadband installation and electric car chargers. Altering, remodeling, painting and decorating count. Installing items made off site can count too. Demolition counts in some cases, such as when new covered construction is planned on the same site.</p>
+<h3>Who has to be paid the rate</h3>
+<p>Laborers and mechanics: anyone whose work on the job is manual or physical, using tools or doing a trade's work. That includes apprentices and helpers. It leaves out people whose duties are mainly administrative, executive or clerical. A foreperson can count too. If they spend more than 20 percent of a workweek on laborers' or mechanics' work, they count for that time, unless they meet the executive, administrative or professional tests in 29 CFR part 541 (29 CFR 5.2).</p>
+<p>How the contractor and the worker label their deal doesn't change it. Anyone doing that work on the job is covered "regardless of any contractual relationship" claimed between the contractor and that person (40 U.S.C. 3142(c)(1) and 29 CFR 5.2).</p>
+<p class="notice">If you read the 2023 rule yourself: DOL's Davis-Bacon page says a federal court in Texas blocked three of its provisions on 24 June 2024. They are the line between material suppliers and contractors, pay for delivery truck drivers' time on site, and applying the rules to a contract by operation of law when an agency left them out. DOL says it can't enforce those three for now. The rest of the rule, in effect since 23 October 2023, still applies.</p>
+</section>
+
+<section aria-labelledby="owe-h">
+<h2 id="owe-h">What you owe on a covered job</h2>
+<div class="table-wrap">
+<table class="data">
+<thead><tr><th scope="col">What you have to do</th><th scope="col">Where it's written</th></tr></thead>
+<tbody>
+<tr><td>Pay each worker at least the base rate plus fringe in the <a href="/davis-bacon-wage-rates/">wage determination</a>, for the trade of the work they actually did. The fringe can go into plans, be paid as cash, or both.</td><td>29 CFR 5.5(a)(1)(i), 5.31</td></tr>
+<tr><td>Pay at least once a week, in full, with no rebates and no deductions beyond the ones 29 CFR part 3 allows.</td><td>40 U.S.C. 3142(c)(1); 29 CFR 5.5(a)(1)(i)</td></tr>
+<tr><td>Post the wage determination and DOL's Davis-Bacon poster, WH-1321, at the site where workers can easily see them.</td><td>29 CFR 5.5(a)(1)(i)</td></tr>
+<tr><td>On contracts over $100,000, pay at least 1.5 times the basic rate for every hour over 40 in the workweek.</td><td>40 U.S.C. 3702; 29 CFR 5.5(b)(1)</td></tr>
+<tr><td>Send a certified payroll for every week with covered work.</td><td>29 CFR 3.3, 5.5(a)(3)(ii)</td></tr>
+<tr><td>Keep payroll records until 3 years after all work on the prime contract is done.</td><td>29 CFR 5.5(a)(3)(i)(A)</td></tr>
+<tr><td>Pay an apprentice less than the rate only if they're registered in a program registered with DOL's Office of Apprenticeship or a state agency it recognizes, or certified for their first 90 days of probation. Stay within the program's ratio.</td><td>29 CFR 5.5(a)(4)(i)</td></tr>
+<tr><td>Put the same clauses and wage determination in every subcontract. The prime is liable for unpaid wages owed to workers of subcontractors at any tier.</td><td>29 CFR 5.5(a)(6)</td></tr>
+<tr><td>Let the agency and DOL inspect your records and interview workers on the job during working hours.</td><td>29 CFR 5.5(a)(3)(iv)(A)</td></tr>
+<tr><td>Never punish a worker for raising a pay problem, filing a complaint or helping an investigation.</td><td>29 CFR 5.5(a)(11)</td></tr>
+</tbody>
+</table>
+</div>
+<p>DOL's Davis-Bacon page adds that the Fair Labor Standards Act's overtime rules may apply on these contracts too.</p>
+</section>
+
+<section aria-labelledby="cp-h">
+<h2 id="cp-h">Certified payroll, in plain terms</h2>
+<p>Certified payroll is the weekly copy of your payroll for covered workers, sent with a signed statement that it's right. The law behind it is 40 U.S.C. 3145, which has DOL require a statement each week of the wages paid to each worker the week before.</p>
+<ul>
+<li><strong>Who sends it:</strong> the prime and every subcontractor with workers on covered work. The prime is responsible for getting every sub's payroll in.</li>
+<li><strong>How often:</strong> for every week with covered work, within 7 days after that week's regular payday (29 CFR 3.4(a)).</li>
+<li><strong>What's in it:</strong> for each worker, an identifying number such as the last four digits of the Social Security number, their trade or trades, hourly rates with fringe, hours each day and for the week, deductions, and wages actually paid. Never the full Social Security number, home address, phone or email.</li>
+<li><strong>What you sign:</strong> the Statement of Compliance. It certifies three things. The payroll is correct and complete. Every worker got full weekly wages, with no rebates and only allowed deductions. And every worker got at least the rate and fringe for the work they did. A handwritten or legally valid electronic signature works.</li>
+<li><strong>Which form:</strong> DOL's WH-347 is optional. Any format works if it carries the same facts and a statement with identical wording. An agency or prime can require an online system, as long as it takes a legally valid electronic signature and allows another way in for anyone who can't use it.</li>
+<li><strong>When it isn't needed:</strong> on contracts of $2,000 or less (29 CFR 3.3(c)).</li>
+</ul>
+<p>The rules for all of this are in 29 CFR 3.3 and 5.5(a)(3)(ii). <a href="/wh-347/">How to fill out the WH-347, line by line</a> covers every box on the form.</p>
+</section>
+
+<section aria-labelledby="short-h">
+<h2 id="short-h">What happens when pay comes up short</h2>
+<ul>
+<li><strong>Held-back payments.</strong> The agency can withhold contract payments to cover unpaid wages, and must if DOL asks in writing. It can also hold money on other federal or federally assisted contracts held by the same prime (29 CFR 5.5(a)(2)).</li>
+<li><strong>Back wages with interest.</strong> Interest runs from the date of the underpayment, at the IRS rate for underpaid taxes, compounded daily (29 CFR 5.10(a)).</li>
+<li><strong>$33 a day for unpaid overtime.</strong> On contracts over $100,000, unpaid overtime also costs $33 in liquidated damages per worker, for each calendar day that worker went past the 40-hour week without overtime pay (29 CFR 5.5(b)(2)). That's on top of the wages owed.</li>
+<li><strong>Losing the contract.</strong> The government can end your right to finish the work, have someone else finish it, and charge you and your sureties the extra cost (40 U.S.C. 3143).</li>
+<li><strong>Three years off federal work.</strong> A contractor found to have disregarded its obligations to workers or subcontractors can't be awarded federal or Davis-Bacon contracts for 3 years. That also reaches its responsible officers and firms they have an interest in (40 U.S.C. 3144(b); 29 CFR 5.12(a)).</li>
+<li><strong>A false certification.</strong> Falsifying the Statement of Compliance can lead to civil or criminal prosecution under 18 U.S.C. 1001 and 31 U.S.C. 3729 (29 CFR 5.5(a)(3)(ii)(F)).</li>
+<li><strong>Workers can sue.</strong> If the withheld money doesn't cover what they're owed, workers can sue the contractor and its sureties. It's no defense that they agreed to take less (40 U.S.C. 3144(a)(2)).</li>
+</ul>
+</section>
+
+<section aria-labelledby="miss-h">
+<h2 id="miss-h">The mistakes DOL sees most</h2>
+<p>DOL's Fact Sheet #66 lists the problems that come up most often on these jobs:</p>
+<ul>
+<li>workers put in the wrong trade,</li>
+<li>not paying the full rate and fringe for every hour, overtime hours included,</li>
+<li>records that miss hours, or don't split the hours of someone who worked two trades in a day,</li>
+<li>no copy of the apprenticeship program or the apprentices' registration on file,</li>
+<li>certified payrolls not sent every week,</li>
+<li>the poster and wage determination not up at the site.</li>
+</ul>
+<p>The second one is arithmetic. That's the part Count Twice checks, along with apprentice ratios. The rest need your own records and a look at the site.</p>
+</section>
+
+<section aria-labelledby="check-h">
+<h2 id="check-h">Check a week before you sign</h2>
+<p>Type the rate and fringe for each trade on your wage determination, drop in one week of payroll, and see what it flags. Here's its result on the made-up sample week, which has four mistakes planted in it.</p>
+<figure>
+<img src="/img/sample-week-result.jpg" width="918" height="1100" alt="Count Twice results for the sample week: 9 rows read, 4 flags, 2 things to fix, 2 notes, and a possible shortfall of $215.00. The flags are overtime under time and a half for Cal D., fringe short for Dee F., pay under the base rate for Eli G., and carpenter apprentices over the 1:3 ratio on days 1 to 3." loading="lazy">
+<figcaption>The checker's results for the made-up sample week, in a browser on 9 November 2026.</figcaption>
+</figure>
+<div class="card cta">
+<p><a class="btn" href="/#check">Check a week free</a></p>
+<p class="small">Count Twice checks math against the rates you type. It doesn't decide whether the Act covers your job or which trade the work belongs to, and it isn't a lawyer.</p>
+</div>
+</section>
+
+<section class="next" aria-labelledby="next-h">
+<h2 id="next-h">Next: the rates you owe</h2>
+<p>Everything above starts from one document, the wage determination in your contract. <a href="/davis-bacon-wage-rates/">Davis-Bacon wage rates for 2026: how to find and read yours</a> shows where to get it on SAM.gov and how to read each rate line.</p>
+<p class="small">Sources, each read 9 November 2026 (UTC):</p>
+<ul class="small">
+<li><a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap31-subchapIV-sec3141.htm">40 U.S.C. 3141</a>, <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap31-subchapIV-sec3142.htm">3142</a>, <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap31-subchapIV-sec3143.htm">3143</a>, <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap31-subchapIV-sec3144.htm">3144</a>, <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap31-subchapIV-sec3145.htm">3145</a>, <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap37-sec3701.htm">3701</a> and <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap37-sec3702.htm">3702</a>, U.S. Code 2024 edition on govinfo</li>
+<li><a href="https://www.ecfr.gov/current/title-29/section-3.3">29 CFR 3.3</a>, <a href="https://www.ecfr.gov/current/title-29/section-3.4">3.4</a>, <a href="https://www.ecfr.gov/current/title-29/section-5.1">5.1</a>, <a href="https://www.ecfr.gov/current/title-29/section-5.2">5.2</a>, <a href="https://www.ecfr.gov/current/title-29/section-5.5">5.5</a>, <a href="https://www.ecfr.gov/current/title-29/section-5.10">5.10</a>, <a href="https://www.ecfr.gov/current/title-29/section-5.12">5.12</a> and <a href="https://www.ecfr.gov/current/title-29/section-5.31">5.31</a>, eCFR, current to 5 November 2026</li>
+<li>DOL: <a href="https://www.dol.gov/agencies/whd/fact-sheets/66-dbra">Fact Sheet #66, The Davis-Bacon and Related Acts</a> (October 2023) and <a href="https://www.dol.gov/agencies/whd/government-contracts/construction">Davis-Bacon and Related Acts</a></li>
+</ul>
+</section>
+
+</main>
+
+<footer class="wrap small">
+<p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan. <a href="/">Free checker</a> <span aria-hidden="true">&middot;</span> <a href="/privacy.html">Privacy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms</a></p>
+<p>Facts on this page checked 9 November 2026. This page explains the law and the rules. It isn't legal advice, and you still sign the Statement of Compliance yourself.</p>
+</footer>
+</body>
+</html>

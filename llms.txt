@@ -22,6 +22,9 @@ It checks math against the rates you type. It isn't legal advice, and the contra
 - [Count Twice: certified payroll checker](https://counttwice.app/): the checker, how to use it, what it checks and doesn't, and Michigan's online certified payroll, which started 2 April 2026
 - [How to fill out the WH-347, line by line](https://counttwice.app/wh-347/): every box on the January 2025 form (OMB 1235-0008), a filled-in row with overtime and cash fringe, page 2's Statement of Compliance, and when and where it goes
 - [Davis-Bacon wage rates for 2026](https://counttwice.app/davis-bacon-wage-rates/): finding a wage determination on SAM.gov, reading its rate identifiers, which modification applies, and the Executive Order notes, with Kent County, Michigan as the example
+- [What is prevailing wage?](https://counttwice.app/prevailing-wage/): how DOL picks the prevailing wage (majority, 30 percent, weighted average) with a worked example, federal against Michigan's Act 10 of 2023 side by side, and why DOL's state table is out of date
+- [The Davis-Bacon Act](https://counttwice.app/davis-bacon-act/): the $2,000 coverage test, the related acts, who counts as a laborer or mechanic, what a contractor owes each week, and what short pay costs
+- [What is certified payroll?](https://counttwice.app/certified-payroll/): who files on federal and Michigan state jobs, the 7-day federal and 10-day Michigan deadlines with a worked week, where each payroll goes, what the signed statement means, the 3-year records, and what follows when it's late or wrong
 - [Sample week](https://counttwice.app/sample-week.csv): a CSV file with every column, and made-up names and rates
 - [Privacy](https://counttwice.app/privacy.html)
 - [Terms](https://counttwice.app/terms.html)

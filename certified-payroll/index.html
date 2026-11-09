@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What is certified payroll? Who files, when, and where</title>
+<meta name="description" content="Certified payroll is a signed weekly payroll on prevailing wage jobs. Who files, the 7- and 10-day deadlines, where it goes, and the 3-year records.">
+<link rel="canonical" href="https://counttwice.app/certified-payroll/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Count Twice">
+<meta property="og:title" content="What is certified payroll? Who files it, when it&#x27;s due, and where it goes">
+<meta property="og:description" content="Certified payroll is a signed weekly payroll on prevailing wage jobs. Who files, the 7- and 10-day deadlines, where it goes, and the 3-year records.">
+<meta property="og:url" content="https://counttwice.app/certified-payroll/">
+<meta property="og:image" content="https://counttwice.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Count Twice: certified payroll checker. Check one week before you sign. Free, in your browser. Nothing uploaded.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f5f8b">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script defer data-domain="counttwice.app" src="https://plausible.io/js/script.js"></script>
+<style>
+:root {
+  --bg: #fbfaf7; --card: #ffffff; --ink: #1b1f23; --muted: #555e69; --line: #d9dde3;
+  --accent: #1f5f8b; --accent-ink: #ffffff;
+  --flag: #b3261e; --flag-bg: #fdecea; --fix: #8a5a00; --fix-bg: #fff4dc; --note: #35506b; --note-bg: #eef3f8; --ok: #2e6b3f;
+  --radius: 10px;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color-scheme: light dark;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #14171a; --card: #1c2024; --ink: #e8eaed; --muted: #a5adb7; --line: #2f353b;
+    --accent: #6fb3e0; --accent-ink: #0b1620;
+    --flag: #ff8a80; --flag-bg: #3a1d1b; --fix: #ffcc66; --fix-bg: #3a2e12; --note: #a8c4e0; --note-bg: #1c2a38; --ok: #7fd18f;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--font); }
+a { color: var(--accent); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+.skip { position: absolute; left: -9999px; top: 8px; background: var(--card); padding: 8px 12px; border-radius: var(--radius); }
+.skip:focus { left: 8px; z-index: 10; }
+.top { border-bottom: 1px solid var(--line); }
+.top p { margin: 0; padding: 10px 0; font-size: 15px; color: var(--muted); }
+.top .brand { display: flex; align-items: center; gap: 10px; padding: 12px 0; font-size: 1.05rem; color: var(--ink); }
+.top .brand img { flex: none; display: block; }
+h1 { font-size: 2.1rem; line-height: 1.2; margin: 32px 0 12px; letter-spacing: -0.01em; }
+h2 { font-size: 1.5rem; line-height: 1.25; margin: 48px 0 12px; }
+h3 { font-size: 1.15rem; margin: 28px 0 8px; }
+.lede { font-size: 1.15rem; margin: 0 0 16px; }
+.facts { padding-left: 1.2em; margin: 0 0 20px; }
+.facts li { margin: 4px 0; }
+.btn { display: inline-block; min-height: 44px; padding: 10px 20px; border: 0; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); font: 600 1rem/1.5 var(--font); text-decoration: none; cursor: pointer; }
+.btn:disabled { opacity: 0.6; cursor: default; }
+.small { font-size: 0.95rem; color: var(--muted); }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; }
+.privacy { margin-top: 16px; }
+.dated { display: inline-block; margin: 0 0 8px; padding: 2px 10px; border-radius: 999px; background: var(--note-bg); color: var(--note); font-size: 0.9rem; }
+.steps li { margin: 8px 0; }
+.table-wrap { overflow-x: auto; }
+table.cols { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card); }
+table.cols th, table.cols td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+table.cols th { font-weight: 600; }
+code { font-family: var(--mono); font-size: 0.92em; }
+.notice { padding: 12px 16px; border-radius: var(--radius); background: var(--fix-bg); color: var(--ink); }
+footer { margin: 56px auto 40px; border-top: 1px solid var(--line); padding-top: 16px; }
+footer p { margin: 8px 0; }
+@media (max-width: 480px) {
+  body { font-size: 16px; }
+  h1 { font-size: 1.7rem; }
+  .btn { width: 100%; text-align: center; }
+  table.cols th:nth-child(3), table.cols td:nth-child(3) { display: none; }
+}
+.top .brand a { color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; }
+.cta { margin: 24px 0; }
+.cta p { margin: 8px 0; }
+figure { margin: 24px 0; }
+figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
+figcaption { margin-top: 8px; font-size: 0.95rem; color: var(--muted); }
+table.data { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card); }
+table.data th, table.data td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+table.data th { font-weight: 600; }
+table.data td.num { font-family: var(--mono); white-space: nowrap; }
+.next { margin-top: 40px; }
+table.grid { border-collapse: collapse; background: var(--card); font-family: var(--mono); font-size: 0.9rem; }
+table.grid th, table.grid td { border: 1px solid var(--line); padding: 6px 9px; text-align: center; }
+table.grid thead th { font-weight: 600; line-height: 1.3; }
+table.grid caption { caption-side: bottom; text-align: left; padding-top: 6px; font-family: var(--font); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+@media (max-width: 480px) {
+  table.grid th, table.grid td { padding: 5px 4px; font-size: 0.85rem; }
+  table.data { font-size: 0.88rem; }
+  table.data td.num { white-space: normal; }
+  table.data th, table.data td { padding: 8px 6px; }
+}
+main .table-wrap { margin: 16px 0; }
+</style>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "What is certified payroll? Who files it, when it's due, and where it goes", "url": "https://counttwice.app/certified-payroll/", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "image": "https://counttwice.app/og.png", "author": {"@type": "Person", "name": "Matt Kerr", "worksFor": {"@type": "Organization", "name": "Kerr & Company LLC"}}, "publisher": {"@type": "Organization", "name": "Kerr & Company LLC"}}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to the article</a>
+<header class="top"><div class="wrap"><p class="brand"><a href="/"><img src="/icon.svg" alt="" width="28" height="28"><span><strong>Count Twice</strong>: certified payroll checker</span></a></p></div></header>
+
+<main id="main" class="wrap">
+
+<section aria-labelledby="top-h">
+<h1 id="top-h">What is certified payroll? Who files it, when it's due, and where it goes</h1>
+<p class="dated">By Matt Kerr, who makes Count Twice in Grand Rapids &middot; Checked 9 November 2026</p>
+<p class="lede">Certified payroll is one week of payroll for the workers on a prevailing wage job, sent in with a signed statement that it's true. On a federal job it's due every week, within 7 days after that week's payday (29 CFR 3.4(a)). On a Michigan state job it goes into the state's online system within 10 days after the pay period ends (MCL 408.1122(1)).</p>
+<ul class="facts">
+<li>Each contractor and each subcontractor files its own, for every week its laborers or mechanics do covered work (29 CFR 3.3(b) and 5.5(a)(3)(ii)(A)).</li>
+<li>"Certified" means a person who pays the crew, or oversees paying it, signs for the numbers. Federal law applies 18 U.S.C. 1001 to that statement, and a knowingly false one can mean up to 5 years in prison (40 U.S.C. 3145(b) and 18 U.S.C. 1001(a)).</li>
+<li>Hold on to every certified payroll and the full records behind it until 3 years after all work on the prime contract ends (29 CFR 5.5(a)(3)(i)(A) and (ii)(G)).</li>
+</ul>
+<p class="small">Looking for the form itself? <a href="/wh-347/">The WH-347, line by line</a> covers every box. This page covers the routine around it.</p>
+<div class="card cta">
+<p><strong>Signing a certified payroll this week?</strong> Count Twice is a free checker I built for that week. Type each trade's rate and fringe, drop in the week's payroll as a CSV file, and it flags pay under the base rate, short fringe, overtime under time and a half, and apprentices over the ratio on any day. It has a Michigan mode for state projects.</p>
+<p><a class="btn" href="/#check">Check a week free</a></p>
+<p class="small">Free, with no account. Your file stays on your computer. Nothing is uploaded or saved.</p>
+</div>
+</section>
+
+<section aria-labelledby="who-h">
+<h2 id="who-h">Who has to file, and on which jobs</h2>
+<p>On federal work, the duty sits in 29 CFR 3.3(b). It reaches every contractor or subcontractor working on a public building or public work, or on a project paid for at least in part by federal loans or grants. Each one sends a copy of its weekly payroll for all laborers and mechanics on covered work in the week before. Contracts of $2,000 or less are left out (29 CFR 3.3(c)).</p>
+<p>Subcontractors file too, at every tier. The prime contractor is responsible for getting in every sub's certified payrolls (29 CFR 5.5(a)(3)(ii)(A)). A prime may also ask its subs for each worker's full Social Security number and contact details for its own files. That's allowed, as long as those details stay off the weekly copy that goes to the agency (29 CFR 5.5(a)(3)(ii)(B)).</p>
+<p>On Michigan state projects, MCL 408.1122(1) puts the same duty on each contractor and subcontractor. Two kinds of work are excused from sending to the state system (MCL 408.1122(6)):</p>
+<ul>
+<li>a state project where you already have to send certified payroll to the state transportation department,</li>
+<li>an energy facility project that is only routine maintenance or repair.</li>
+</ul>
+<p>LEO's prevailing wage page lists projects that carry federal Davis-Bacon wage rules as exempt from the state act. On those, the federal routine applies instead.</p>
+</section>
+
+<section aria-labelledby="clock-h">
+<h2 id="clock-h">The deadline: two clocks that start at different times</h2>
+<p>The federal clock starts on payday. A certified payroll is due within 7 days after the regular pay date for that payroll period (29 CFR 3.4(a)). The Michigan clock starts when the pay period ends: "not later than 10 days after" (MCL 408.1122(1)). So a late payday pushes the federal deadline back, but not the Michigan one.</p>
+<p>Here's one made-up week on each kind of job. The workweek runs Sunday 1 November to Saturday 7 November 2026, and the crew is paid on Friday 13 November.</p>
+<div class="table-wrap">
+<table class="data">
+<thead><tr><th scope="col"><span class="sr">Question</span></th><th scope="col">Federal job</th><th scope="col">Michigan state job</th></tr></thead>
+<tbody>
+<tr><th scope="row">Clock starts</th><td>Payday, Friday 13 November</td><td>End of the pay period, Saturday 7 November</td></tr>
+<tr><th scope="row">Due by</th><td>Friday 20 November, 7 days later</td><td>Tuesday 17 November, 10 days later</td></tr>
+<tr><th scope="row">Goes to</th><td>The agency's representative at the site. With no one there, by mail or another way that reliably delivers it to the agency.</td><td>The state's certified payroll database, online</td></tr>
+<tr><th scope="row">How it's signed</th><td>An original handwritten signature or a legally valid electronic one</td><td>An electronic signature, given when you submit</td></tr>
+<tr><th scope="row">Kept for</th><td>3 years after all work on the prime contract is done</td><td>At least 3 years</td></tr>
+<tr><th scope="row">Left off</th><td>Full Social Security numbers, home addresses, phone numbers and email addresses</td><td>Home addresses, phone numbers and Social Security numbers</td></tr>
+</tbody>
+</table>
+</div>
+<p class="small">From 29 CFR 3.3(b), 3.4(a) and 5.5(a)(3)(ii), and MCL 408.1122(1) and (2).</p>
+<h3>Where a federal payroll goes</h3>
+<p>The regulation names two places. If the federal agency is a party to the contract, the certified payroll goes to that agency. If it isn't, as on a city project paid for with a federal grant, it goes to the applicant, sponsor or owner that keeps the records, which passes it on to the agency (29 CFR 5.5(a)(3)(ii)(A)). An agency or prime can also require an electronic system. That system has to take a legally valid electronic signature, keep the payrolls open to you, the agency and DOL for at least 3 years, and allow another way in for anyone who can't use it (29 CFR 5.5(a)(3)(ii)(A)). If you're a sub, ask the prime which route it wants, because it answers for your payroll.</p>
+<h3>Where a Michigan payroll goes</h3>
+<p>Since 2 April 2026, Michigan payrolls go to a state database. The law set that date as one year after 2024's Public Act 110 took effect on 2 April 2025, the act that added the registration section, MCL 408.1102a (MCL 408.1122(1)(b) and (2)). LEO's page sends contractors to an LCPtracker portal for it. It also says each covered project has to be registered and set up there before payrolls can go in. For each worker, the state system takes the trade, the skill level, gross pay for the period, hours each day, start and end times, and the hourly wage, overtime and fringe rates (MCL 408.1122(2)(b)).</p>
+</section>
+
+<section aria-labelledby="sign-h">
+<h2 id="sign-h">What "certified" means</h2>
+<p>The word comes from the signed statement. Congress told DOL to require a weekly statement from every contractor and sub on the wages paid each worker the week before. The same section says 18 U.S.C. 1001 applies to those statements (40 U.S.C. 3145).</p>
+<p>18 U.S.C. 1001 is the federal false-statement law. It covers anyone who knowingly and willfully makes a materially false statement, or covers up a material fact, in any matter within the federal government's jurisdiction. The penalty is a fine, up to 5 years in prison, or both. 29 CFR 5.5(a)(3)(ii)(F) adds that a falsified certification can also bring civil or criminal action under 31 U.S.C. 3729.</p>
+<p>On a federal job, the person who signs is the contractor, or its agent who pays or supervises paying the workers (29 CFR 5.5(a)(3)(ii)(C)). Each week they certify three things. The payroll is complete and correct, and so are the records behind it. Everyone got full weekly wages with only allowed deductions. And everyone got at least the rate and fringe for the work they actually did.</p>
+<p>Michigan asks for its own statement, signed electronically at the moment you submit (MCL 408.1122(2)(d)). You attest that:</p>
+<ol class="steps">
+<li>the payroll record is complete and accurate,</li>
+<li>the wage and fringe paid are not less than the act requires,</li>
+<li>you reviewed the record yourself,</li>
+<li>you understand a violation can cost your state project registration, by suspension or revocation, or get an application for one denied.</li>
+</ol>
+<p>A contractor also may not submit a payroll it knows has a false statement in it (MCL 408.1122(5)). LEO's page says contractors have to register before bidding on or working on any state project, so losing that registration keeps you off state work.</p>
+</section>
+
+<section aria-labelledby="keep-h">
+<h2 id="keep-h">The records behind it: 3 years</h2>
+<p>The weekly copy is a trimmed version of records you keep in full. For each worker those records hold the name, full Social Security number, last known address, phone and email, the trade or trades of the work done, the hourly rates with fringe, hours each day and each week in total and on each covered contract, deductions, and wages actually paid (29 CFR 5.5(a)(3)(i)(B)).</p>
+<p>Keep these for at least 3 years after all work on the prime contract is done:</p>
+<ul>
+<li>your regular payrolls and basic records (29 CFR 5.5(a)(3)(i)(A)),</li>
+<li>every certified payroll you sent (29 CFR 5.5(a)(3)(ii)(G)),</li>
+<li>the contract or subcontract, with bids, proposals, amendments, modifications and extensions (29 CFR 5.5(a)(3)(iii)),</li>
+<li>proof that your fringe plans are real and funded, if you take credit for them (29 CFR 5.5(a)(3)(i)(C)),</li>
+<li>the registration of each apprenticeship program and apprentice, with its ratios and wage rates (29 CFR 5.5(a)(3)(i)(D)).</li>
+</ul>
+<p>Note where the clock starts. It's the end of all work on the prime contract, not the day your own crew left the site. The agency keeps its copies for the same 3 years (29 CFR 3.4(a)). In Michigan, the contracting agent, contractor and subcontractor each keep certified payroll records for at least 3 years (MCL 408.1122(1)).</p>
+</section>
+
+<section aria-labelledby="late-h">
+<h2 id="late-h">When it's late, missing or wrong</h2>
+<p>Certified payrolls get read. Agency investigations include confidential interviews with workers and a look at certified payrolls and the records behind them, with particular care on trade classifications and apprentice numbers (29 CFR 5.6(a)(3)).</p>
+<p>On a federal job, 29 CFR 5.5(a)(3)(iv)(B) spells out what follows if you don't send the records or make them available, or refuse to let workers be interviewed on the job:</p>
+<ul>
+<li>After written notice, the agency can stop further payments, advances or guarantees of funds.</li>
+<li>It can be grounds for debarment. A debarred firm and its responsible officers can't get federal or Davis-Bacon contracts for 3 years (29 CFR 5.12(a)).</li>
+<li>Records you don't give DOL's Wage and Hour Division by the time it asks can't be used later as your evidence in an administrative hearing. WHD does consider a reasonable request for more time.</li>
+</ul>
+<p>Any breach of the contract's labor clauses can also be grounds to end the contract (29 CFR 5.5(a)(7)). A wrong payroll is a different problem from a late one. If a worker was short-paid, the shortfall is owed whether or not anyone caught it. <a href="/davis-bacon-act/">The Davis-Bacon Act guide</a> lists what underpayment costs.</p>
+<p>In Michigan, a violation of the payroll section can lead to suspension or revocation of your state project registration (MCL 408.1122(2)(d)(iv)).</p>
+</section>
+
+<section aria-labelledby="check-h">
+<h2 id="check-h">Check the week before you sign for it</h2>
+<p>Whoever signs is vouching for every hour and every rate. Count Twice takes each trade's rate and fringe and one week of payroll, and checks each worker against them before the deadline. Here's its result on the made-up sample week, which has four mistakes planted in it.</p>
+<figure>
+<img src="/img/sample-week-result.jpg" width="918" height="1100" alt="Count Twice results for the sample week: 9 rows read, 4 flags, 2 things to fix, 2 notes, and a possible shortfall of $215.00. The flags are overtime under time and a half for Cal D., fringe short for Dee F., pay under the base rate for Eli G., and carpenter apprentices over the 1:3 ratio on days 1 to 3." loading="lazy">
+<figcaption>The checker's results for the made-up sample week, in a browser on 9 November 2026.</figcaption>
+</figure>
+<div class="card cta">
+<p><a class="btn" href="/#check">Check a week free</a></p>
+<p class="small">Count Twice checks math against the rates you type. It doesn't file your payroll or decide which law covers your job, and it isn't a lawyer.</p>
+</div>
+</section>
+
+<section class="next" aria-labelledby="next-h">
+<h2 id="next-h">Next: fill in the form</h2>
+<p>On a federal job you can use DOL's optional WH-347, or any format with the same facts and a statement in identical wording (29 CFR 3.3(b) and 5.5(a)(3)(ii)(B)). <a href="/wh-347/">How to fill out the WH-347, line by line</a> walks one worker's week through every column.</p>
+<p class="small">Sources, each read 9 November 2026 (UTC):</p>
+<ul class="small">
+<li><a href="https://www.ecfr.gov/current/title-29/section-3.3">29 CFR 3.3</a>, <a href="https://www.ecfr.gov/current/title-29/section-3.4">3.4</a>, <a href="https://www.ecfr.gov/current/title-29/section-5.5">5.5</a>, <a href="https://www.ecfr.gov/current/title-29/section-5.6">5.6</a> and <a href="https://www.ecfr.gov/current/title-29/section-5.12">5.12</a>, eCFR, current to 5 November 2026</li>
+<li><a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap31-subchapIV-sec3145.htm">40 U.S.C. 3145</a> and <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title18/html/USCODE-2024-title18-partI-chap47-sec1001.htm">18 U.S.C. 1001</a>, U.S. Code 2024 edition on govinfo</li>
+<li>Michigan: <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-408-1102a">MCL 408.1102a</a> and <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-408-1122">408.1122</a>; LEO's <a href="https://www.michigan.gov/leo/bureaus-agencies/ber/wage-and-hour/prevailing-wage">Prevailing Wage</a> page</li>
+</ul>
+</section>
+
+</main>
+
+<footer class="wrap small">
+<p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan. <a href="/">Free checker</a> <span aria-hidden="true">&middot;</span> <a href="/privacy.html">Privacy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms</a></p>
+<p>Facts on this page checked 9 November 2026. This page explains the weekly routine and the rules. It isn't legal advice.</p>
+</footer>
+</body>
+</html>
