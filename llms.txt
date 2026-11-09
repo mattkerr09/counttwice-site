@@ -20,6 +20,8 @@ It checks math against the rates you type. It isn't legal advice, and the contra
 
 ## Pages
 - [Count Twice: certified payroll checker](https://counttwice.app/): the checker, how to use it, what it checks and doesn't, and Michigan's online certified payroll, which started 2 April 2026
+- [How to fill out the WH-347, line by line](https://counttwice.app/wh-347/): every box on the January 2025 form (OMB 1235-0008), a filled-in row with overtime and cash fringe, page 2's Statement of Compliance, and when and where it goes
+- [Davis-Bacon wage rates for 2026](https://counttwice.app/davis-bacon-wage-rates/): finding a wage determination on SAM.gov, reading its rate identifiers, which modification applies, and the Executive Order notes, with Kent County, Michigan as the example
 - [Sample week](https://counttwice.app/sample-week.csv): a CSV file with every column, and made-up names and rates
 - [Privacy](https://counttwice.app/privacy.html)
 - [Terms](https://counttwice.app/terms.html)
