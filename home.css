@@ -456,3 +456,19 @@ html.motion-ready .soc-wrap.in .sig path { transition: stroke-dashoffset 1.8s cu
   .cols td:first-child { width: auto; margin-bottom: 4px; }
   .cols td:nth-child(3)::before { content: "Example: "; color: var(--muted); }
 }
+
+/* Phones: the comparison becomes one card per question, each tool labelled (CEO QC: no clipped cells at 375). */
+@media (max-width: 700px) {
+  .cmp { overflow: visible; background: transparent; border: 0; }
+  .comparison { min-width: 0; table-layout: auto; }
+  .comparison thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .comparison, .comparison tbody, .comparison tr, .comparison th, .comparison td { display: block; width: 100%; }
+  .comparison tr { margin-bottom: 14px; padding: 6px 0 4px; border: 1px solid var(--line); border-radius: 16px; background: var(--card); overflow: hidden; }
+  .comparison tbody th { padding: 14px 18px 10px; font-size: .98rem; border: 0; }
+  .comparison tbody th:first-child { width: auto; }
+  .comparison td { display: flex; align-items: flex-start; padding: 10px 18px; border: 0; border-top: 1px solid var(--line); }
+  .comparison td::before { content: attr(data-label); flex: 0 0 8.5rem; margin-right: 14px; font-weight: 600; color: var(--ink); }
+  .comparison td svg { margin: 4px 6px 0 0; }
+  .comparison td:nth-child(2) { border-left: 3px solid var(--yellow); }
+  .scroll-note { display: none; }
+}
