@@ -23,110 +23,137 @@
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <script defer data-domain="counttwice.app" src="https://plausible.io/js/script.js"></script>
 <script>window.plausible = window.plausible || function () { (window.plausible.q = window.plausible.q || []).push(arguments); };</script>
-<style>
-:root {
-  --bg: #fbfaf7; --card: #ffffff; --ink: #1b1f23; --muted: #555e69; --line: #d9dde3;
-  --accent: #1f5f8b; --accent-ink: #ffffff;
-  --flag: #b3261e; --flag-bg: #fdecea; --fix: #8a5a00; --fix-bg: #fff4dc; --note: #35506b; --note-bg: #eef3f8; --ok: #2e6b3f;
-  --radius: 10px;
-  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  color-scheme: light dark;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #14171a; --card: #1c2024; --ink: #e8eaed; --muted: #a5adb7; --line: #2f353b;
-    --accent: #6fb3e0; --accent-ink: #0b1620;
-    --flag: #ff8a80; --flag-bg: #3a1d1b; --fix: #ffcc66; --fix-bg: #3a2e12; --note: #a8c4e0; --note-bg: #1c2a38; --ok: #7fd18f;
-  }
-}
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--font); }
-a { color: var(--accent); }
-a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
-.skip { position: absolute; left: -9999px; top: 8px; background: var(--card); padding: 8px 12px; border-radius: var(--radius); }
-.skip:focus { left: 8px; z-index: 10; }
-.top { border-bottom: 1px solid var(--line); }
-.top p { margin: 0; padding: 10px 0; font-size: 15px; color: var(--muted); }
-.top .brand { display: flex; align-items: center; gap: 10px; padding: 12px 0; font-size: 1.05rem; color: var(--ink); }
-.top .brand img { flex: none; display: block; }
-h1 { font-size: 2.1rem; line-height: 1.2; margin: 32px 0 12px; letter-spacing: -0.01em; }
-h2 { font-size: 1.5rem; line-height: 1.25; margin: 48px 0 12px; }
-h3 { font-size: 1.15rem; margin: 28px 0 8px; }
-.lede { font-size: 1.15rem; margin: 0 0 16px; }
-.facts { padding-left: 1.2em; margin: 0 0 20px; }
-.facts li { margin: 4px 0; }
-.btn { display: inline-block; min-height: 44px; padding: 10px 20px; border: 0; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); font: 600 1rem/1.5 var(--font); text-decoration: none; cursor: pointer; }
-.btn:disabled { opacity: 0.6; cursor: default; }
-.small { font-size: 0.95rem; color: var(--muted); }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; }
-.privacy { margin-top: 16px; }
-.dated { display: inline-block; margin: 0 0 8px; padding: 2px 10px; border-radius: 999px; background: var(--note-bg); color: var(--note); font-size: 0.9rem; }
-.steps li { margin: 8px 0; }
-.table-wrap { overflow-x: auto; }
-table.cols { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card); }
-table.cols th, table.cols td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
-table.cols th { font-weight: 600; }
-code { font-family: var(--mono); font-size: 0.92em; }
-.notice { padding: 12px 16px; border-radius: var(--radius); background: var(--fix-bg); color: var(--ink); }
-footer { margin: 56px auto 40px; border-top: 1px solid var(--line); padding-top: 16px; }
-footer p { margin: 8px 0; }
-@media (max-width: 480px) {
-  body { font-size: 16px; }
-  h1 { font-size: 1.7rem; }
-  .btn { width: 100%; text-align: center; }
-  table.cols th:nth-child(3), table.cols td:nth-child(3) { display: none; }
-}
-@media print {
-  .top, .skip, .btn, #how, #checks, #limits, #michigan, #guides, #app, footer { display: none; }
-  body { background: #fff; color: #000; }
-}
-</style>
+<link rel="preload" href="/fonts/dmsans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/clashdisplay-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="home.css">
 <link rel="stylesheet" href="checker.css">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "WebApplication", "name": "Count Twice: certified payroll checker", "url": "https://counttwice.app/", "applicationCategory": "BusinessApplication", "operatingSystem": "Any web browser", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "description": "Checks one week of certified payroll in the browser before you sign it: pay under the base rate, short fringe, overtime under time and a half, and apprentices over the ratio."}
 </script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is it free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Count Twice is free to use. There is nothing to install and no account."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does my payroll file get uploaded?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Your browser reads your payroll file on this computer. It isn't uploaded or saved. Close the tab and it's gone. The page counts visits and button presses, never what's in your file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What file does it need?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "One week of payroll as a CSV file. Use the columns listed on this page, or start from the sample file. Type each trade's base rate and fringe from the wage determination in your contract."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it fill out the WH-347 for me?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It checks the numbers you put on the form. Use DOL's free WH-347 PDF or online form to fill it out. You still sign the Statement of Compliance yourself."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work for Michigan state projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Tick Michigan state project to count Michigan's standard overtime hours. It doesn't check double-time pay, start and end times, trade-specific overtime rules or due dates. It doesn't make a portal upload file."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it check apprentice pay?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It checks the daily apprentice ratio you type from the registered program. It doesn't check apprentice pay steps, overtime pay or whether an apprentice is registered. An apprentice over the ratio gets the full rate for the work."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can it tell me which trade a worker belongs in?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. It checks math against the rates you type. It can't decide which trade fits the work or which wage determination applies. Ask the contracting officer or the agency named in your contract."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Who makes Count Twice?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kerr & Company LLC, Grand Rapids, Michigan. Matt Kerr builds it. Questions go to matthew@kerrandcompanyholdings.com."
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <a class="skip" href="#check">Skip to the checker</a>
-<header class="top"><div class="wrap"><p class="brand"><img src="icon.svg" alt="" width="28" height="28"><span><strong>Count Twice</strong>: certified payroll checker</span></p></div></header>
+<header class="top"><div class="wrap nav-in">
+<a class="brand" href="/"><img src="/icon.svg" alt="" width="34" height="34"><span><strong>Count Twice</strong>: certified payroll checker</span></a>
+<nav class="nav-links" aria-label="Main navigation"><a href="#how">How it works</a><a href="#check">The check</a><a href="#compare">Compare</a><a href="#michigan">Michigan</a><a href="#faq">FAQ</a></nav>
+<a class="btn btn-primary btn-sm" href="#check">Check a week <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+</div></header>
+<main id="main">
 
-<main id="main" class="wrap">
-
-<section class="hero" aria-labelledby="top-h">
-<h1 id="top-h">Check your certified payroll before you sign it</h1>
-<p class="lede">Drop in one week of payroll as a CSV file and type each trade's rates from your wage determination. The page flags pay under the base rate, short fringe, overtime under time and a half, and apprentices over the ratio. It checks your numbers before you sign.</p>
-<ul class="facts">
-<li>Free. Nothing to install, and no account.</li>
-<li>Your file stays on your computer. Nothing is uploaded or saved.</li>
-<li>Built on the federal Davis-Bacon rules, with a Michigan mode for state projects.</li>
-</ul>
-<p><a class="btn" href="#check">Check a week now</a></p>
-<p class="small">Looking for the blank WH-347? The U.S. Department of Labor gives it away free, as a <a href="https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/wh347.pdf">PDF</a> and as an <a href="https://www.dol.gov/agencies/whd/forms/wh347-web">online form</a>. This page doesn't replace the form. It checks the numbers you put on it. New to the form? <a href="/wh-347/">How to fill out the WH-347, line by line</a>.</p>
-</section>
-
-<section id="check" aria-labelledby="check-h">
-<h2 id="check-h">Run the check</h2>
-<p>Type your rates, pick your payroll file, then press Check my numbers. No CSV file yet? Start from the <a href="sample-week.csv" download>sample file</a> and type over it in any spreadsheet.</p>
-<p>To see how it works first, press Try the sample week. Its 9 made-up rows hide 4 pay problems: overtime paid at the straight rate, a short fringe, a wage under the base rate and too many apprentices on three days. The check flags all 4 and shows a possible $215.00 short for the week.</p>
-<div id="checker"></div>
-<noscript><p class="notice">The checker needs JavaScript turned on. It runs on your own computer, so turning it on doesn't send your file anywhere.</p></noscript>
-<p class="privacy card"><strong>What happens to your file:</strong> your browser reads it on this computer. It isn't uploaded and it isn't saved. Close the tab and it's gone. The page counts visits and button presses, never what's in your file.</p>
-</section>
-
-<section id="how" aria-labelledby="how-h">
-<h2 id="how-h">How to use it</h2>
-<ol class="steps">
-<li><strong>Get one week out of payroll.</strong> Save it as a CSV file with the columns below. Most payroll and spreadsheet programs can do that. Or start from the <a href="sample-week.csv" download>sample file</a> and type over it.</li>
-<li><strong>Type your rates.</strong> For each trade on the payroll, copy the base rate and the fringe from the wage determination in your contract. If you have apprentices, add the ratio from their apprenticeship program, like 1:3.</li>
-<li><strong>Press Check my numbers.</strong> Fix what it flags and check again.</li>
-<li><strong>Then fill in the WH-347 and sign it.</strong> The check helps you get there. The signature is still yours.</li>
-</ol>
-
-<h3>The columns</h3>
-<div class="table-wrap">
+<section class="hero" aria-labelledby="top-h"><div class="wrap">
+<div class="hero-top"><div class="hero-copy">
+<p class="kicker">One week. Before you sign.</p>
+<h1 id="top-h">Check your certified payroll <span class="grad">before you sign it</span></h1>
+<p class="lede">Drop in one week as a CSV file. Type your wage rates. Find short pay, missed overtime and apprentice ratio problems. <strong>It checks your numbers before you sign.</strong></p>
+<div class="cta"><a class="btn btn-primary" href="#check">Check a week now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a><a class="btn btn-ghost" id="hero-sample" href="#check">Try the sample week</a></div>
+<ul class="facts"><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Free, no account.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 3v6c0 4-4 7-8 9-4-2-8-5-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></svg>Nothing uploaded.</li><li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Federal Davis-Bacon rules, with a Michigan mode.</li></ul>
+</div>
+<figure class="demo" id="sample-demo" aria-labelledby="demo-caption"><div class="demo-window">
+<div class="window-bar"><i></i><i></i><i></i><span>sample-week.csv</span><span class="local"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 3v6c0 4-4 7-8 9-4-2-8-5-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></svg>In your browser</span></div>
+<div class="sheet"><table class="sheet-table" aria-label="The sample week's nine payroll rows"><thead><tr><th scope="col">Row</th><th scope="col">Worker</th><th scope="col">Trade</th><th scope="col">Hours</th><th scope="col">Rate</th></tr></thead><tbody>
+<tr id="demo-row-2" class=""><td>2</td><td>Ana R.</td><td>Carpenter</td><td>40</td><td>$30.00</td></tr>
+<tr id="demo-row-3" class=""><td>3</td><td>Ben C.</td><td>Carpenter</td><td>44</td><td>$30.00</td></tr>
+<tr id="demo-row-4" class="row-flag"><td>4</td><td>Cal D.</td><td>Carpenter</td><td>45</td><td>$30.00</td></tr>
+<tr id="demo-row-5" class="row-flag"><td>5</td><td>Dee F.</td><td>Laborer</td><td>40</td><td>$22.00</td></tr>
+<tr id="demo-row-6" class="row-flag"><td>6</td><td>Eli G.</td><td>Laborer</td><td>40</td><td>$20.50</td></tr>
+<tr id="demo-row-7" class="row-ratio"><td>7</td><td>Fay H.</td><td>Carpenter</td><td>40</td><td>$18.00</td></tr>
+<tr id="demo-row-8" class="row-ratio"><td>8</td><td>Gus K.</td><td>Carpenter</td><td>24</td><td>$18.00</td></tr>
+<tr id="demo-row-9" class=""><td>9</td><td>Hal M.</td><td>Electrician</td><td>40</td><td>$38.50</td></tr>
+<tr id="demo-row-10" class=""><td>10</td><td>Ivy N.</td><td>Laborer</td><td>Fix day3</td><td>$22.00</td></tr>
+</tbody></table><div class="scan-line" aria-hidden="true"></div></div><div class="demo-flags" id="demo-flags">
+<div class="demo-flag" data-flag="ot-short"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4m0 0c5-5 9 5 14 0v10c-5 5-9-5-14 0"/></svg><div><small><a href="#demo-row-4">Cal D., Carpenter · row 4</a></small><strong>Overtime under time and a half</strong></div><span class="amount">$75.00</span></div>
+<div class="demo-flag" data-flag="fringe-short"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4m0 0c5-5 9 5 14 0v10c-5 5-9-5-14 0"/></svg><div><small><a href="#demo-row-5">Dee F., Laborer · row 5</a></small><strong>Fringe short</strong></div><span class="amount">$80.00</span></div>
+<div class="demo-flag" data-flag="pay-short"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4m0 0c5-5 9 5 14 0v10c-5 5-9-5-14 0"/></svg><div><small><a href="#demo-row-6">Eli G., Laborer · row 6</a></small><strong>Pay under the base rate</strong></div><span class="amount">$60.00</span></div>
+<div class="demo-flag" data-flag="ratio-over"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4m0 0c5-5 9 5 14 0v10c-5 5-9-5-14 0"/></svg><div><small><a href="#demo-row-7">Carpenter, rows 7 and 8 · days 1, 2 and 3</a></small><strong>Apprentices over the ratio</strong></div><span class="amount">1:3</span></div>
+</div><div class="demo-total"><strong class="total" id="demo-total">$215.00</strong><span class="total-label">possible shortfall this week</span><p class="small">Apprentice ratio fixes aren't in that number.</p></div>
+<p class="demo-meta" id="demo-meta">4 flags · 2 things to fix · 2 notes</p></div>
+<figcaption id="demo-caption">The sample week: 9 made-up rows, checked by this page.</figcaption></figure></div>
+<div class="hero-bottom"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Zm0 0v6h5M8 13h8M8 17h5"/></svg><p class="small">Looking for the blank WH-347? DOL gives it away free as a <a href="https://www.dol.gov/sites/dolgov/files/WHD/legacy/files/wh347.pdf">PDF</a> and an <a href="https://www.dol.gov/agencies/whd/forms/wh347-web">online form</a>. This page checks the numbers you put on it. New to the form? <a href="/wh-347/">How to fill out the WH-347, line by line</a>.</p></div>
+</div></section>
+<section class="section" id="problem"><div class="wrap"><div class="section-head reveal"><p class="kicker">The signature is yours</p><h2>A busy week leaves room for a small miss.</h2><p class="lede">You sign the Statement of Compliance. A short fringe, an overtime hour at the straight rate or one apprentice too many is easy to miss.</p></div><div class="cards">
+<article class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="10" cy="6" rx="7" ry="3"/><path d="M3 6v5c0 4 14 4 14 0V6M3 11v5c0 4 14 4 14 0v-5M20 9v9"/></svg></div><h3>A few dollars an hour add up.</h3><p>Base pay and fringe belong together. A fringe payment that looks close can still leave a whole week short.</p></article>
+<article class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg></div><h3>The clock keeps running.</h3><p>Michigan payroll is due within 10 days after the pay period ends. Federal payroll is due within 7 days after the regular payday.</p></article>
+<article class="card reveal"><div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="3"/><path d="M2 21v-5a6 6 0 0 1 12 0v5M16 4a3 3 0 0 1 0 6m2 3a6 6 0 0 1 4 6v2"/></svg></div><h3>Count the crew each day.</h3><p>The apprentice ratio is a daily check for each trade. An apprentice over the ratio gets the full rate for the work.</p></article>
+</div><p class="small problem-note">On Michigan state projects, LEO can fine up to $5,000 for each violation, plus 10%, under MCL 408.1113. <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-Act-10-of-2023">Michigan's Act 10 of 2023</a>.</p></div></section>
+<section class="section band" id="how" aria-labelledby="how-h"><div class="wrap"><div class="section-head reveal"><p class="kicker">How it works</p><h2><span id="how-h">One week. Three steps.</span></h2><p class="lede">Bring your payroll and the wage determination in your contract.</p></div><div class="cards">
+<article class="card step-card reveal"><svg class="step-visual" viewBox="0 0 325 155" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="52" y="22" width="166" height="110" rx="8"/><path d="M52 48h166M90 48v84M52 69h166M52 90h166M52 111h166" opacity=".35"/><path d="M66 35h28m18 0h48M65 59h11m28 0h27m15 0h22M65 80h11m28 0h27m15 0h22M65 101h11m28 0h27"/><rect x="177" y="80" width="91" height="51" rx="9" fill="var(--card)"/><path d="M193 99h12m-12 12h20m29-18v21m-7-7 7 7 7-7"/><path d="m267 44 17 0m-6-6 6 6-6 6"/></svg><div class="step-copy"><span class="n">01</span><h3>Export one week as CSV.</h3><p>Get one week out of payroll. Save it with the columns below. Or start from the <a href="sample-week.csv" download>sample file</a> and type over it in a spreadsheet.</p></div></article>
+<article class="card step-card reveal"><svg class="step-visual" viewBox="0 0 325 155" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="45" y="25" width="235" height="107" rx="9"/><path d="M45 53h235M65 40h74m29 0h37m25 0h27"/><rect x="59" y="68" width="77" height="21" rx="4"/><rect x="149" y="68" width="48" height="21" rx="4" fill="var(--fix-bg)"/><rect x="209" y="68" width="57" height="21" rx="4" fill="var(--fix-bg)"/><path d="M66 79h54m37 0h30m32 0h36M65 107h59m32 0h33m30 0h36"/><path d="M165 17v18m-6-6 6 6 6-6"/></svg><div class="step-copy"><span class="n">02</span><h3>Type each trade's rates.</h3><p>Copy the base rate and fringe from the wage determination in your contract. Add each apprentice ratio from the registered program, like 1:3.</p></div></article>
+<article class="card step-card reveal"><svg class="step-visual" viewBox="0 0 325 155" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="45" y="25" width="235" height="107" rx="9"/><circle cx="68" cy="48" r="8"/><path d="m64 48 3 3 5-6M88 48h92M59 70h207M59 91h207" opacity=".6"/><path d="M65 80h9m14 0h87m-110 21h9m14 0h62"/><rect x="190" y="85" width="65" height="28" rx="14" fill="var(--fix-bg)"/><path d="m212 99 6 5 12-12"/></svg><div class="step-copy"><span class="n">03</span><h3>Check, fix, then sign.</h3><p>Press Check my numbers. Fix what it flags and check again. Then fill in the WH-347 and sign it. The signature is still yours.</p></div></article>
+</div><div class="columns-panel"><div class="columns-head"><h3>The columns</h3><p class="small">One row per worker, per trade</p></div>
+<div class="table-wrap" tabindex="0" role="region" aria-label="CSV columns">
 <table class="cols">
 <thead><tr><th scope="col">Column</th><th scope="col">What to put in it</th><th scope="col">Example</th></tr></thead>
 <tbody>
@@ -141,52 +168,83 @@ footer p { margin: 8px 0; }
 </tbody>
 </table>
 </div>
-<p>These line up with the WH-347. The rate is column 6A, plan fringe is column 6B, and cash in place of fringe is column 6C. The form shows 6B and 6C as weekly totals. This page wants them per hour.</p>
-</section>
-
-<section id="checks" aria-labelledby="checks-h">
-<h2 id="checks-h">What it checks</h2>
-<ul>
-<li><strong>Base plus fringe.</strong> Every hour needs at least the base rate plus the fringe. You can pay it as cash, as plan payments, or both, and cash above the base rate counts toward the fringe. Sources: 29 CFR 5.31 and 40 U.S.C. 3142(d).</li>
-<li><strong>Overtime.</strong> Hours over 40 in the week need at least 1.5 times the basic rate, and the fringe is added at its straight amount. The basic rate is never lower than the base rate on your wage determination. Sources: 40 U.S.C. 3702, 40 U.S.C. 3142(e) and 29 CFR 5.32.</li>
-<li><strong>Apprentices.</strong> On any day, a trade's apprentices can't outnumber what the program's ratio allows. An apprentice over the ratio gets the full rate for the work. Source: 29 CFR 5.5(a)(4).</li>
-<li><strong>Your file and your rates.</strong> Rows it can't read and trades with no rate typed are listed, so nothing gets skipped quietly.</li>
-</ul>
-<p class="small">Rules it's built on: <a href="https://www.ecfr.gov/current/title-29/subtitle-A/part-5">29 CFR part 5</a>, <a href="https://www.ecfr.gov/current/title-29/subtitle-A/part-3">29 CFR part 3</a>, <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap31-subchapIV-sec3142.htm">40 U.S.C. 3142</a>, <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap37-sec3702.htm">40 U.S.C. 3702</a>, <a href="https://www.dol.gov/agencies/whd/forms/wh347">DOL's WH-347 instructions</a> and <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-Act-10-of-2023">Michigan's Act 10 of 2023</a>.</p>
-
-<h3>An overtime example</h3>
+<p class="column-note">These line up with the WH-347. The rate is column 6A, plan fringe is column 6B, and cash in place of fringe is column 6C. The form shows 6B and 6C as weekly totals. This page wants them per hour.</p>
+</div></div></section>
+<section class="section check-section" id="check" aria-labelledby="check-h"><div class="wrap"><div class="section-head reveal"><p class="kicker">The check</p><h2>Your week, on your computer.</h2></div><div class="app-frame"><div class="window-bar"><i></i><i></i><i></i><span>Count Twice / payroll checker</span><span class="local"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 3v6c0 4-4 7-8 9-4-2-8-5-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></svg>Nothing uploaded</span></div><div class="app-content">
+<h2 id="check-h">Run the check</h2>
+<p>Type your rates, pick your payroll file, then press Check my numbers. No CSV file yet? Start from the <a href="sample-week.csv" download>sample file</a> and type over it in any spreadsheet.</p>
+<p>To see how it works first, press Try the sample week. Its 9 made-up rows hide 4 pay problems: overtime paid at the straight rate, a short fringe, a wage under the base rate and too many apprentices on three days. The check flags all 4 and shows a possible $215.00 short for the week.</p>
+<div id="checker"></div>
+<noscript><p class="notice">The checker needs JavaScript turned on. It runs on your own computer, so turning it on doesn't send your file anywhere.</p></noscript>
+<div class="privacy"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 3v6c0 4-4 7-8 9-4-2-8-5-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></svg><p><strong>What happens to your file:</strong> your browser reads it on this computer. It isn't uploaded and it isn't saved. Close the tab and it's gone. The page counts visits and button presses, never what's in your file.</p></div>
+</div></div></div></section>
+<section class="section band" id="example"><div class="wrap"><div class="example-layout"><div class="example-aside reveal"><div class="section-head reveal"><p class="kicker">A worked example</p><h2>Four flags in the sample week.</h2><p class="lede">Made-up names and rates. The same check your file gets.</p></div><p class="example-sum">$215.00</p><p class="small">Possible shortfall this week. Apprentice ratio fixes aren't in that number.</p><p class="small">The sample also has a trade with no rate and a row with unreadable hours. The check lists both so they can be fixed.</p></div><div class="worked-flags">
+<article class="worked-flag reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2"/></svg><div><h3>Cal D. / Overtime under time and a half</h3><p>Cal D., Carpenter, has 5 overtime hours paid at $30.00 an hour. At a $30.00 basic rate, overtime needs $45.00 before fringe. That is $15.00 short an hour, about $75.00 this week.</p><div class="math-line">5 hours × $15.00 = $75.00</div></div></article>
+<article class="worked-flag reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><ellipse cx="10" cy="6" rx="7" ry="3"/><path d="M3 6v5c0 4 14 4 14 0V6M3 11v5c0 4 14 4 14 0v-5M20 9v9"/></svg><div><h3>Dee F. / Fringe short</h3><p>Dee F., Laborer, needs $6.00 fringe an hour. The cash fringe is $4.00, with no extra wage or plan payment to cover the gap. That is $2.00 short for each of 40 hours, about $80.00 this week.</p><div class="math-line">40 hours × $2.00 = $80.00</div></div></article>
+<article class="worked-flag reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 21V4m0 0c5-5 9 5 14 0v10c-5 5-9-5-14 0"/></svg><div><h3>Eli G. / Pay under the base rate</h3><p>Eli G., Laborer, is paid $20.50 against a $22.00 base. With $6.00 fringe, total pay is $26.50 against $28.00 due. That is $1.50 short for each of 40 hours, about $60.00 this week.</p><div class="math-line">40 hours × $1.50 = $60.00</div></div></article>
+<article class="worked-flag reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="8" cy="7" r="3"/><path d="M2 21v-5a6 6 0 0 1 12 0v5M16 4a3 3 0 0 1 0 6m2 3a6 6 0 0 1 4 6v2"/></svg><div><h3>Carpenter / Apprentices over the ratio</h3><p>The ratio is 1:3. On days 1, 2 and 3 there are 2 apprentices and 3 journeyworkers. Only 1 apprentice is allowed. An apprentice over the ratio gets $30.00 an hour plus $10.00 fringe.</p><div class="math-line">Days 1, 2 and 3 · no dollar total</div></div></article>
+</div></div><div class="overtime-example"><div><h3>An overtime example</h3>
 <p>Say the base rate is $30.00 and the fringe is $10.00, paid in cash. An overtime hour needs at least $30.00 times 1.5, which is $45.00, plus the $10.00 cash fringe. That's $55.00. Paying 1.5 times $40.00, or $60.00, is fine too. It's just more than the minimum.</p>
 <p>One catch: the page goes by your columns. If you pay a single $40.00 rate and put all of it under <code>rate_paid</code>, it figures overtime on $40.00. If $10.00 of that is cash in place of fringe, put the $10.00 under <code>cash_fringe</code>. Then overtime is figured on $30.00.</p>
-</section>
-
-<section id="limits" aria-labelledby="limits-h">
-<h2 id="limits-h">What it doesn't check</h2>
-<ul>
-<li>Whether each worker is in the right trade for the work they did.</li>
-<li>Whether you have the right wage determination, or its latest changes.</li>
-<li>Whether your fringe plans count, or their hourly credit. It uses the numbers you type.</li>
-<li>Gross pay, deductions and net pay.</li>
-<li>Apprentice pay steps, and whether each apprentice is registered.</li>
-<li>Hours worked off this job in the same week. Those count toward overtime too.</li>
-<li>Overtime for a worker split across two trades. It tells you when to check that by hand.</li>
-<li>Michigan double-time pay, start and end times, and trades whose schedules set their own overtime rules.</li>
-<li>Due dates, and other states' prevailing wage rules.</li>
-</ul>
-<p>It checks math against the rates you type. It doesn't decide which trade a job belongs to, and it isn't a lawyer. If something doesn't fit your job, ask the contracting officer or the agency named in your contract.</p>
-</section>
-
-<section id="michigan" aria-labelledby="mi-h">
-<h2 id="mi-h">Michigan certified payroll went online on 2 April 2026</h2>
-<p class="dated">Checked 8 November 2026</p>
-<p>On Michigan state projects, contractors and subcontractors now send certified payroll to the state's online system instead of the contracting agent. It's due no later than 10 days after each pay period ends. That rule is MCL 408.1122, part of the prevailing wage law Michigan brought back in 2023 Public Act 10 and amended in 2024 Public Act 110.</p>
-
-<h3>The 10-day clock</h3>
-<p>The 10 days start when the pay period ends. For a pay week that ends Saturday, 7 November 2026, day 10 is Tuesday, 17 November 2026. Federal jobs run on a different clock. The WH-347 goes in within 7 days after the regular payday, under 29 CFR 3.4.</p>
-
-<h3>The portal</h3>
+</div><div class="overtime-math"><div><span>$45.00</span><small>$30.00 base × 1.5</small></div><b>+</b><div><span>$10.00</span><small>cash fringe</small></div><b>=</b><div><span>$55.00</span><small>minimum OT hour</small></div></div></div></div></section>
+<section class="section" id="compare"><div class="wrap"><div class="compare-head"><div class="section-head reveal"><p class="kicker">Compare</p><h2>Pick the tool for this part of the job.</h2><p class="lede">Read on each tool's own pages, 8 November 2026. LCPcertified's rate checks re-read 10 November 2026.</p></div><p>We make Count Twice.</p></div><div class="cmp reveal" tabindex="0" role="region" aria-label="Payroll tool comparison"><table class="comparison"><thead><tr><th scope="col">The job</th><th scope="col">Count Twice</th><th scope="col">DOL's WH-347 web form</th><th scope="col">LCPcertified</th><th scope="col">QuickBooks Online Payroll</th></tr></thead><tbody>
+<tr><th scope="row">Price</th>
+<td>Free</td>
+<td>Free</td>
+<td>$12 a report, or $145 a month for up to 5 projects</td>
+<td>In the Premium and Elite plans.</td>
+</tr>
+<tr><th scope="row">Checks your pay against your wage determination's rates</th>
+<td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Yes, base plus fringe for each trade</td>
+<td>Not stated on its pages</td>
+<td>Keeps California's rates and checks them before you submit. For other states, you upload the wage determination yourself.</td>
+<td class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg>No, you type the rates in.</td>
+</tr>
+<tr><th scope="row">Where your payroll goes</th>
+<td>Stays in your browser</td>
+<td>&quot;Your data never leaves your computer,&quot; DOL says</td>
+<td>Their cloud</td>
+<td>Their cloud</td>
+</tr>
+<tr><th scope="row">Makes the WH-347 itself</th>
+<td class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg>No, use <a href="https://www.dol.gov/agencies/whd/forms/wh347-web">DOL's free form</a>, then check it here</td>
+<td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Yes</td>
+<td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Yes</td>
+<td><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg>Yes, as a spreadsheet.</td>
+</tr>
+<tr><th scope="row">Michigan state projects</th>
+<td>Counts Michigan's overtime hours</td>
+<td class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg>No, it's the federal form</td>
+<td>Michigan's filing portal runs on LCPtracker</td>
+<td class="no"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg>No, the federal WH-347 only.</td>
+</tr>
+</tbody></table></div><p class="scroll-note">Scroll the table to see all four tools.</p></div></section>
+<section class="section band"><div class="wrap"><div class="section-head reveal"><p class="kicker">Know the limits</p><h2>A check of your numbers. The judgment is yours.</h2></div><div class="check-lists">
+<article class="check-list checks reveal" id="checks" aria-labelledby="checks-h"><h2 id="checks-h">What it checks</h2><ul>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><div><strong>Base plus fringe.</strong> Every hour needs at least the base rate plus the fringe. You can pay it as cash, as plan payments, or both, and cash above the base rate counts toward the fringe. Sources: 29 CFR 5.31 and 40 U.S.C. 3142(d).</div></li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><div><strong>Overtime.</strong> Hours over 40 in the week need at least 1.5 times the basic rate, and the fringe is added at its straight amount. The basic rate is never lower than the base rate on your wage determination. Sources: 40 U.S.C. 3702, 40 U.S.C. 3142(e) and 29 CFR 5.32.</div></li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><div><strong>Apprentices.</strong> On any day, a trade's apprentices can't outnumber what the program's ratio allows. An apprentice over the ratio gets the full rate for the work. Source: 29 CFR 5.5(a)(4).</div></li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><div><strong>Your file and your rates.</strong> Rows it can't read and trades with no rate typed are listed, so nothing gets skipped quietly.</div></li>
+</ul><p class="small">Rules it's built on: <a href="https://www.ecfr.gov/current/title-29/subtitle-A/part-5">29 CFR part 5</a>, <a href="https://www.ecfr.gov/current/title-29/subtitle-A/part-3">29 CFR part 3</a>, <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap31-subchapIV-sec3142.htm">40 U.S.C. 3142</a>, <a href="https://www.govinfo.gov/content/pkg/USCODE-2024-title40/html/USCODE-2024-title40-subtitleII-partA-chap37-sec3702.htm">40 U.S.C. 3702</a>, <a href="https://www.dol.gov/agencies/whd/forms/wh347">DOL's WH-347 instructions</a> and <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-Act-10-of-2023">Michigan's Act 10 of 2023</a>.</p></article>
+<article class="check-list limits reveal" id="limits" aria-labelledby="limits-h"><h2 id="limits-h">What it doesn't check</h2><ul>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg><div>Whether each worker is in the right trade for the work they did.</div></li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg><div>Whether you have the right wage determination, or its latest changes.</div></li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg><div>Whether your fringe plans count, or their hourly credit. It uses the numbers you type.</div></li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg><div>Gross pay, deductions and net pay.</div></li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg><div>Apprentice pay steps, and whether each apprentice is registered.</div></li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg><div>Hours worked off this job in the same week. Those count toward overtime too.</div></li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg><div>Overtime for a worker split across two trades. It tells you when to check that by hand.</div></li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg><div>Michigan double-time pay, start and end times, and trades whose schedules set their own overtime rules.</div></li>
+<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"/></svg><div>Due dates, and other states' prevailing wage rules.</div></li>
+</ul></article>
+</div><p class="limits-note">It checks math against the rates you type. It doesn't decide which trade a job belongs to, and it isn't a lawyer. If something doesn't fit your job, ask the contracting officer or the agency named in your contract.</p></div></section>
+<section class="section" id="michigan" aria-labelledby="mi-h"><div class="wrap"><div class="mi-heading"><div class="section-head reveal"><p class="kicker">For Michigan contractors</p><h2 id="mi-h">Michigan certified payroll went online on 2 April 2026</h2><p class="dated">Checked 8 November 2026</p></div><div><p>On Michigan state projects, contractors and subcontractors now send certified payroll to the state's online system instead of the contracting agent. It's due no later than 10 days after each pay period ends. That rule is MCL 408.1122, part of the prevailing wage law Michigan brought back in 2023 Public Act 10 and amended in 2024 Public Act 110.</p></div></div>
+<div class="mi-clock reveal"><div><h3>The 10-day clock</h3><p>The 10 days start when the pay period ends. For a pay week that ends Saturday, 7 November 2026, day 10 is Tuesday, 17 November 2026.</p><svg class="timeline" viewBox="0 0 430 116" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M25 33h370" stroke="#5b6a6c"/><path d="M25 33h370" stroke-dasharray="1 36" stroke-width="6"/><circle cx="25" cy="33" r="7" fill="#f5c400"/><circle cx="395" cy="33" r="7" fill="#f5c400"/><path d="M25 49v10m370-10v10"/><g fill="#dce6ed" stroke="none" font-family="DM Sans, sans-serif" font-size="13"><text x="18" y="80">Sat 7 Nov</text><text x="328" y="80">Tue 17 Nov</text><text x="18" y="100">Pay week ends</text><text x="328" y="100">Day 10</text></g></svg></div><div class="federal"><h3>Federal jobs have a different clock.</h3><p>The WH-347 goes in within 7 days after the regular payday, under 29 CFR 3.4.</p><p>The starting point matters. Michigan counts from the end of the pay period. Federal jobs count from the regular payday.</p></div></div><div class="mi-details">
+<article><h3>The portal</h3>
 <p>Michigan's labor department, LEO, runs the system. The Online Certified Payroll Submission button on <a href="https://www.michigan.gov/leo/bureaus-agencies/ber/wage-and-hour/prevailing-wage">LEO's prevailing wage page</a> opens an LCPtracker portal at userportal.fortifyv2.lcptracker.net. To get in, you register with LEO's Wage and Hour Division, which costs $500 a year, and you register each project. LEO then sends the steps to log in.</p>
 
-<h3>What the state's system asks for</h3>
+</article>
+<article><h3>What the state's system asks for</h3>
 <ul>
 <li>Each worker's trade</li>
 <li>Apprentice, journeyman or other level</li>
@@ -197,7 +255,8 @@ footer p { margin: 8px 0; }
 </ul>
 <p>It leaves out home addresses, phone numbers and Social Security numbers. When you submit, you sign electronically that the record is complete and accurate, and that you paid at least the required wage and fringe rates. You also confirm you understand that breaking the rule can lead to a suspended or revoked state project registration. LEO can fine up to $5,000 for each violation, plus 10%, under MCL 408.1113.</p>
 
-<h3>Overtime on Michigan rate schedules</h3>
+</article>
+<article><h3>Overtime on Michigan rate schedules</h3>
 <p>LEO's <a href="https://www.michigan.gov/leo/bureaus-agencies/ber/wage-and-hour/prevailing-wage/prevailing-wages-by-county">rates page</a> says every trade follows these rules unless its schedule notes otherwise:</p>
 <ul>
 <li>Time and a half for hours over 8 in a day, or over 10 where four 10-hour days are allowed.</li>
@@ -206,41 +265,47 @@ footer p { margin: 8px 0; }
 </ul>
 <p>LEO updates its rates every year on 1 November. Tick Michigan state project in the checker to count these hours.</p>
 
-<h3>Which jobs it covers</h3>
+</article>
+<article><h3>Which jobs it covers</h3>
 <p>State-funded work on public buildings, schools, roads, bridges and other public works, plus wind, solar and storage projects of 2 megawatts or more, private ones included. Contracts that already carry federal Davis-Bacon rates are exempt from the Michigan law. So are projects that send certified payroll to MDOT, and routine maintenance on energy projects.</p>
 
-<h3>Federal jobs use the WH-347</h3>
+</article>
+<article><h3>Federal jobs use the WH-347</h3>
 <p>The U.S. Department of Labor gives the WH-347 away free, as a PDF and as an online form that runs in your browser. The online form does the pay math, one worker at a time. DOL's form pages don't mention checking your pay against your wage determination's rates. That's the part this page does. Get the form from <a href="https://www.dol.gov/agencies/whd/forms/wh347">DOL's WH-347 page</a>, or use <a href="https://www.dol.gov/agencies/whd/forms/wh347-web">the online WH-347</a>.</p>
-<p class="small">Sources, read 8 November 2026: MCL 408.1101, 408.1102, 408.1113 and 408.1122 in <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-Act-10-of-2023">Michigan's Act 10 of 2023</a>; LEO's prevailing wage and rates pages on michigan.gov; <a href="https://www.ecfr.gov/current/title-29/subtitle-A/part-3/section-3.4">29 CFR 3.4</a>; and DOL's WH-347 pages.</p>
-</section>
 
-<section id="guides" aria-labelledby="guides-h">
-<h2 id="guides-h">Guides</h2>
-<ul>
-<li><a href="/wh-347/">How to fill out the WH-347, line by line</a>: every box on the January 2025 form, with a filled-in row.</li>
-<li><a href="/davis-bacon-wage-rates/">Davis-Bacon wage rates for 2026</a>: find your wage determination on SAM.gov and read its rate lines.</li>
-<li><a href="/prevailing-wage/">What is prevailing wage?</a>: how DOL and Michigan set the rate, with the 30 percent test worked through.</li>
-<li><a href="/davis-bacon-act/">The Davis-Bacon Act</a>: which jobs it covers, and what a contractor owes each week.</li>
-<li><a href="/certified-payroll/">What is certified payroll?</a>: who files, the federal 7-day and Michigan 10-day deadlines, and where it goes.</li>
-<li><a href="/california-prevailing-wage/">California prevailing wage</a>: DIR's rates, the $400 registration, daily overtime and monthly certified payroll, with one week worked through.</li>
-<li><a href="/nj-prevailing-wage/">New Jersey prevailing wage</a>: New Jersey's thresholds, the  registration, daily overtime on benefits and the MW-562, with one week worked through.</li>
-</ul>
-</section>
-
-<section id="app" aria-labelledby="app-h">
+</article>
+</div><p class="small mi-sources">Sources, read 8 November 2026: MCL 408.1101, 408.1102, 408.1113 and 408.1122 in <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-Act-10-of-2023">Michigan's Act 10 of 2023</a>; LEO's prevailing wage and rates pages on michigan.gov; <a href="https://www.ecfr.gov/current/title-29/subtitle-A/part-3/section-3.4">29 CFR 3.4</a>; and DOL's WH-347 pages.</p></div></section>
+<section class="section band" id="faq"><div class="wrap faq-layout"><div class="section-head reveal"><p class="kicker">Questions before you start</p><h2>A few things worth asking.</h2></div><div class="faq">
+<details><summary>Is it free?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Yes. Count Twice is free to use. There is nothing to install and no account.</p></details>
+<details><summary>Does my payroll file get uploaded?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>No. Your browser reads your payroll file on this computer. It isn't uploaded or saved. Close the tab and it's gone. The page counts visits and button presses, never what's in your file.</p></details>
+<details><summary>What file does it need?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>One week of payroll as a CSV file. Use the columns listed on this page, or start from the sample file. Type each trade's base rate and fringe from the wage determination in your contract.</p></details>
+<details><summary>Does it fill out the WH-347 for me?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>No. It checks the numbers you put on the form. Use DOL's free WH-347 PDF or online form to fill it out. You still sign the Statement of Compliance yourself.</p></details>
+<details><summary>Does it work for Michigan state projects?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Yes. Tick Michigan state project to count Michigan's standard overtime hours. It doesn't check double-time pay, start and end times, trade-specific overtime rules or due dates. It doesn't make a portal upload file.</p></details>
+<details><summary>Does it check apprentice pay?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>It checks the daily apprentice ratio you type from the registered program. It doesn't check apprentice pay steps, overtime pay or whether an apprentice is registered. An apprentice over the ratio gets the full rate for the work.</p></details>
+<details><summary>Can it tell me which trade a worker belongs in?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>No. It checks math against the rates you type. It can't decide which trade fits the work or which wage determination applies. Ask the contracting officer or the agency named in your contract.</p></details>
+<details><summary>Who makes Count Twice?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Kerr &amp; Company LLC, Grand Rapids, Michigan. Matt Kerr builds it. Questions go to matthew@kerrandcompanyholdings.com.</p></details>
+</div></div></section>
+<section class="section" id="guides" aria-labelledby="guides-h"><div class="wrap"><div class="section-head reveal"><p class="kicker">Field notes</p><h2><span id="guides-h">Know the form. Know the rates.</span></h2><p class="lede">A guide for the part you are working through.</p></div><div class="guide-grid">
+<article class="guide-card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Zm0 0v6h5M8 13h8M8 17h5"/></svg><h3><a href="/wh-347/">How to fill out the WH-347, line by line</a></h3><p>Every box on the January 2025 form, with a filled-in row.</p></article>
+<article class="guide-card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Zm0 0v6h5M8 13h8M8 17h5"/></svg><h3><a href="/davis-bacon-wage-rates/">Davis-Bacon wage rates for 2026</a></h3><p>Find your wage determination on SAM.gov and read its rate lines.</p></article>
+<article class="guide-card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Zm0 0v6h5M8 13h8M8 17h5"/></svg><h3><a href="/prevailing-wage/">What is prevailing wage?</a></h3><p>How DOL and Michigan set the rate, with the 30 percent test worked through.</p></article>
+<article class="guide-card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Zm0 0v6h5M8 13h8M8 17h5"/></svg><h3><a href="/davis-bacon-act/">The Davis-Bacon Act</a></h3><p>Which jobs it covers, and what a contractor owes each week.</p></article>
+<article class="guide-card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Zm0 0v6h5M8 13h8M8 17h5"/></svg><h3><a href="/certified-payroll/">What is certified payroll?</a></h3><p>Who files, the federal 7-day and Michigan 10-day deadlines, and where it goes.</p></article>
+<article class="guide-card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Zm0 0v6h5M8 13h8M8 17h5"/></svg><h3><a href="/california-prevailing-wage/">California prevailing wage</a></h3><p>DIR's rates, the $400 registration, daily overtime and monthly certified payroll, with one week worked through.</p></article>
+<article class="guide-card reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H5v18h14V8l-5-5Zm0 0v6h5M8 13h8M8 17h5"/></svg><h3><a href="/nj-prevailing-wage/">New Jersey prevailing wage</a></h3><p>New Jersey's thresholds, the contractor registration, daily overtime on benefits and the MW-562, with one week worked through.</p></article>
+</div></div></section>
+<section class="section band" id="app" aria-labelledby="app-h"><div class="wrap desktop"><svg class="desktop-visual" viewBox="0 0 320 250" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="31" y="24" width="258" height="171" rx="12"/><path d="M31 52h258M31 168h258M135 195v27m50-27v27m-76 0h102"/><circle cx="46" cy="38" r="2"/><circle cx="57" cy="38" r="2"/><circle cx="68" cy="38" r="2"/><path d="M54 73h107M54 90h73M54 107h96" opacity=".4"/><rect x="191" y="72" width="69" height="69" rx="14" fill="var(--fix-bg)"/><path d="m203 108 13 13 25-31m-17 22 7 9 18-23"/><path d="M55 143h41m13 0h18"/></svg><div><p class="kicker">What comes next</p>
 <h2 id="app-h">A desktop app, if this page earns it</h2>
 <p>If contractors use this page, I'll build a desktop version. It would check every week straight from your payroll export, keep your payroll on your own computer, and cost one price with no monthly fee. It isn't built yet.</p>
-<p><button type="button" class="btn" id="notify">Tell me when the desktop app is ready</button></p>
+<p><button type="button" class="btn btn-primary" id="notify">Tell me when the desktop app is ready</button></p>
 <p id="notify-thanks" class="small" role="status" hidden>Thanks. Your click is counted, and nothing else was sent. There's no email list yet, so check back on this page.</p>
-</section>
-
+</div></div></section>
+<section class="section"><div class="wrap"><div class="trust-strip"><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v11H3V10Zm6 11v-7h6v7"/></svg><p><strong>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan.</strong><br>Matt Kerr builds it.</p></div><div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3 8 3v6c0 4-4 7-8 9-4-2-8-5-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></svg><p>Your payroll stays in your browser. Nothing uploaded or saved.<br>Questions go to matthew@kerrandcompanyholdings.com.</p></div></div><div class="final-panel reveal"><div><p class="kicker">One last look</p><h2>Check this week's payroll before you sign it</h2></div><a class="btn btn-primary" href="#check">Check a week <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div></div></section>
 </main>
-
 <footer class="wrap small">
 <p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan. <a href="privacy.html">Privacy</a> <span aria-hidden="true">&middot;</span> <a href="terms.html">Terms</a></p>
 <p>Facts on this page checked 8 November 2026. Count Twice checks math against the rates you type. You still sign the Statement of Compliance yourself.</p>
 </footer>
-
 <script>
 (function () {
   var button = document.getElementById("notify");
@@ -254,5 +319,6 @@ footer p { margin: 8px 0; }
 })();
 </script>
 <script src="checker.js" defer></script>
+<script src="home.js" defer></script>
 </body>
 </html>

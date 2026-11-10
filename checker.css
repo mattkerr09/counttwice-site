@@ -1,31 +1,33 @@
 #checker { margin: 24px 0; font-family: var(--font); color: var(--ink); }
 #checker [hidden] { display: none; }
-#checker .cp-form, #checker .cp-results { min-width: 0; padding: 20px; margin: 20px 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--card); }
-#checker .cp-heading { margin: 0 0 12px; line-height: 1.3; }
+#checker .cp-form, #checker .cp-results { min-width: 0; padding: 28px; margin: 20px 0; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(155deg, var(--card), var(--panel)); }
+#checker .cp-heading { font-family: var(--head); font-weight: 600; margin: 0 0 12px; line-height: 1.3; }
 #checker .cp-help, #checker .cp-about { color: var(--muted); font-size: 0.95rem; margin: 8px 0 16px; }
 #checker .cp-rates { display: grid; gap: 16px; }
 #checker .cp-rate { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr auto; gap: 10px; align-items: end; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
 #checker .cp-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; margin: 8px 0; }
 #checker .cp-label { font-size: 0.9rem; font-weight: 600; }
-#checker .cp-input { min-width: 0; max-width: 100%; min-height: 44px; padding: 8px; border: 1px solid var(--line); border-radius: 5px; background: var(--bg); color: var(--ink); font: inherit; }
+#checker .cp-input { min-width: 0; max-width: 100%; min-height: 44px; padding: 8px; border: 1px solid var(--line); border-radius: 9px; background: var(--bg); color: var(--ink); font: inherit; }
 #checker .cp-input[type="file"] { width: 100%; font-size: 0.9rem; }
-#checker .cp-input[type="checkbox"] { flex: 0 0 20px; width: 20px; height: 20px; min-height: 20px; margin: 0; accent-color: var(--accent); }
+#checker .cp-input[type="checkbox"] { flex: 0 0 20px; width: 20px; height: 20px; min-height: 20px; margin: 0; accent-color: var(--yellow); }
 #checker .cp-toggle { display: flex; align-items: center; gap: 10px; min-height: 44px; margin-top: 12px; cursor: pointer; }
-#checker .cp-button { min-height: 44px; padding: 10px 14px; border: 1px solid var(--accent); border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); font: 600 0.95rem/1.4 var(--font); cursor: pointer; }
+#checker .cp-button { min-height: 44px; padding: 10px 14px; border: 1px solid var(--hair-lit); border-radius: 999px; background: var(--card); color: var(--ink); transition: transform .2s, box-shadow .2s; font: 600 0.95rem/1.4 var(--font); cursor: pointer; }
+#checker .cp-button:hover { transform: translateY(-2px); box-shadow: var(--lift); }
+#checker .cp-actions .cp-button:first-child { background: linear-gradient(180deg, #ffde52, #f5c400); color: #14202b; border-color: #c59d00; box-shadow: 0 10px 25px -15px #c59d0099; }
 #checker .cp-rate .cp-button { margin-bottom: 8px; }
 #checker .cp-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
 #checker :focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
 #checker .cp-mi-options { margin: 12px 0; padding: 12px; border: 1px solid var(--line); border-radius: var(--radius); }
-#checker .cp-holidays { display: flex; flex-wrap: wrap; gap: 4px 16px; border: 1px solid var(--line); margin: 12px 0; }
+#checker .cp-holidays { min-width: 0; border-radius: 9px; display: flex; flex-wrap: wrap; gap: 4px 16px; border: 1px solid var(--line); margin: 12px 0; }
 #checker .cp-status { overflow-wrap: anywhere; }
 #checker .cp-section { margin: 20px 0; padding: 16px; border: 1px solid; border-left-width: 5px; border-radius: var(--radius); overflow-wrap: anywhere; }
 #checker .cp-flag { color: var(--ink); background: var(--flag-bg); border-color: var(--flag); }
 #checker .cp-fix { color: var(--ink); background: var(--fix-bg); border-color: var(--fix); }
 #checker .cp-note { color: var(--ink); background: var(--note-bg); border-color: var(--note); }
 #checker .cp-item + .cp-item { margin-top: 20px; }
-#checker .cp-title { font-size: 1rem; margin: 0 0 4px; }
+#checker .cp-title { font-family: var(--font); font-size: 1rem; margin: 0 0 4px; }
 #checker .cp-message { margin: 0; }
-#checker .cp-table-wrap { max-width: 100%; overflow-x: auto; margin: 16px 0; }
+#checker .cp-table-wrap { overscroll-behavior-x: contain; max-width: 100%; overflow-x: auto; margin: 16px 0; }
 #checker .cp-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
 #checker .cp-table th, #checker .cp-table td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
 #checker .cp-table td:nth-child(4), #checker .cp-table td:nth-child(5) { font-family: var(--mono); }
@@ -39,6 +41,10 @@
   #checker .cp-actions { flex-direction: column; }
   #checker .cp-section { padding: 12px; }
   #checker .cp-table { min-width: 440px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #checker .cp-button { transition: none; }
+  #checker .cp-button:hover { transform: none; }
 }
 @media print {
   #checker .cp-form, #checker .cp-actions, #checker .cp-status { display: none; }
