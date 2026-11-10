@@ -88,18 +88,18 @@
 <h3>The test on two made-up surveys</h3>
 <p>Say DOL hears from 20 carpenters on similar building projects in one county. These numbers are invented to show the math, and they look at the hourly wage only.</p>
 <div class="table-wrap">
-<table class="data">
+<table class="data stack">
 <thead><tr><th scope="col">Hourly wage</th><th scope="col">Survey 1, workers</th><th scope="col">Survey 2, workers</th></tr></thead>
 <tbody>
-<tr><td class="num">$32.00</td><td class="num">0</td><td class="num">5</td></tr>
-<tr><td class="num">$31.00</td><td class="num">8</td><td class="num">0</td></tr>
-<tr><td class="num">$30.00</td><td class="num">0</td><td class="num">5</td></tr>
-<tr><td class="num">$29.50</td><td class="num">7</td><td class="num">0</td></tr>
-<tr><td class="num">$28.00</td><td class="num">0</td><td class="num">4</td></tr>
-<tr><td class="num">$27.00</td><td class="num">5</td><td class="num">4</td></tr>
-<tr><td class="num">$25.00</td><td class="num">0</td><td class="num">2</td></tr>
-<tr><th scope="row">Total</th><td class="num">20</td><td class="num">20</td></tr>
-<tr><th scope="row">Prevailing wage</th><td class="num">$31.00</td><td class="num">$29.00</td></tr>
+<tr><td class="num" data-label="Hourly wage">$32.00</td><td class="num" data-label="Survey 1, workers">0</td><td class="num" data-label="Survey 2, workers">5</td></tr>
+<tr><td class="num" data-label="Hourly wage">$31.00</td><td class="num" data-label="Survey 1, workers">8</td><td class="num" data-label="Survey 2, workers">0</td></tr>
+<tr><td class="num" data-label="Hourly wage">$30.00</td><td class="num" data-label="Survey 1, workers">0</td><td class="num" data-label="Survey 2, workers">5</td></tr>
+<tr><td class="num" data-label="Hourly wage">$29.50</td><td class="num" data-label="Survey 1, workers">7</td><td class="num" data-label="Survey 2, workers">0</td></tr>
+<tr><td class="num" data-label="Hourly wage">$28.00</td><td class="num" data-label="Survey 1, workers">0</td><td class="num" data-label="Survey 2, workers">4</td></tr>
+<tr><td class="num" data-label="Hourly wage">$27.00</td><td class="num" data-label="Survey 1, workers">5</td><td class="num" data-label="Survey 2, workers">4</td></tr>
+<tr><td class="num" data-label="Hourly wage">$25.00</td><td class="num" data-label="Survey 1, workers">0</td><td class="num" data-label="Survey 2, workers">2</td></tr>
+<tr><th scope="row" data-label="Hourly wage">Total</th><td class="num" data-label="Survey 1, workers">20</td><td class="num" data-label="Survey 2, workers">20</td></tr>
+<tr><th scope="row" data-label="Hourly wage">Prevailing wage</th><td class="num" data-label="Survey 1, workers">$31.00</td><td class="num" data-label="Survey 2, workers">$29.00</td></tr>
 </tbody>
 </table>
 </div>
@@ -117,17 +117,17 @@
 <h2 id="vs-h">Federal and Michigan prevailing wage, side by side</h2>
 <p>A job in Michigan can fall under the federal law, the state law, or neither. If a state project's contract already requires federal Davis-Bacon rates, Michigan's act doesn't apply to it (MCL 408.1102(1)).</p>
 <div class="table-wrap">
-<table class="data">
+<table class="data stack">
 <thead><tr><th scope="col"><span class="sr">Question</span></th><th scope="col">Federal: Davis-Bacon</th><th scope="col">Michigan: Act 10 of 2023</th></tr></thead>
 <tbody>
-<tr><th scope="row">Which jobs</th><td>Federal or Washington, DC contracts over $2,000 to build, alter or repair public buildings and works. Most federally assisted construction too, through the related acts.</td><td>Public buildings, schools, works, bridges, highways and roads that a public contracting agent authorizes and the state sponsors or finances, in whole or in part. Also wind, solar and storage projects of 2 megawatts or more.</td></tr>
-<tr><th scope="row">Who gets the rate</th><td>Laborers and mechanics, meaning workers whose duties are manual or physical. Apprentices and helpers count.</td><td>Construction mechanics, apprentices included. Not executive, administrative, professional, office or custodial staff.</td></tr>
-<tr><th scope="row">Who sets it</th><td>DOL's Wage and Hour Division</td><td>LEO, Michigan's labor department</td></tr>
-<tr><th scope="row">How</th><td>Wage surveys, then the majority, 30 percent or average test</td><td>The rate in collective bargaining agreements in the area. With none there, the nearest similar area's rate.</td></tr>
-<tr><th scope="row">Area</th><td>City, county or other civil subdivision</td><td>County, city, village, township or school district</td></tr>
-<tr><th scope="row">Where to look</th><td>The wage determination named in your contract, on SAM.gov</td><td>LEO's rate schedule by county, updated each 1 November</td></tr>
-<tr><th scope="row">Overtime</th><td>Over 40 hours in the week, at 1.5 times the basic rate, on contracts over $100,000</td><td>Over 8 hours a day (10 where four 10s are allowed), over 40 a week, and Saturdays at 1.5 times the base rate. Sundays and recognized holidays at 2 times. A trade's schedule can say otherwise.</td></tr>
-<tr><th scope="row">Certified payroll</th><td>Every week, within 7 days after the regular payday</td><td>Within 10 days after each pay period ends, to the state's online system since 2 April 2026</td></tr>
+<tr><th scope="row" data-label="Question">Which jobs</th><td data-label="Federal: Davis-Bacon">Federal or Washington, DC contracts over $2,000 to build, alter or repair public buildings and works. Most federally assisted construction too, through the related acts.</td><td data-label="Michigan: Act 10 of 2023">Public buildings, schools, works, bridges, highways and roads that a public contracting agent authorizes and the state sponsors or finances, in whole or in part. Also wind, solar and storage projects of 2 megawatts or more.</td></tr>
+<tr><th scope="row" data-label="Question">Who gets the rate</th><td data-label="Federal: Davis-Bacon">Laborers and mechanics, meaning workers whose duties are manual or physical. Apprentices and helpers count.</td><td data-label="Michigan: Act 10 of 2023">Construction mechanics, apprentices included. Not executive, administrative, professional, office or custodial staff.</td></tr>
+<tr><th scope="row" data-label="Question">Who sets it</th><td data-label="Federal: Davis-Bacon">DOL's Wage and Hour Division</td><td data-label="Michigan: Act 10 of 2023">LEO, Michigan's labor department</td></tr>
+<tr><th scope="row" data-label="Question">How</th><td data-label="Federal: Davis-Bacon">Wage surveys, then the majority, 30 percent or average test</td><td data-label="Michigan: Act 10 of 2023">The rate in collective bargaining agreements in the area. With none there, the nearest similar area's rate.</td></tr>
+<tr><th scope="row" data-label="Question">Area</th><td data-label="Federal: Davis-Bacon">City, county or other civil subdivision</td><td data-label="Michigan: Act 10 of 2023">County, city, village, township or school district</td></tr>
+<tr><th scope="row" data-label="Question">Where to look</th><td data-label="Federal: Davis-Bacon">The wage determination named in your contract, on SAM.gov</td><td data-label="Michigan: Act 10 of 2023">LEO's rate schedule by county, updated each 1 November</td></tr>
+<tr><th scope="row" data-label="Question">Overtime</th><td data-label="Federal: Davis-Bacon">Over 40 hours in the week, at 1.5 times the basic rate, on contracts over $100,000</td><td data-label="Michigan: Act 10 of 2023">Over 8 hours a day (10 where four 10s are allowed), over 40 a week, and Saturdays at 1.5 times the base rate. Sundays and recognized holidays at 2 times. A trade's schedule can say otherwise.</td></tr>
+<tr><th scope="row" data-label="Question">Certified payroll</th><td data-label="Federal: Davis-Bacon">Every week, within 7 days after the regular payday</td><td data-label="Michigan: Act 10 of 2023">Within 10 days after each pay period ends, to the state's online system since 2 April 2026</td></tr>
 </tbody>
 </table>
 </div>

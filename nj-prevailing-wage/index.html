@@ -110,12 +110,12 @@
 <h2 id="line-h">A real rate line, and one week worked through</h2>
 <p>Here's the carpenter line from the Mercer County rates, effective 8 May 2026, page 9 of the file dated 19 October 2026.</p>
 <div class="table-wrap">
-<table class="data">
+<table class="data stack">
 <thead><tr><th scope="col">Carpenter, Mercer County</th><th scope="col">Wage</th><th scope="col">Benefits</th><th scope="col">Total an hour</th></tr></thead>
 <tbody>
-<tr><td>Journeyman</td><td class="num">$58.52</td><td class="num">$35.25</td><td class="num">$93.77</td></tr>
-<tr><td>Foreman</td><td class="num">$67.30</td><td class="num">$40.45</td><td class="num">$107.75</td></tr>
-<tr><td>General foreman</td><td class="num">$76.08</td><td class="num">$45.65</td><td class="num">$121.73</td></tr>
+<tr><td data-label="Carpenter, Mercer County">Journeyman</td><td class="num" data-label="Wage">$58.52</td><td class="num" data-label="Benefits">$35.25</td><td class="num" data-label="Total an hour">$93.77</td></tr>
+<tr><td data-label="Carpenter, Mercer County">Foreman</td><td class="num" data-label="Wage">$67.30</td><td class="num" data-label="Benefits">$40.45</td><td class="num" data-label="Total an hour">$107.75</td></tr>
+<tr><td data-label="Carpenter, Mercer County">General foreman</td><td class="num" data-label="Wage">$76.08</td><td class="num" data-label="Benefits">$45.65</td><td class="num" data-label="Total an hour">$121.73</td></tr>
 </tbody>
 </table>
 </div>
@@ -129,15 +129,15 @@
 </ul>
 <p>One week, three answers. Say the carpenter works 9 hours Monday to Thursday and 4 hours on Saturday. That's 40 hours, so a check that only looks for hours past 40 in the week finds no overtime.</p>
 <div class="table-wrap">
-<table class="data">
+<table class="data stack">
 <thead><tr><th scope="col">Day</th><th scope="col">Hours</th><th scope="col">Straight time</th><th scope="col">Overtime at 1.5</th></tr></thead>
 <tbody>
-<tr><td>Monday</td><td class="num">9</td><td class="num">8</td><td class="num">1</td></tr>
-<tr><td>Tuesday</td><td class="num">9</td><td class="num">8</td><td class="num">1</td></tr>
-<tr><td>Wednesday</td><td class="num">9</td><td class="num">8</td><td class="num">1</td></tr>
-<tr><td>Thursday</td><td class="num">9</td><td class="num">8</td><td class="num">1</td></tr>
-<tr><td>Saturday</td><td class="num">4</td><td class="num">0</td><td class="num">4</td></tr>
-<tr><th scope="row">Week</th><td class="num">40</td><td class="num">32</td><td class="num">8</td></tr>
+<tr><td data-label="Day">Monday</td><td class="num" data-label="Hours">9</td><td class="num" data-label="Straight time">8</td><td class="num" data-label="Overtime at 1.5">1</td></tr>
+<tr><td data-label="Day">Tuesday</td><td class="num" data-label="Hours">9</td><td class="num" data-label="Straight time">8</td><td class="num" data-label="Overtime at 1.5">1</td></tr>
+<tr><td data-label="Day">Wednesday</td><td class="num" data-label="Hours">9</td><td class="num" data-label="Straight time">8</td><td class="num" data-label="Overtime at 1.5">1</td></tr>
+<tr><td data-label="Day">Thursday</td><td class="num" data-label="Hours">9</td><td class="num" data-label="Straight time">8</td><td class="num" data-label="Overtime at 1.5">1</td></tr>
+<tr><td data-label="Day">Saturday</td><td class="num" data-label="Hours">4</td><td class="num" data-label="Straight time">0</td><td class="num" data-label="Overtime at 1.5">4</td></tr>
+<tr><th scope="row" data-label="Day">Week</th><td class="num" data-label="Hours">40</td><td class="num" data-label="Straight time">32</td><td class="num" data-label="Overtime at 1.5">8</td></tr>
 </tbody>
 </table>
 </div>
@@ -193,16 +193,16 @@
 <section aria-labelledby="vs-h">
 <h2 id="vs-h">Federal and New Jersey rules, side by side</h2>
 <div class="table-wrap">
-<table class="data">
+<table class="data stack">
 <thead><tr><th scope="col"><span class="sr">Question</span></th><th scope="col">Federal: Davis-Bacon</th><th scope="col">New Jersey</th></tr></thead>
 <tbody>
-<tr><th scope="row">Which jobs</th><td>Federal contracts over $2,000 to build, alter or repair public buildings and works</td><td>Municipal contracts of $19,375 or more; other public bodies over $2,000</td></tr>
-<tr><th scope="row">Who sets the rate</th><td>The U.S. Department of Labor</td><td>The New Jersey Department of Labor</td></tr>
-<tr><th scope="row">How long a rate holds</th><td>The wage determination in the contract generally holds for the contract</td><td>Two years from issue; the rate at award plus listed increases</td></tr>
-<tr><th scope="row">Overtime</th><td>Over 40 a week, at 1.5 times the base, on contracts over $100,000; fringe at straight time</td><td>Set by the craft line; the Mercer carpenter line pays 1.5 times the full rate past 8 a day and on Saturdays</td></tr>
-<tr><th scope="row">Contractor registration</th><td>None in the labor clauses of 29 CFR 5.5</td><td>$500 a year</td></tr>
-<tr><th scope="row">Certified payroll</th><td>WH-347 or equivalent, weekly, within 7 days of payday</td><td>MW-562 through the Wage Hub, within 10 days of each payday</td></tr>
-<tr><th scope="row">Records</th><td>3 years</td><td>2 years</td></tr>
+<tr><th scope="row" data-label="Question">Which jobs</th><td data-label="Federal: Davis-Bacon">Federal contracts over $2,000 to build, alter or repair public buildings and works</td><td data-label="New Jersey">Municipal contracts of $19,375 or more; other public bodies over $2,000</td></tr>
+<tr><th scope="row" data-label="Question">Who sets the rate</th><td data-label="Federal: Davis-Bacon">The U.S. Department of Labor</td><td data-label="New Jersey">The New Jersey Department of Labor</td></tr>
+<tr><th scope="row" data-label="Question">How long a rate holds</th><td data-label="Federal: Davis-Bacon">The wage determination in the contract generally holds for the contract</td><td data-label="New Jersey">Two years from issue; the rate at award plus listed increases</td></tr>
+<tr><th scope="row" data-label="Question">Overtime</th><td data-label="Federal: Davis-Bacon">Over 40 a week, at 1.5 times the base, on contracts over $100,000; fringe at straight time</td><td data-label="New Jersey">Set by the craft line; the Mercer carpenter line pays 1.5 times the full rate past 8 a day and on Saturdays</td></tr>
+<tr><th scope="row" data-label="Question">Contractor registration</th><td data-label="Federal: Davis-Bacon">None in the labor clauses of 29 CFR 5.5</td><td data-label="New Jersey">$500 a year</td></tr>
+<tr><th scope="row" data-label="Question">Certified payroll</th><td data-label="Federal: Davis-Bacon">WH-347 or equivalent, weekly, within 7 days of payday</td><td data-label="New Jersey">MW-562 through the Wage Hub, within 10 days of each payday</td></tr>
+<tr><th scope="row" data-label="Question">Records</th><td data-label="Federal: Davis-Bacon">3 years</td><td data-label="New Jersey">2 years</td></tr>
 </tbody>
 </table>
 </div>

@@ -130,15 +130,15 @@
 <h3>One week, two answers</h3>
 <p>Say a carpenter on this determination works 10 hours on Monday, 10 on Tuesday, 8 on Wednesday, 8 on Thursday and 4 on Friday. That's 40 hours, so a check that only looks for hours past 40 in the week finds no overtime at all.</p>
 <div class="table-wrap">
-<table class="data">
+<table class="data stack">
 <thead><tr><th scope="col">Day</th><th scope="col">Hours</th><th scope="col">Straight time</th><th scope="col">Daily overtime</th></tr></thead>
 <tbody>
-<tr><td>Monday</td><td class="num">10</td><td class="num">8</td><td class="num">2</td></tr>
-<tr><td>Tuesday</td><td class="num">10</td><td class="num">8</td><td class="num">2</td></tr>
-<tr><td>Wednesday</td><td class="num">8</td><td class="num">8</td><td class="num">0</td></tr>
-<tr><td>Thursday</td><td class="num">8</td><td class="num">8</td><td class="num">0</td></tr>
-<tr><td>Friday</td><td class="num">4</td><td class="num">4</td><td class="num">0</td></tr>
-<tr><th scope="row">Week</th><td class="num">40</td><td class="num">36</td><td class="num">4</td></tr>
+<tr><td data-label="Day">Monday</td><td class="num" data-label="Hours">10</td><td class="num" data-label="Straight time">8</td><td class="num" data-label="Daily overtime">2</td></tr>
+<tr><td data-label="Day">Tuesday</td><td class="num" data-label="Hours">10</td><td class="num" data-label="Straight time">8</td><td class="num" data-label="Daily overtime">2</td></tr>
+<tr><td data-label="Day">Wednesday</td><td class="num" data-label="Hours">8</td><td class="num" data-label="Straight time">8</td><td class="num" data-label="Daily overtime">0</td></tr>
+<tr><td data-label="Day">Thursday</td><td class="num" data-label="Hours">8</td><td class="num" data-label="Straight time">8</td><td class="num" data-label="Daily overtime">0</td></tr>
+<tr><td data-label="Day">Friday</td><td class="num" data-label="Hours">4</td><td class="num" data-label="Straight time">4</td><td class="num" data-label="Daily overtime">0</td></tr>
+<tr><th scope="row" data-label="Day">Week</th><td class="num" data-label="Hours">40</td><td class="num" data-label="Straight time">36</td><td class="num" data-label="Daily overtime">4</td></tr>
 </tbody>
 </table>
 </div>
@@ -192,16 +192,16 @@
 <section aria-labelledby="vs-h">
 <h2 id="vs-h">Federal and California rules, side by side</h2>
 <div class="table-wrap">
-<table class="data">
+<table class="data stack">
 <thead><tr><th scope="col"><span class="sr">Question</span></th><th scope="col">Federal: Davis-Bacon</th><th scope="col">California public works</th></tr></thead>
 <tbody>
-<tr><th scope="row">Which jobs</th><td>Federal contracts over $2,000 to build, alter or repair public buildings and works, and federally funded work under the related acts</td><td>Public works over $1,000, paid for in whole or in part with public funds</td></tr>
-<tr><th scope="row">Who sets the rate</th><td>The U.S. Department of Labor</td><td>The Director of Industrial Relations</td></tr>
-<tr><th scope="row">When rates change</th><td>The wage determination in the contract generally holds for the whole contract</td><td>New sets each 22 February and 22 August. Predetermined increases, marked **, apply during the job.</td></tr>
-<tr><th scope="row">Overtime</th><td>Over 40 hours a week, at 1.5 times the basic rate, on contracts over $100,000</td><td>Over 8 hours a day and 40 a week, at 1.5 times the basic rate at least. The determination sets the details.</td></tr>
-<tr><th scope="row">Apprentices</th><td>The ratio is a ceiling</td><td>On contracts of $30,000 or more, a floor of 1 apprentice hour for every 5 journeyperson hours</td></tr>
-<tr><th scope="row">Contractor registration</th><td>No registration step in the labor clauses of 29 CFR 5.5</td><td>$400 a fiscal year with DIR</td></tr>
-<tr><th scope="row">Certified payroll</th><td>Every week, within 7 days after payday, to the agency</td><td>At least monthly, online, to the Labor Commissioner</td></tr>
+<tr><th scope="row" data-label="Question">Which jobs</th><td data-label="Federal: Davis-Bacon">Federal contracts over $2,000 to build, alter or repair public buildings and works, and federally funded work under the related acts</td><td data-label="California public works">Public works over $1,000, paid for in whole or in part with public funds</td></tr>
+<tr><th scope="row" data-label="Question">Who sets the rate</th><td data-label="Federal: Davis-Bacon">The U.S. Department of Labor</td><td data-label="California public works">The Director of Industrial Relations</td></tr>
+<tr><th scope="row" data-label="Question">When rates change</th><td data-label="Federal: Davis-Bacon">The wage determination in the contract generally holds for the whole contract</td><td data-label="California public works">New sets each 22 February and 22 August. Predetermined increases, marked **, apply during the job.</td></tr>
+<tr><th scope="row" data-label="Question">Overtime</th><td data-label="Federal: Davis-Bacon">Over 40 hours a week, at 1.5 times the basic rate, on contracts over $100,000</td><td data-label="California public works">Over 8 hours a day and 40 a week, at 1.5 times the basic rate at least. The determination sets the details.</td></tr>
+<tr><th scope="row" data-label="Question">Apprentices</th><td data-label="Federal: Davis-Bacon">The ratio is a ceiling</td><td data-label="California public works">On contracts of $30,000 or more, a floor of 1 apprentice hour for every 5 journeyperson hours</td></tr>
+<tr><th scope="row" data-label="Question">Contractor registration</th><td data-label="Federal: Davis-Bacon">No registration step in the labor clauses of 29 CFR 5.5</td><td data-label="California public works">$400 a fiscal year with DIR</td></tr>
+<tr><th scope="row" data-label="Question">Certified payroll</th><td data-label="Federal: Davis-Bacon">Every week, within 7 days after payday, to the agency</td><td data-label="California public works">At least monthly, online, to the Labor Commissioner</td></tr>
 </tbody>
 </table>
 </div>

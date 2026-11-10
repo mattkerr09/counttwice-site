@@ -82,3 +82,18 @@
   .guide-body .table-wrap { overflow: visible; }
   .guide-body table { min-width: 0; }
 }
+
+/* Phones: tables of 3 or more columns stack into one labelled card per row, so no column hides off the right edge
+   (Article Studio, 10 Nov 2026). The labels come from build_articles.py's stack_tables(). */
+@media (max-width: 700px) {
+  .guide-body .table-wrap:has(table.stack) { overflow: visible; border: 0; background: transparent; }
+  .guide-body table { min-width: 0; }
+  .guide-body table.stack { font-size: .92rem; }
+  .guide-body table.stack thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .guide-body table.stack, .guide-body table.stack tbody, .guide-body table.stack tr, .guide-body table.stack th, .guide-body table.stack td { display: block; width: 100%; }
+  .guide-body table.stack tr { margin-bottom: 12px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--card); }
+  .guide-body table.stack td, .guide-body table.stack th { padding: 5px 0; border: 0; text-align: left; }
+  .guide-body table.stack tr > :first-child { padding-top: 0; font-weight: 600; color: var(--ink); }
+  .guide-body table.stack td:not(:first-child)::before, .guide-body table.stack th:not(:first-child)::before { content: attr(data-label); display: block; margin-bottom: 1px; font: 600 .72rem/1.3 var(--sans); letter-spacing: .05em; text-transform: uppercase; color: var(--muted); }
+  .guide-body table.stack caption { display: block; padding: 4px 2px 0; }
+}
