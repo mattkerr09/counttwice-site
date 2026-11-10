@@ -61,6 +61,8 @@
     });
     totalCents = result.summary.totalCents;
     total.textContent = api.formatMoney(totalCents);
+    var totalSr = document.getElementById("demo-total-sr");
+    if (totalSr) { totalSr.textContent = api.formatMoney(totalCents); }
     document.getElementById("demo-meta").textContent = api.plural(result.summary.flags, "flag") + " · " +
       api.plural(result.summary.fixes, "fix") + " · " + api.plural(result.summary.notes, "note");
     document.getElementById("demo-caption").textContent = "The sample week: " + result.summary.rowsRead + " made-up rows, checked by this page.";
