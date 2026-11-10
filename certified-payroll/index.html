@@ -21,99 +21,50 @@
 <link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script defer data-domain="counttwice.app" src="https://plausible.io/js/script.js"></script>
-<style>
-:root {
-  --bg: #fbfaf7; --card: #ffffff; --ink: #1b1f23; --muted: #555e69; --line: #d9dde3;
-  --accent: #1f5f8b; --accent-ink: #ffffff;
-  --flag: #b3261e; --flag-bg: #fdecea; --fix: #8a5a00; --fix-bg: #fff4dc; --note: #35506b; --note-bg: #eef3f8; --ok: #2e6b3f;
-  --radius: 10px;
-  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  color-scheme: light dark;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #14171a; --card: #1c2024; --ink: #e8eaed; --muted: #a5adb7; --line: #2f353b;
-    --accent: #6fb3e0; --accent-ink: #0b1620;
-    --flag: #ff8a80; --flag-bg: #3a1d1b; --fix: #ffcc66; --fix-bg: #3a2e12; --note: #a8c4e0; --note-bg: #1c2a38; --ok: #7fd18f;
-  }
-}
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--font); }
-a { color: var(--accent); }
-a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
-.skip { position: absolute; left: -9999px; top: 8px; background: var(--card); padding: 8px 12px; border-radius: var(--radius); }
-.skip:focus { left: 8px; z-index: 10; }
-.top { border-bottom: 1px solid var(--line); }
-.top p { margin: 0; padding: 10px 0; font-size: 15px; color: var(--muted); }
-.top .brand { display: flex; align-items: center; gap: 10px; padding: 12px 0; font-size: 1.05rem; color: var(--ink); }
-.top .brand img { flex: none; display: block; }
-h1 { font-size: 2.1rem; line-height: 1.2; margin: 32px 0 12px; letter-spacing: -0.01em; }
-h2 { font-size: 1.5rem; line-height: 1.25; margin: 48px 0 12px; }
-h3 { font-size: 1.15rem; margin: 28px 0 8px; }
-.lede { font-size: 1.15rem; margin: 0 0 16px; }
-.facts { padding-left: 1.2em; margin: 0 0 20px; }
-.facts li { margin: 4px 0; }
-.btn { display: inline-block; min-height: 44px; padding: 10px 20px; border: 0; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); font: 600 1rem/1.5 var(--font); text-decoration: none; cursor: pointer; }
-.btn:disabled { opacity: 0.6; cursor: default; }
-.small { font-size: 0.95rem; color: var(--muted); }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; }
-.privacy { margin-top: 16px; }
-.dated { display: inline-block; margin: 0 0 8px; padding: 2px 10px; border-radius: 999px; background: var(--note-bg); color: var(--note); font-size: 0.9rem; }
-.steps li { margin: 8px 0; }
-.table-wrap { overflow-x: auto; }
-table.cols { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card); }
-table.cols th, table.cols td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
-table.cols th { font-weight: 600; }
-code { font-family: var(--mono); font-size: 0.92em; }
-.notice { padding: 12px 16px; border-radius: var(--radius); background: var(--fix-bg); color: var(--ink); }
-footer { margin: 56px auto 40px; border-top: 1px solid var(--line); padding-top: 16px; }
-footer p { margin: 8px 0; }
-@media (max-width: 480px) {
-  body { font-size: 16px; }
-  h1 { font-size: 1.7rem; }
-  .btn { width: 100%; text-align: center; }
-  table.cols th:nth-child(3), table.cols td:nth-child(3) { display: none; }
-}
-.top .brand a { color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; }
-.cta { margin: 24px 0; }
-.cta p { margin: 8px 0; }
-figure { margin: 24px 0; }
-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
-figcaption { margin-top: 8px; font-size: 0.95rem; color: var(--muted); }
-table.data { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card); }
-table.data th, table.data td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
-table.data th { font-weight: 600; }
-table.data td.num { font-family: var(--mono); white-space: nowrap; }
-.next { margin-top: 40px; }
-table.grid { border-collapse: collapse; background: var(--card); font-family: var(--mono); font-size: 0.9rem; }
-table.grid th, table.grid td { border: 1px solid var(--line); padding: 6px 9px; text-align: center; }
-table.grid thead th { font-weight: 600; line-height: 1.3; }
-table.grid caption { caption-side: bottom; text-align: left; padding-top: 6px; font-family: var(--font); }
-.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-@media (max-width: 480px) {
-  table.grid th, table.grid td { padding: 5px 4px; font-size: 0.85rem; }
-  table.data { font-size: 0.88rem; }
-  table.data td.num { white-space: normal; }
-  table.data th, table.data td { padding: 8px 6px; }
-}
-main .table-wrap { margin: 16px 0; }
-</style>
+<link rel="preload" href="/fonts/dmsans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/clashdisplay-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/home.css">
+<link rel="stylesheet" href="/article.css">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "What is certified payroll? Who files it, when it's due, and where it goes", "url": "https://counttwice.app/certified-payroll/", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "image": "https://counttwice.app/og.png", "author": {"@type": "Person", "name": "Matt Kerr", "worksFor": {"@type": "Organization", "name": "Kerr & Company LLC"}}, "publisher": {"@type": "Organization", "name": "Kerr & Company LLC"}}
 </script>
 </head>
-<body>
+<body class="guide-page">
 <a class="skip" href="#main">Skip to the article</a>
-<header class="top"><div class="wrap"><p class="brand"><a href="/"><img src="/icon.svg" alt="" width="28" height="28"><span><strong>Count Twice</strong>: certified payroll checker</span></a></p></div></header>
+<header class="top"><div class="wrap nav-in">
+<a class="brand" href="/"><img src="/icon.svg" alt="" width="34" height="34"><span><strong>Count Twice</strong>: certified payroll checker</span></a>
+<nav class="nav-links" aria-label="Main navigation"><a href="/#how">How it works</a><a href="/#check">The check</a><a href="/#compare">Compare</a><a href="/#michigan">Michigan</a><a href="/#faq">FAQ</a></nav>
+<a class="btn btn-primary btn-sm" href="/#check">Check a week <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+</div></header>
 
-<main id="main" class="wrap">
-
+<main id="main">
+<section class="hero guide-hero" aria-labelledby="guide-h"><div class="wrap">
+<div class="guide-hero-copy">
+<p class="kicker">Guide</p>
+<h1 id="guide-h">What is certified payroll? Who files it, when it&#x27;s due, and where it goes</h1>
+<p class="lede">Certified payroll is a signed weekly payroll on prevailing wage jobs. Who files, the 7- and 10-day deadlines, where it goes, and the 3-year records.</p>
+<div class="guide-meta"><p>By Matt Kerr, who makes Count Twice in Grand Rapids</p><p class="dated">Checked 9 November 2026</p></div>
+<div class="cta"><a class="btn btn-primary" href="/#check">Check a week free</a></div>
+</div>
+</div></section>
+<div class="wrap guide-layout">
+<aside class="guide-contents"><nav aria-labelledby="contents-h">
+<p id="contents-h">On this page</p>
+<ol>
+<li><a href="#who-h">Who has to file, and on which jobs</a></li>
+<li><a href="#clock-h">The deadline: two clocks that start at different times</a></li>
+<li><a href="#sign-h">What &quot;certified&quot; means</a></li>
+<li><a href="#keep-h">The records behind it: 3 years</a></li>
+<li><a href="#late-h">When it&#x27;s late, missing or wrong</a></li>
+<li><a href="#check-h">Check the week before you sign for it</a></li>
+<li><a href="#faq-h">Certified payroll questions</a></li>
+<li><a href="#next-h">Next: fill in the form</a></li>
+</ol>
+</nav></aside>
+<article class="guide-body" aria-labelledby="guide-h">
 <section aria-labelledby="top-h">
 <h1 id="top-h">What is certified payroll? Who files it, when it's due, and where it goes</h1>
-<p class="dated">By Matt Kerr, who makes Count Twice in Grand Rapids &middot; Checked 9 November 2026</p>
+<p class="dated">Checked 9 November 2026</p>
 <p class="lede">Certified payroll is one week of payroll for the workers on a prevailing wage job, sent in with a signed statement that it's true. On a federal job it's due every week, within 7 days after that week's payday (29 CFR 3.4(a)). On a Michigan state job it goes into the state's online system within 10 days after the pay period ends (MCL 408.1122(1)).</p>
 <ul class="facts">
 <li>Each contractor and each subcontractor files its own, for every week its laborers or mechanics do covered work (29 CFR 3.3(b) and 5.5(a)(3)(ii)(A)).</li>
@@ -219,6 +170,20 @@ main .table-wrap { margin: 16px 0; }
 </div>
 </section>
 
+<section class="section band" id="faq" aria-labelledby="faq-h"><div class="wrap faq-layout"><div class="section-head"><p class="kicker">Questions</p><h2 id="faq-h">Certified payroll questions</h2></div>
+<div class="faq">
+<details><summary>When is certified payroll due?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>On a federal job, within 7 days after that week's regular payday. On a Michigan state job, within 10 days after the pay period ends. A late payday pushes the federal deadline back, but not the Michigan one.</p></details>
+<details><summary>Who has to file certified payroll?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Each contractor and each subcontractor, at every tier, for every week its laborers or mechanics do covered work. The prime contractor is responsible for getting in every sub's certified payrolls. Federal contracts of $2,000 or less are left out.</p></details>
+<details><summary>Who signs certified payroll?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>On a federal job, the contractor, or its agent who pays or supervises paying the workers. On a Michigan state job, you sign electronically at the moment you submit.</p></details>
+<details><summary>How long do I keep certified payroll records?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>At least 3 years after all work on the prime contract is done, not from the day your own crew left the site. In Michigan, the contracting agent, contractor and subcontractor each keep them for at least 3 years.</p></details>
+<details><summary>What happens if a certified payroll is false?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Federal law applies 18 U.S.C. 1001 to the statement. A knowingly false one can mean a fine, up to 5 years in prison, or both.</p></details>
+<details><summary>Where does Michigan certified payroll go?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Since 2 April 2026, into the state's online database. LEO's page sends contractors to an LCPtracker portal, and each covered project has to be registered and set up there before payrolls can go in.</p></details>
+</div></div>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "When is certified payroll due?", "acceptedAnswer": {"@type": "Answer", "text": "On a federal job, within 7 days after that week's regular payday. On a Michigan state job, within 10 days after the pay period ends. A late payday pushes the federal deadline back, but not the Michigan one."}}, {"@type": "Question", "name": "Who has to file certified payroll?", "acceptedAnswer": {"@type": "Answer", "text": "Each contractor and each subcontractor, at every tier, for every week its laborers or mechanics do covered work. The prime contractor is responsible for getting in every sub's certified payrolls. Federal contracts of $2,000 or less are left out."}}, {"@type": "Question", "name": "Who signs certified payroll?", "acceptedAnswer": {"@type": "Answer", "text": "On a federal job, the contractor, or its agent who pays or supervises paying the workers. On a Michigan state job, you sign electronically at the moment you submit."}}, {"@type": "Question", "name": "How long do I keep certified payroll records?", "acceptedAnswer": {"@type": "Answer", "text": "At least 3 years after all work on the prime contract is done, not from the day your own crew left the site. In Michigan, the contracting agent, contractor and subcontractor each keep them for at least 3 years."}}, {"@type": "Question", "name": "What happens if a certified payroll is false?", "acceptedAnswer": {"@type": "Answer", "text": "Federal law applies 18 U.S.C. 1001 to the statement. A knowingly false one can mean a fine, up to 5 years in prison, or both."}}, {"@type": "Question", "name": "Where does Michigan certified payroll go?", "acceptedAnswer": {"@type": "Answer", "text": "Since 2 April 2026, into the state's online database. LEO's page sends contractors to an LCPtracker portal, and each covered project has to be registered and set up there before payrolls can go in."}}]}
+</script>
+</section>
+
 <section class="next" aria-labelledby="next-h">
 <h2 id="next-h">Next: fill in the form</h2>
 <p>On a federal job you can use DOL's optional WH-347, or any format with the same facts and a statement in identical wording (29 CFR 3.3(b) and 5.5(a)(3)(ii)(B)). <a href="/wh-347/">How to fill out the WH-347, line by line</a> walks one worker's week through every column.</p>
@@ -229,12 +194,15 @@ main .table-wrap { margin: 16px 0; }
 <li>Michigan: <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-408-1102a">MCL 408.1102a</a> and <a href="https://legislature.mi.gov/Laws/MCL?objectName=mcl-408-1122">408.1122</a>; LEO's <a href="https://www.michigan.gov/leo/bureaus-agencies/ber/wage-and-hour/prevailing-wage">Prevailing Wage</a> page</li>
 </ul>
 </section>
-
+</article>
+</div>
+<section class="section guide-final"><div class="wrap"><div class="final-panel reveal"><div><p class="kicker">One last look</p><h2>Check this week's payroll before you sign it</h2></div><a class="btn btn-primary" href="/#check">Check a week <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div></div></section>
 </main>
 
 <footer class="wrap small">
-<p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan. <a href="/">Free checker</a> <span aria-hidden="true">&middot;</span> <a href="/privacy.html">Privacy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms</a></p>
+<p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan. <a href="/privacy.html">Privacy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms</a></p>
 <p>Facts on this page checked 9 November 2026. This page explains the weekly routine and the rules. It isn't legal advice.</p>
 </footer>
+<script src="/home.js" defer></script>
 </body>
 </html>

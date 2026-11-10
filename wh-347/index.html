@@ -21,99 +21,51 @@
 <link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script defer data-domain="counttwice.app" src="https://plausible.io/js/script.js"></script>
-<style>
-:root {
-  --bg: #fbfaf7; --card: #ffffff; --ink: #1b1f23; --muted: #555e69; --line: #d9dde3;
-  --accent: #1f5f8b; --accent-ink: #ffffff;
-  --flag: #b3261e; --flag-bg: #fdecea; --fix: #8a5a00; --fix-bg: #fff4dc; --note: #35506b; --note-bg: #eef3f8; --ok: #2e6b3f;
-  --radius: 10px;
-  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  color-scheme: light dark;
-}
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #14171a; --card: #1c2024; --ink: #e8eaed; --muted: #a5adb7; --line: #2f353b;
-    --accent: #6fb3e0; --accent-ink: #0b1620;
-    --flag: #ff8a80; --flag-bg: #3a1d1b; --fix: #ffcc66; --fix-bg: #3a2e12; --note: #a8c4e0; --note-bg: #1c2a38; --ok: #7fd18f;
-  }
-}
-* { box-sizing: border-box; }
-html { -webkit-text-size-adjust: 100%; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 var(--font); }
-a { color: var(--accent); }
-a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
-.wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
-.skip { position: absolute; left: -9999px; top: 8px; background: var(--card); padding: 8px 12px; border-radius: var(--radius); }
-.skip:focus { left: 8px; z-index: 10; }
-.top { border-bottom: 1px solid var(--line); }
-.top p { margin: 0; padding: 10px 0; font-size: 15px; color: var(--muted); }
-.top .brand { display: flex; align-items: center; gap: 10px; padding: 12px 0; font-size: 1.05rem; color: var(--ink); }
-.top .brand img { flex: none; display: block; }
-h1 { font-size: 2.1rem; line-height: 1.2; margin: 32px 0 12px; letter-spacing: -0.01em; }
-h2 { font-size: 1.5rem; line-height: 1.25; margin: 48px 0 12px; }
-h3 { font-size: 1.15rem; margin: 28px 0 8px; }
-.lede { font-size: 1.15rem; margin: 0 0 16px; }
-.facts { padding-left: 1.2em; margin: 0 0 20px; }
-.facts li { margin: 4px 0; }
-.btn { display: inline-block; min-height: 44px; padding: 10px 20px; border: 0; border-radius: var(--radius); background: var(--accent); color: var(--accent-ink); font: 600 1rem/1.5 var(--font); text-decoration: none; cursor: pointer; }
-.btn:disabled { opacity: 0.6; cursor: default; }
-.small { font-size: 0.95rem; color: var(--muted); }
-.card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 20px; }
-.privacy { margin-top: 16px; }
-.dated { display: inline-block; margin: 0 0 8px; padding: 2px 10px; border-radius: 999px; background: var(--note-bg); color: var(--note); font-size: 0.9rem; }
-.steps li { margin: 8px 0; }
-.table-wrap { overflow-x: auto; }
-table.cols { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card); }
-table.cols th, table.cols td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
-table.cols th { font-weight: 600; }
-code { font-family: var(--mono); font-size: 0.92em; }
-.notice { padding: 12px 16px; border-radius: var(--radius); background: var(--fix-bg); color: var(--ink); }
-footer { margin: 56px auto 40px; border-top: 1px solid var(--line); padding-top: 16px; }
-footer p { margin: 8px 0; }
-@media (max-width: 480px) {
-  body { font-size: 16px; }
-  h1 { font-size: 1.7rem; }
-  .btn { width: 100%; text-align: center; }
-  table.cols th:nth-child(3), table.cols td:nth-child(3) { display: none; }
-}
-.top .brand a { color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 10px; }
-.cta { margin: 24px 0; }
-.cta p { margin: 8px 0; }
-figure { margin: 24px 0; }
-figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: var(--radius); }
-figcaption { margin-top: 8px; font-size: 0.95rem; color: var(--muted); }
-table.data { width: 100%; border-collapse: collapse; font-size: 0.95rem; background: var(--card); }
-table.data th, table.data td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
-table.data th { font-weight: 600; }
-table.data td.num { font-family: var(--mono); white-space: nowrap; }
-.next { margin-top: 40px; }
-table.grid { border-collapse: collapse; background: var(--card); font-family: var(--mono); font-size: 0.9rem; }
-table.grid th, table.grid td { border: 1px solid var(--line); padding: 6px 9px; text-align: center; }
-table.grid thead th { font-weight: 600; line-height: 1.3; }
-table.grid caption { caption-side: bottom; text-align: left; padding-top: 6px; font-family: var(--font); }
-.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
-@media (max-width: 480px) {
-  table.grid th, table.grid td { padding: 5px 4px; font-size: 0.85rem; }
-  table.data { font-size: 0.88rem; }
-  table.data td.num { white-space: normal; }
-  table.data th, table.data td { padding: 8px 6px; }
-}
-main .table-wrap { margin: 16px 0; }
-</style>
+<link rel="preload" href="/fonts/dmsans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/clashdisplay-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/home.css">
+<link rel="stylesheet" href="/article.css">
 <script type="application/ld+json">
 {"@context": "https://schema.org", "@type": "Article", "headline": "How to fill out the WH-347, line by line", "url": "https://counttwice.app/wh-347/", "datePublished": "2026-11-09", "dateModified": "2026-11-09", "image": "https://counttwice.app/og.png", "author": {"@type": "Person", "name": "Matt Kerr", "worksFor": {"@type": "Organization", "name": "Kerr & Company LLC"}}, "publisher": {"@type": "Organization", "name": "Kerr & Company LLC"}}
 </script>
 </head>
-<body>
+<body class="guide-page">
 <a class="skip" href="#main">Skip to the article</a>
-<header class="top"><div class="wrap"><p class="brand"><a href="/"><img src="/icon.svg" alt="" width="28" height="28"><span><strong>Count Twice</strong>: certified payroll checker</span></a></p></div></header>
+<header class="top"><div class="wrap nav-in">
+<a class="brand" href="/"><img src="/icon.svg" alt="" width="34" height="34"><span><strong>Count Twice</strong>: certified payroll checker</span></a>
+<nav class="nav-links" aria-label="Main navigation"><a href="/#how">How it works</a><a href="/#check">The check</a><a href="/#compare">Compare</a><a href="/#michigan">Michigan</a><a href="/#faq">FAQ</a></nav>
+<a class="btn btn-primary btn-sm" href="/#check">Check a week <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+</div></header>
 
-<main id="main" class="wrap">
-
+<main id="main">
+<section class="hero guide-hero" aria-labelledby="guide-h"><div class="wrap">
+<div class="guide-hero-copy">
+<p class="kicker">Guide</p>
+<h1 id="guide-h">How to fill out the WH-347, line by line</h1>
+<p class="lede">The January 2025 WH-347, box by box: the header, columns 1A to 9, page 2&#x27;s Statement of Compliance, and a filled-in row with overtime and cash fringe.</p>
+<div class="guide-meta"><p>By Matt Kerr, who makes Count Twice in Grand Rapids</p><p class="dated">Checked 9 November 2026</p></div>
+<div class="cta"><a class="btn btn-primary" href="/#check">Check a week free</a></div>
+</div>
+</div></section>
+<div class="wrap guide-layout">
+<aside class="guide-contents"><nav aria-labelledby="contents-h">
+<p id="contents-h">On this page</p>
+<ol>
+<li><a href="#new-h">If your guide mentions boxes 4(a) to 4(c), it&#x27;s out of date</a></li>
+<li><a href="#head-h">The header, box by box</a></li>
+<li><a href="#cols-h">The columns, 1A to 9</a></li>
+<li><a href="#row-h">One row, filled in</a></li>
+<li><a href="#p2-h">Page 2: the Statement of Compliance</a></li>
+<li><a href="#send-h">When and where it goes</a></li>
+<li><a href="#check-h">Check the math before you sign</a></li>
+<li><a href="#faq-h">WH-347 questions</a></li>
+<li><a href="#next-h">Next: the rates you&#x27;re signing for</a></li>
+</ol>
+</nav></aside>
+<article class="guide-body" aria-labelledby="guide-h">
 <section aria-labelledby="top-h">
 <h1 id="top-h">How to fill out the WH-347, line by line</h1>
-<p class="dated">By Matt Kerr, who makes Count Twice in Grand Rapids &middot; Checked 9 November 2026</p>
+<p class="dated">Checked 9 November 2026</p>
 <p class="lede">The WH-347 is the U.S. Department of Labor's weekly certified payroll form for Davis-Bacon jobs. Page 1 is the payroll: one row for each worker in each trade, with hours by day, rates, fringe, gross pay, deductions and net pay. Page 2 is the Statement of Compliance, which you sign.</p>
 <ul class="facts">
 <li>The current form is dated January 2025. It carries OMB number 1235-0008, good through 31 January 2028.</li>
@@ -269,17 +221,34 @@ main .table-wrap { margin: 16px 0; }
 </div>
 </section>
 
+<section class="section band" id="faq" aria-labelledby="faq-h"><div class="wrap faq-layout"><div class="section-head"><p class="kicker">Questions</p><h2 id="faq-h">WH-347 questions</h2></div>
+<div class="faq">
+<details><summary>Is the WH-347 form required?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>No. The form itself is optional. Sending the same payroll facts every week, with a signed statement in identical wording, is not.</p></details>
+<details><summary>Which version of the WH-347 is current?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>The one dated January 2025, with OMB number 1235-0008, good through 31 January 2028. A guide that mentions boxes 4(a) to 4(c) or an exceptions table is describing the older form.</p></details>
+<details><summary>When is the WH-347 due?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>Within 7 days after your regular payday for that week, under 29 CFR 3.4.</p></details>
+<details><summary>Do I put the full Social Security number on the WH-347?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>No. Column 1E takes the last four digits of the Social Security number, or your own number for that worker. Never the full Social Security number.</p></details>
+<details><summary>What goes in column 6B?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>The week's hours times the worker's total hourly plan credit from page 2. It's a dollar total for the week, not an hourly rate.</p></details>
+<details><summary>Where can I get the WH-347?<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary><p>DOL gives it away free, as a PDF and as an online form that runs in your browser.</p></details>
+</div></div>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is the WH-347 form required?", "acceptedAnswer": {"@type": "Answer", "text": "No. The form itself is optional. Sending the same payroll facts every week, with a signed statement in identical wording, is not."}}, {"@type": "Question", "name": "Which version of the WH-347 is current?", "acceptedAnswer": {"@type": "Answer", "text": "The one dated January 2025, with OMB number 1235-0008, good through 31 January 2028. A guide that mentions boxes 4(a) to 4(c) or an exceptions table is describing the older form."}}, {"@type": "Question", "name": "When is the WH-347 due?", "acceptedAnswer": {"@type": "Answer", "text": "Within 7 days after your regular payday for that week, under 29 CFR 3.4."}}, {"@type": "Question", "name": "Do I put the full Social Security number on the WH-347?", "acceptedAnswer": {"@type": "Answer", "text": "No. Column 1E takes the last four digits of the Social Security number, or your own number for that worker. Never the full Social Security number."}}, {"@type": "Question", "name": "What goes in column 6B?", "acceptedAnswer": {"@type": "Answer", "text": "The week's hours times the worker's total hourly plan credit from page 2. It's a dollar total for the week, not an hourly rate."}}, {"@type": "Question", "name": "Where can I get the WH-347?", "acceptedAnswer": {"@type": "Answer", "text": "DOL gives it away free, as a PDF and as an online form that runs in your browser."}}]}
+</script>
+</section>
+
 <section class="next" aria-labelledby="next-h">
 <h2 id="next-h">Next: the rates you're signing for</h2>
 <p>Every number in 6A and 6C starts from your wage determination. <a href="/davis-bacon-wage-rates/">How to find and read your 2026 Davis-Bacon wage determination</a> walks through a real one, line by line.</p>
 <p class="small">Sources, read 9 November 2026: the WH-347 (Rev. January 2025) and <a href="https://www.dol.gov/agencies/whd/forms/wh347">DOL's instructions for it</a>; <a href="https://www.ecfr.gov/current/title-29/subtitle-A/part-3/section-3.4">29 CFR 3.4</a>, <a href="https://www.ecfr.gov/current/title-29/section-5.5">5.5</a>, <a href="https://www.ecfr.gov/current/title-29/section-5.25">5.25</a>, <a href="https://www.ecfr.gov/current/title-29/section-5.28">5.28</a> and <a href="https://www.ecfr.gov/current/title-29/section-5.32">5.32</a>.</p>
 </section>
-
+</article>
+</div>
+<section class="section guide-final"><div class="wrap"><div class="final-panel reveal"><div><p class="kicker">One last look</p><h2>Check this week's payroll before you sign it</h2></div><a class="btn btn-primary" href="/#check">Check a week <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div></div></section>
 </main>
 
 <footer class="wrap small">
-<p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan. <a href="/">Free checker</a> <span aria-hidden="true">&middot;</span> <a href="/privacy.html">Privacy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms</a></p>
+<p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan. <a href="/privacy.html">Privacy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms</a></p>
 <p>Facts on this page checked 9 November 2026. This page explains the form and the rules. It isn't legal advice, and you still sign the Statement of Compliance yourself.</p>
 </footer>
+<script src="/home.js" defer></script>
 </body>
 </html>
