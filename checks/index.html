@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Certified payroll problems: sample weeks and real checker results</title>
+<meta name="description" content="See the free checker run on sample payroll weeks, then compare the changed inputs and results.">
+<link rel="canonical" href="https://counttwice.app/checks/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Count Twice">
+<meta property="og:title" content="Certified payroll problems: sample weeks and real checker results">
+<meta property="og:description" content="See the free checker run on sample payroll weeks, then compare the changed inputs and results.">
+<meta property="og:url" content="https://counttwice.app/checks/">
+<meta property="og:image" content="https://counttwice.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Count Twice: certified payroll checker. Check one week before you sign. Free, in your browser. Nothing uploaded.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1f5f8b">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-96.png" sizes="96x96" type="image/png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script defer data-domain="counttwice.app" src="https://plausible.io/js/script.js"></script>
+<link rel="preload" href="/fonts/dmsans-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/clashdisplay-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/home.css">
+<link rel="stylesheet" href="/article.css">
+<link rel="stylesheet" href="/checks/checks.css">
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "Article", "headline": "Certified payroll problems: sample weeks and real checker results", "url": "https://counttwice.app/checks/", "datePublished": "2026-11-10", "dateModified": "2026-11-10", "image": "https://counttwice.app/og.png", "author": {"@type": "Person", "name": "Matt Kerr", "worksFor": {"@type": "Organization", "name": "Kerr & Company LLC"}}, "publisher": {"@type": "Organization", "name": "Kerr & Company LLC"}}
+</script>
+</head>
+<body class="guide-page">
+<a class="skip" href="#main">Skip to the article</a>
+<header class="top"><div class="wrap nav-in">
+<a class="brand" href="/"><img src="/icon.svg" alt="" width="34" height="34"><span><strong>Count Twice</strong>: certified payroll checker</span></a>
+<nav class="nav-links" aria-label="Main navigation"><a href="/#how">How it works</a><a href="/#check">The check</a><a href="/#compare">Compare</a><a href="/#michigan">Michigan</a><a href="/#faq">FAQ</a></nav>
+<a class="btn btn-primary btn-sm" href="/#check">Check a week <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a>
+</div></header>
+<main id="main">
+<section class="hero guide-hero" aria-labelledby="guide-h"><div class="wrap"><div class="guide-hero-copy">
+<p class="kicker">Guide</p>
+<h1 id="guide-h">Certified payroll problems: sample weeks and real checker results</h1>
+<p class="lede">See the free checker run on sample payroll weeks, then compare the changed inputs and results.</p>
+<div class="guide-meta"><p>By Matt Kerr, who makes Count Twice in Grand Rapids</p><p class="dated">Checked 10 November 2026</p></div>
+<div class="cta"><a class="btn btn-primary" href="/#check">Check a week free</a></div>
+</div></div></section>
+<div class="wrap guide-layout">
+<aside class="guide-contents"><nav aria-labelledby="contents-h"><p id="contents-h">On this page</p><ol>
+<li><a href="#examples">Find a payroll problem</a></li>
+<li><a href="#reading">How to read the results</a></li>
+</ol></nav></aside>
+<article class="guide-body" aria-labelledby="guide-h">
+<section><h2 id="examples">Find a payroll problem</h2>
+<p>Each example starts with one item the free checker can return. Pick the question closest to the result you are reviewing. The page shows a sample week, its rate table and the actual checker output, followed by a corrected comparison and a second result.</p>
+<p>Names, trades and rates are made up. Use your own work records and the wage determination in your contract for a real week. The sample rates are there to explain the math, not to supply a rate for a county or a project.</p>
+<ul><li><a href="/checks/apprentice-not-checked/">Why does the certified payroll checker leave apprentice pay unchecked?</a><p>Apprentice pay and overtime follow the registered program, so this tool checks the entered ratio and leaves pay for a separate review.</p></li>
+<li><a href="/checks/class-missing/">No rate for this trade on certified payroll: why was the row skipped?</a><p>Add a rate-table line that matches the worker&#x27;s classification before the checker can review that row.</p></li>
+<li><a href="/checks/fringe-short/">Davis-Bacon fringe benefits short: how much is missing from the week?</a><p>Count cash above the base, cash fringe and plan credit before finding any fringe gap.</p></li>
+<li><a href="/checks/mi-double-time/">Michigan Sunday or holiday payroll: why does the checker show a double-time note?</a><p>With Michigan mode on, Sunday hours and marked holiday hours get a double-time reminder because the CSV has no double-time wage field.</p></li>
+<li><a href="/checks/ot-basis-full-rate/">Why does Davis-Bacon overtime use the full cash rate when it includes fringe?</a><p>The checker treats rate_paid as wages and uses that full rate unless cash in place of fringe is entered in its own column.</p></li>
+<li><a href="/checks/ot-multi-row/">One worker in two trades: why does certified payroll overtime need a hand check?</a><p>The checker totals the worker&#x27;s hours across trades but leaves the overtime split to the payroll records.</p></li>
+<li><a href="/checks/ot-short/">Davis-Bacon overtime under time and a half: how do you spot it on certified payroll?</a><p>Compare the overtime wage with one and a half times the basic rate, leaving cash paid in place of fringe separate.</p></li>
+<li><a href="/checks/ot-unchecked/">Certified payroll overtime not checked: what does a blank overtime rate mean?</a><p>A blank overtime wage means the checker reports the required rate in a note and cannot compare it with what was paid.</p></li>
+<li><a href="/checks/pay-covered-by-plan/">Davis-Bacon wage below base but benefits cover the total: why is there a note?</a><p>The checker gives a note when cash and plan payments cover base plus fringe even though the wage field is below base.</p></li>
+<li><a href="/checks/pay-short/">Davis-Bacon pay below the base rate: how do you find the weekly shortfall?</a><p>Add the cash wage, cash fringe and plan credit, then compare that total with the base rate plus fringe.</p></li>
+<li><a href="/checks/ratio-over/">Apprentices over the allowed ratio: how do you find the days that need review?</a><p>Count apprentices and journeyworkers in each trade on each day, then apply the entered program ratio and round down.</p></li>
+<li><a href="/checks/wage-covers-fringe/">Does cash pay above the Davis-Bacon base count toward fringe?</a><p>Yes, the checker counts the part of the cash wage above base toward the fringe and shows that credit in a note.</p></li></ul></section>
+<section><h2 id="reading">How to read the results</h2>
+<p>A flag identifies pay that looks short or a daily apprentice count above the entered ratio. A file-or-rates fix means a row could not be checked yet. A note explains an input, a credit or a limit. Some notes need a review by hand even when no dollar gap is shown.</p>
+<p>Read the summary counts as well as the messages. A skipped row is different from a checked row. A blank overtime rate is different from a rate that was compared and found high enough. The sample pages keep those distinctions visible in both runs.</p>
+<p>Some comparison weeks change an actual work condition, such as the future staffing or schedule. They explain how a note can disappear without pretending that a new CSV repairs past work. Keep the original hours, trade and worker status when reviewing a real payroll.</p>
+<p>Rule summaries cite the sources recorded in the project's rule notes, read 8 November 2026. They are a dated summary, not legal advice. The checker does not choose your rate determination, verify benefit plans, confirm apprentice registration or sign the weekly form.</p></section>
+</article>
+</div>
+<section class="section guide-final"><div class="wrap"><div class="final-panel reveal"><div><p class="kicker">One last look</p><h2>Check this week's payroll before you sign it</h2></div><a class="btn btn-primary" href="/#check">Check a week <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></a></div></div></section>
+</main>
+<footer class="wrap small">
+<p>Made by Kerr &amp; Company LLC, Grand Rapids, Michigan. <a href="/privacy.html">Privacy</a> <span aria-hidden="true">&middot;</span> <a href="/terms.html">Terms</a></p>
+<p>Examples checked 10 November 2026. A dated summary, not legal advice. Sources were read 8 November 2026, as recorded in the rule notes.</p>
+</footer>
+<script src="/home.js" defer></script>
+</body>
+</html>

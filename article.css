@@ -103,7 +103,7 @@
    phone hero stays short. */
 .guide-proof { display: none; }
 @media (min-width: 1100px) {
-  .guide-hero .wrap { display: grid; grid-template-columns: minmax(0,1fr) 380px; gap: 56px; align-items: center; }
+  .guide-hero .guide-hero-grid { display: grid; grid-template-columns: minmax(0,1fr) 380px; gap: 56px; align-items: center; }
   .guide-proof { display: block; padding: 14px 0; border: 1px solid #4c5360; border-radius: var(--radius); background: linear-gradient(155deg,#132c42,#0b2031); box-shadow: 0 30px 75px -25px #0009,0 0 0 6px #ffffff03; }
   .guide-proof-head { display: flex; justify-content: space-between; gap: 12px; margin: 0 16px 12px; padding-bottom: 10px; border-bottom: 1px solid #ffffff1c; font: .7rem var(--mono); color: #adbfce; }
   .guide-proof .demo-flags { gap: 8px; padding: 0 16px; }

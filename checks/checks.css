@@ -1,0 +1,27 @@
+/* Static checker output uses the same result colours and borders as the home page. */
+.check-results { min-width: 0; padding: 24px; margin: 24px 0; border: 1px solid var(--line); border-radius: var(--radius); background: linear-gradient(155deg, var(--card), var(--panel)); }
+.check-results h3, .check-results h4 { margin-top: 0; }
+.check-results h5 { font: 600 1rem var(--font); margin: 0 0 8px; }
+.check-results .cp-section { margin: 20px 0 0; padding: 16px; border: 1px solid; border-left-width: 5px; border-radius: var(--radius); overflow-wrap: anywhere; }
+.check-results .cp-flag { background: var(--flag-bg); border-color: var(--flag); }
+.check-results .cp-fix { background: var(--fix-bg); border-color: var(--fix); }
+.check-results .cp-note { background: var(--note-bg); border-color: var(--note); }
+.check-results .cp-item + .cp-item { margin-top: 20px; }
+.check-results .cp-item p:last-child { margin-bottom: 0; }
+.check-options { padding: 16px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--panel); }
+.guide-body table[data-input$="-csv"] { font-size: .8rem; }
+.guide-body table[data-input] { overflow-wrap: normal; word-break: normal; }
+.guide-body .csv-fields { display: none; }
+@media (min-width: 701px) {
+  .guide-body .table-wrap:has(table[data-input$="-csv"]) { display: none; }
+  .guide-body .table-wrap.csv-fields { display: block; }
+  .guide-body table.csv-fields { display: table; min-width: 0; }
+  .guide-body table.csv-fields th, .guide-body table.csv-fields td { white-space: nowrap; }
+}
+@media (max-width: 480px) {
+  .check-results { padding: 16px; }
+}
+@media print {
+  .check-results, .check-results .cp-section { background: white; color: black; border-color: #777; }
+  .check-results .cp-item { break-inside: avoid; }
+}
